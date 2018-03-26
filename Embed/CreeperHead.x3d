@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">
+<X3D>
+ <Scene>
+  <Group>
+   <viewpoint description='FrontRight'	position="1.8 0 2" orientation="0 1 0 0.707" fieldOfView="0.785398" centerOfRotation="0,0,0" />
+   <viewpoint description='FrontLeft' position="-1.8 0 2" orientation="0 1 0 -0.707" fieldOfView="0.785398" centerOfRotation="0,0,0"/>
+  </Group>		
+  <fog visibilityRange="10" color="1,1,1" fogType="LINEAR" />
+   <NavigationInfo headlight='false' type='"EXAMINE" "WALK" "FLY" "ANY"'/>
+   <Group def="CreeperHead">
+    <Shape>
+     <Appearance>
+      <imagetexture url="../Textures/TerrainTexture.jpg" repeats="true" repeatt="true" scale="true" hidechildren="true"></imagetexture>
+     </Appearance> 
+     <box size="0.8 0.8 0.8"></box>
+    </Shape>
+    <Group def="Face">
+     <transform translation="-0.2 0.11 0.36">
+      <Shape def="CreepEye">
+       <Appearance>
+        <Material diffuseColor='0 0 0'/>
+       </Appearance> 
+       <box size="0.2 0.2 0.1"></box>
+      </Shape>
+     </transform>
+     <transform translation="0.2 0.11 0.36">
+      <Shape use="CreepEye"></Shape>
+     </transform>
+     <transform translation="0 -0.14 0.36">
+      <Shape>
+       <Appearance>
+        <Material diffuseColor='0 0 0'/>
+       </Appearance> 
+       <box size="0.2 0.3 0.1"></box>
+      </Shape>
+     </transform>
+     <transform translation="-0.15 -0.24 0.36">
+      <Shape def="CreepMouth">
+       <Appearance>
+        <Material diffuseColor='0 0 0'/>
+       </Appearance> 
+       <box size="0.1 0.3 0.1"></box>
+      </Shape>
+     </transform>
+     <transform translation="0.15 -0.24 0.36">
+      <Shape use="CreepMouth"></Shape>
+     </transform>
+    </Group>
+   </Group>
+  </Scene>
+</X3D>
