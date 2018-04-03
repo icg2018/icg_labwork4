@@ -1,0 +1,47 @@
+<Scene><!-- 1 уровень листьев -->
+	<Shape DEF="tree_part">
+		<Appearance><material diffuseColor='#0f0'></material></Appearance>
+		<IndexedFaceSet 
+		  solid="false" coordIndex="0 1 2 3 4 5 6 7 8 1 ">
+		<Coordinate point="0 1 0, -1 0 0, -2 0 -2, 0 0 -1, 2 0 -2, 1 0 0, 2 0 2, 0 0 1, -2 0 2"></Coordinate>
+		</IndexedFaceSet>
+	</Shape>
+	<Group DEF="points">
+		<Shape DEF="points_one">
+			<PointSet>
+				<Color color='1 0 0, 1 0 1, 0 0 1'></Color>
+				<Coordinate point='1.0 0.3 1.5, -0.8 0.5 1.1, 0.5 0.7 0.8 '></Coordinate>
+			</PointSet>
+		</Shape>
+		<Transform  rotation='0 1 0 1.57' ><Shape USE="points_one"></Shape></Transform>
+		<Transform  rotation='0 1 0 -1.57' ><Shape USE="points_one"></Shape></Transform>
+		<Transform  rotation='0 1 0 3.14' ><Shape USE="points_one"></Shape></Transform>
+	</Group>
+	<Transform  rotation='0 0 0 0' scale='0.8 0.8 0.8' translation='0 0.9 0' >
+	<!-- 2 уровень листьев --><Shape USE="tree_part"></Shape><Shape USE="points"></Shape>
+		<Transform  rotation='0 0 0 0' scale='0.8 0.8 0.8' translation='0 0.9 0' >
+		<!-- 3 уровень листьев --><Shape USE="tree_part"></Shape><Shape USE="points"></Shape>
+			<Transform  rotation='0 0 0 0' scale='0.8 0.8 0.8' translation='0 0.9 0' >
+			<!-- 4 уровень листьев --><Shape USE="tree_part"></Shape><Shape USE="points"></Shape>
+			</Transform>
+		</Transform>
+	</Transform>
+
+	<Transform  rotation='0 0 0 0' scale='0.5 1 0.5' translation='-0.25 -1 -0.25' >
+		<!-- ствол дерева -->
+		<Shape>
+			<Appearance><material diffuseColor='#331a00'></material></Appearance>
+			<IndexedTriangleStripSet index='0 1 2 3 4 5 6 7 0 1' solid='false'>
+				<Coordinate point='0 0 0, 0 1 0, 1 0 0, 1 1 0, 1 0 1, 1 1 1, 0 0 1, 0 1 1'></Coordinate>
+			</IndexedTriangleStripSet>
+		</Shape>
+	</Transform>
+	<Transform  rotation='0 0 0 0' scale='0.7 0.7 1' translation='0 2.7 0' >
+	<!-- Украшеине сверху --><Shape>
+		<Appearance><material diffuseColor='#ff0'></material></Appearance>
+		<IndexedTriangleSet index='0 1 2 0 1 3' solid='false'>
+		<Coordinate point='0 0 0, 0 1 0, -0.7 -0.2 0, 0.7 -0.2 0'></Coordinate>
+		</IndexedTriangleSet>
+		</Shape>
+	</Transform>
+</Scene>
