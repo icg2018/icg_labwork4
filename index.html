@@ -1,13 +1,70 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 4</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+
+<html>
+	<head>
+		<title>Лабораторная работа №4</title>
+		<link rel="stylesheet" type="text/css" href="https://x3dom.org/download/dev/x3dom.css"></link>
+		<script type="text/javascript" src="https://x3dom.org/download/dev/x3dom-full.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		
+		<style type="text/css">
+			body{padding:0;margin:0;}
+			X3D{left:0px; top:0px; width:100%; height:100%; border:none;}
+		</style>
+<X3D>
+<Scene>
+
+	<Collision enabled="true">
+		<Transform  rotation='0 0 0 0' scale='3 1 3' translation='-18 -1 -18'>
+
+		<Shape>
+			<Appearance><ImageTexture url="floor.jpg"></ImageTexture><TextureTransform scale='5 5'></TextureTransform></Appearance>
+			<ElevationGrid xDimension="7" zDimension="7"  height="
+			 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+			 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+			 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+			 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+			 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+			 0.0, 0.0, 0.0,-0.0, 0.0, 0.0, 0.0,
+			 0.0, 0.0,-0.0, 0.0,-0.0, 0.0, 0.0,
+			"	xSpacing="2.0" zSpacing="2.0" solid="false">
+			</ElevationGrid>
+		</Shape>
+		</Transform>
+
+		<Transform  rotation='0 0 0 0' scale='1 1 1' translation='0 0 0' >
+		<Group DEF="tree"><Inline url='"tree.x3d"' /></Group>
+		</Transform>	
+
+		<Transform  rotation='0 0 0 0' scale='0.4 0.4 0.4' translation='5 -0,8 5' ><Shape USE="tree"></Shape></Transform>
+		<Transform  rotation='0 0 0 0' scale='0.9 0.9 0.9' translation='5 0 -5' ><Shape USE="tree"></Shape></Transform>
+		<Transform  rotation='0 0 0 0' scale='0.5 0.5 0.5' translation='-10 -0.6 -5' ><Shape USE="tree"></Shape></Transform>
+		<Transform  rotation='0 0 0 0' scale='1.4 1.4 1.4' translation='10 0 10' ><Shape USE="tree"></Shape></Transform>
+
+		<Transform  rotation='0 0 0 0' scale='1 1 1' translation='-5 0 5' >
+		<Anchor url="https://guap.ru" parameter="target='_blank'">
+		<Shape>
+		<Appearance><material diffuseColor="0 0.8 0"></material></Appearance>
+		<Box Size="1 1 1" ></Box>
+		</Shape>
+		</Anchor>
+		</Transform>
+
+	</Collision>
+
+	<NavigationInfo type='WALK'   avatarSize='0.25, 1.6, 0.75' visibilityLimit='0.0' speed='4' headligh="false" ></NavigationInfo>
+	<Viewpoint id="front" position="0 1.6 10" orientation="0 1.6 0 0" centerOfRotation="0 1.6 0" description="front camera"></Viewpoint>
+	<Viewpoint id="left" position="-5 1.6 0" orientation="0 1.6 0 0" centerOfRotation="0 1.6 0" description="left camera"></Viewpoint>
+
+	<PointLight id='point' on='TRUE' intensity='0.5' color='#0FF' location='2.2 2.9 0 ' radius='5.0000' ></PointLight> 
+	<!--<SpotLight id='spot' on ="TRUE" beamWidth='40' cutOffAngle='0.2' location='0 0 5' radius='22' direction="-3.14" shadowIntensity="0.5"  shadowCascades="1" shadowFilterSize="16" shadowMapSize="512">  </SpotLight>-->
+	<directionalLight id="directional" direction='0 -1 0' on ="TRUE" intensity='0.5' shadowIntensity='0.5'  shadowCascades="1" shadowFilterSize="16" shadowMapSize="512">
+			</directionalLight>
+
+	<Fog color="#fff" visibilityRange="50"></Fog>
+</Scene>
+</X3D>
+
+	</body>
 </html>
