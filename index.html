@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
   <head>  
     <meta charset="utf-8" />
@@ -8,6 +8,105 @@
     <script src="https://www.x3dom.org/download/x3dom.js"></script>
   </head>
   <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
+<x3d width="1100px" height="650px">
+ <h1></h1>
+ <scene>
+     <!--Куб (Земля)-->
+     <Transform translation="0 -1 0">
+         <shape>
+             <appearance>
+                 <material diffuseColor="0 0 0"></material>
+                 <ImageTexture url='textures/Trava_2.png'></ImageTexture>
+                 <TextureTransform translation="0.1 0.1" rotation="0.707" scale="1 1"></TextureTransform>
+             </appearance>
+             <box size="30 0.01 30"></box>
+         </shape>
+     </Transform>
+
+     <!--Cфера (Колобок)-->
+     <Transform translation="3 0 0" rotation="0 1 0 -0.5">
+         <Anchor url='ssilka/stranichka.html'>
+             <shape>
+                 <appearance>
+                     <material diffuseColor="0 0 0"></material>
+                     <ImageTexture url='textures/kolobok_2.png'></ImageTexture>
+                 </appearance>
+                 <sphere radius="1"></sphere>
+             </shape>
+         </Anchor>
+     </Transform>
+
+     <!--Группа роща-->
+     <Group DEF="Grove">
+         <!--Конус (Елочка)-->
+         <Transform def="Cone_1" translation="-2 1 -4">
+             <shape>
+                 <appearance>
+                     <Material diffuseColor="0 1 0"></Material>
+                 </appearance>
+                 <cone bottomRadius="1" height="4" bottom="false"></cone>
+             </shape>
+         </Transform>
+
+         <!--Копия конуса 1-->
+         <Transform translation="3 0 -6">
+             <shape use="Cone_1">
+             </shape>
+         </Transform>
+
+         <!--Копия конуса 2-->
+         <Transform translation="3 0 1">
+             <shape use="Cone_1">
+             </shape>
+         </Transform>
+
+         <!--Копия конуса 3-->
+         <Transform translation="-3 0 4">
+             <shape use="Cone_1">
+             </shape>
+         </Transform>
+     </Group>
+
+     <!--Копия рощи-->
+     <Transform translation="15 0 9" rotation="0 1 0 1">
+         <group use="Grove">
+         </group>
+     </Transform>
+
+     <!--Cфера солнце-->
+     <Transform translation="-4 8 2" rotation="0 1 0 -0.5">
+         <shape>
+             <appearance>
+                 <material diffuseColor="1 1 0"></material>
+             </appearance>
+             <sphere radius="0.5"></sphere>
+         </shape>
+     </Transform>
+
+     <!--Внешная сцена (Домик)-->
+     <Transform translation="-8 1 9" rotation="0 1 0 3.8">
+         <Inline url='ssilka/domik.x3d'></Inline>
+     </Transform>
+
+     <!--Источники света-->
+     <PointLight ambientIntensity="1" location="-2 4 0" color="1 0 0" intensity="0.3" shadowIntensity="0.1" shadowMapSize="512"></PointLight>
+     <PointLight ambientIntensity="1" location="2 4 0" color="0 0 1" intensity="0.5" shadowIntensity="0.2" shadowMapSize="512"></PointLight>
+     <DirectionalLight location="8 10 0" direction='0 0 1' intensity='1.0' shadowIntensity='0.4'></DirectionalLight>
+     <SpotLight location="3 8 2" on="TRUE" beamWidth='0.9' color='0 0 1' cutOffAngle='0.78' radius='22'></SpotLight>
+
+     <!--Туман-->
+     <fog fogType="EXPONENTIAL" visibilityRange="50"></fog>>
+
+     <!--Фон-->
+     <Background groundAngle='0.9 1.5 1.57' groundColor='0.6 0.7 0.1 0.4 0.7 0.2 0.1 0.6 0.1 0 0.3 0.1' skyAngle='0.9 1.5 1.57' skyColor='0.21 0.18 0.66 0.2 0.44 0.85 0.51 0.81 0.95 0.77 0.8 0.82'></Background>
+
+     <!--Настройка точек наблюдения-->
+     <Viewpoint fieldOfView="1.39" position='0 0 14'></Viewpoint>
+
+     <!--Настрока навигации по сцене-->
+     <NavigationInfo headlight="false" type="WALK" avatarSize="1 1 1 1" speed="5" Collision="enabled=true"></NavigationInfo>
+
+ </scene>
+  </x3d>
   </body> 
 </html>
