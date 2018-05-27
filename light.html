@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+     <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
+    <script src="https://www.x3dom.org/download/x3dom.js"></script>
+  </head>
+  <body>
+	<X3D width="700px" height="500px">
+		<scene>
+			<Viewpoint position='70 0 45' orientation='0 1 0 1.1'></Viewpoint>
+			<NavigationInfo type="None"></NavigationInfo>
+			<SpotLight id='spot' on ="TRUE" beamWidth='0.9' color='0 0 1' cutOffAngle='0.78' location='0 0 12' radius='22' >  </SpotLight> 
+			<SpotLight id='spot' on ="TRUE" beamWidth='0.9' color='0 1 0' cutOffAngle='0.78' location='0 5 12' radius='22' >  </SpotLight>
+			<SpotLight id='spot' on ="TRUE" beamWidth='0.9' color='1 0 0' cutOffAngle='0.78' location='2.5 2.5 12' radius='22' >  </SpotLight> 
+			<PointLight id='point' on='TRUE' intensity='1' color='1 1 1' location='6 6 0.5 ' radius='10' >  </PointLight>
+			<transform scale='25 25 25'>
+				<shape>
+					<appearance>
+						<material diffusecolor='1 1 1'></material>
+					</appearance>
+					<plane solid='false'></plane>
+				</shape>
+			</transform>	
+		</scene> 
+	</X3D>
+  </body>
+</html>
