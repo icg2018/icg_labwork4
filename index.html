@@ -23,11 +23,11 @@
 </style>
 <X3D>
     <Scene>
-        <Collision enabled="true">
+        <Collision enabled="true"/>
         <Fog color="0 0 0" visibilityRange="15"></Fog>
 
             
-            <SpotLight DEF='spot' on ="TRUE" beamWidth='0.7' cutOffAngle='0.7' location='0 1 0' direction="0 -1 0" radius='22' shadowIntensity="0.5"  shadowCascades="1" shadowFilterSize="16" shadowMapSize="512"></SpotLight color='0 1 0' >
+            <SpotLight DEF='spot' on ="TRUE" beamWidth='0.7' cutOffAngle='0.7' location='0 1 0' direction="0 -1 0" radius='22' shadowIntensity="0.5"  shadowCascades="1" shadowFilterSize="16" shadowMapSize="512"></SpotLight color='0 1 0'>
                 
             <!--
             <PointLight DEF="lamp" intensity="1" on="true" color="1 0 1" location="0 1 0" radius="5" ambientIntensity="0" attenuation="1 0 0"></PointLight>
@@ -35,8 +35,6 @@
             <!-- свет на кубик сверху-
             <directionalLight DEF="directional" direction='0 -1 0' on="true" intensity='1' shadowIntensity='0.0'></directionalLight>
             -->
-
-
             <Background backUrl='sky.jpg'></Background>
 
             <Transform rotation='0 0 0 0' scale='3 1 3' translation='-18 0 -18'>
