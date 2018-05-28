@@ -1,0 +1,12 @@
+<x3d width='1000' height='800'>
+    <Scene>
+        <transform translation='0 2 0'>
+            <shape>
+                <appearance>
+                    <ImageTexture url='house.jpg'></ImageTexture>
+                </appearance>
+                <box size='3 4 3'></box>
+            </shape>
+        </transform>
+    </Scene>
+</x3d>
