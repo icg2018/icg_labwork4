@@ -7,70 +7,78 @@
     <script src="https://www.x3dom.org/download/x3dom.js"></script>
   </head>
   <body>
-    <h1><x3d width='800px' height='600px'>
+     <x3d width='800px' height='600px'>
 <Scene>
 <Background skyColor='0.000 0.000 0.000'></Background>
-<Transform translation="0 -0.5 0">
-<shape>
-<Appearance>
-<Material diffuseColor='1 1 1'></Material>
-</Appearance>
-<box size="10 0.01 10"> </box>
-</shape>
-</Transform>
-<Group DEF="Text">
-<Transform translation="0 4 0">
-<Shape>
-<Appearance DEF="TextApp">
-<Material ambientIntensity="0.1" diffuseColor="#08f" shininess="0.51" specularColor=".24 .24 .24"> 
-</Appearance>
-<Text string="Результат выполнения работы" solid="false">
-<FontStyle DEF="FontStyle_1" family="TimesNewRoman" size="0.5"> </FontStyle>
-</Text>
-</Shape>
+		<Transform translation="0 -0.5 0">
+			<shape>
+					<Appearance>
+						<Material diffuseColor='1 1 1'></Material>
+					</Appearance>
+					<box size="10 0.01 10"> </box>
+			</shape>
+		</Transform>
+		
+	<Group DEF="Text">
+		<Transform translation="0 4 0">
+			<Shape>
+					<Appearance DEF="TextApp">
+						<Material ambientIntensity="0.1" diffuseColor="#08f" shininess="0.51" specularColor=".24 .24 .24" > </Material>
+					</Appearance>
+					<Text string="Результат выполнения работы" solid="false">
+						<FontStyle DEF="FontStyle_1" family="TimesNewRoman" size="0.5"> </FontStyle>
+					</Text>
+			</Shape>
+		</Transform>
+		
+		<Transform translation="0 3 0">
+			<Anchor url="http://aksenov.in/">
+			<Shape>
+					<Appearance USE="TextApp"> </Appearance>
+						<Text string="Ссылкa " solid="false">
+							<FontStyle USE="FontStyle_1"> </FontStyle>
+						</Text>
+			</Shape>
+			</Anchor>
+		</Transform>
+	</Group>
+	
+	<Group DEF="model">
+		<Transform translation="0 0.7 0", scale="0.2 0.2 0.2">
+			<Inline url="1.x3d"> </Inline>
+		</Transform>
+		
+		<Transform translation="-1 0 0">
+			<shape>
+					<appearance>
+						<imagetexture url="https://sun9-9.userapi.com/c840634/v840634854/574b7/J50zIfcxkWE.jpg"> </imagetexture>
+					</appearance>
+					<box size="1 1 1"> </box>
+			</shape>
+		</Transform>
+	</Group>
+	
+		<Transform translation="2 0 0">
+			<Group USE="model"> </Group>
+		</Transform>
 
-<Transform translation="0 3 0">
-<Anchor url="http://aksenov.in/">
-<Shape>
-<Appearance USE="TextApp""> </Appearance>
-<Text string="Ссылкa " solid="false">
-<FontStyle USE="FontStyle_1"> </FontStyle>
-</Text>
-</Shape>
-</Anchor>
-</Transform>
-</Group>
-<Group DEF="model">
-<Transform translation="0 0.7 0", scale="0.2 0.2 0.2">
-<Inline url="1.x3d"> </Inline>
-</Transform>
-<Transform translation="-1 0 0">
-<shape>
-<appearance>
-<imagetexture url="https://sun9-9.userapi.com/c840634/v840634854/574b7/J50zIfcxkWE.jpg"> </imagetexture>
-</appearance>
-<box size="1 1 1"> </box>
-</shape>
-</Transform>
-</Group>
-<Transform translation="2 0 0">
-<Group USE="model"> </Group>
-</Transform>
-<ViewPoint fieldOfView='0.9' position="0 1 10"" orientation="1 0 0 0.2"> </ViewPoint>
-<NavigationInfo avatarSize="10 10 10" speed ="5" visibilityLimit="10" headlight="fasle" type="FLY">
-</NavigationInfo>
-<Collision enabled="true">
-<Group USE="model"> </Group>
-<Group USE="Text"> </Group>
-</Collision>
-<DirectionalLight direction="0 0 -1" "ambientIntensivity="0.4" intensity="0.6" global="false" on="true">
-</DirectionalLight>
-<PointLight color="0 1 0" attenuation="0.6 0.6 0" location="2 3 1" radius="4" on="true">
-</PointLight>
-<SpotLight color="1 0 1" location="0 7 5" direction="-0.7 -0.2 -0.5" beamWidth="0.5" cutOffAngle="1" on="true">
-</SpotLight>
-<Fog color="1 1 1" fogType ="LINEAR" visibilityRange ="50"> </Fog>
+	<ViewPoint fieldOfView='0.9' position="0 1 10"" orientation="1 0 0 0.2"> </ViewPoint>
+
+	<NavigationInfo avatarSize="10 10 10" speed ="5" visibilityLimit="10" headlight="fasle" type="FLY"> </NavigationInfo>
+
+	<Collision enabled="true">
+		<Group USE="model"> </Group>
+		<Group USE="Text"> </Group>
+	</Collision>
+	
+	<DirectionalLight direction="0 0 -1" "ambientIntensivity="0.4" intensity="0.6" global="false" on="true"> </DirectionalLight>
+
+	<PointLight color="0 1 0" attenuation="0.6 0.6 0" location="2 3 1" radius="4" on="true"> </PointLight>
+
+	<SpotLight color="1 0 1" location="0 7 5" direction="-0.7 -0.2 -0.5" beamWidth="0.5" cutOffAngle="1" on="true"> </SpotLight>
+	
+	<Fog color="1 1 1" fogType ="LINEAR" visibilityRange ="50"> </Fog>
 </Scene>
-</x3d></h1>
-  </body> 
+</x3d> 
+</body> 
 </html>
