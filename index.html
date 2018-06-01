@@ -1,13 +1,159 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 4</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+<html> 
+	<head>      
+		<script type='text/javascript' src='https://www.x3dom.org/download/1.7.2/x3dom-full.js'></script>
+		<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
+	</head> 
+	<body> 
+		<h1>Лабораторная работа №4</h1> 
+		<p> 
+		   Группирование. Гиперссылки. Тиражирование. Встраивание. Освещение. Навигация
+		</p>
+		<script>
+		 function lightSwitch(id){
+			 var light = document.getElementById(id);
+			 if(light.getAttribute('on')!='TRUE')
+				light.setAttribute('on','TRUE');
+			 else
+				 light.setAttribute('on','FALSE');
+		 }
+
+		 function headlight()
+		  {
+			   var h = document.getElementById("head");
+			  if(h.getAttribute('headlight')=='true')
+				h.setAttribute('headlight', 'false');
+			  else
+				  h.setAttribute('headlight', 'true');
+		  }
+		</script>
+		<x3d width='640px' height='480px'> 
+			<scene>
+				<navigationInfo id="head" headlight='true' speed='15' type='"ANY"'></navigationInfo>
+				<Viewpoint position="-3.25762 23.85703 48.74621" orientation="-0.99104 -0.13344 -0.00551 0.46917"></Viewpoint>
+				<directionalLight id="directional" direction='0 -1 0' on ="TRUE" intensity='2.0' shadowIntensity='0.0'>
+				</directionalLight>
+				<PointLight id='point' on='TRUE' intensity='0.9000' ambientIntensity='0.0000' color='0.0 0.6 0.0' location='2 10 0.5 '  attenuation='0 0 0' radius='20.0000'> </PointLight>
+				<SpotLight id='spot' on ="TRUE" beamWidth='0.9' color='1 1 1' cutOffAngle='0.78' location='0 0 12' radius='22'></SpotLight>
+				<fog visibilityRange="200" color="1,0.8,0.85" fogType="LINEAR"></fog>
+					
+				<Anchor url="http://guap.ru" >
+				<shape>     <!--форма-->  
+					<Appearance>
+						<Material diffuseColor='#027A22'/>
+					</Appearance>
+					<IndexedFaceSet ccw="true" colorPerVertex="false" convex="false" сreaseAngle="0" normalPerVertex="true" solid="false" coordIndex="0 8 7 6 5 4 3 2 1 0 -1 0 8 9 10 11 12 13 14 15 0 -1 0 8 16 17 18 19 20 21 22 0 -1 0 8 29 28 27 26 25 24 23 0 -1" >
+						<Coordinate point="0 0 0, -1 0 0, -1 1 0, -4 1 0, -2 3 0, -3 3 0, -1 5 0, -2 5 0, 0 7 0, 2 5 0, 1 5 0, 3 3 0, 2 3 0, 4 1 0, 1 1 0, 1 0 0, 0 5 2, 0 5 1, 0 3 3, 0 3 2, 0 1 4, 0 1 1, 0 0 1, 0 0 -1, 0 1 -1, 0 1 -4, 0 3 -2, 0 3 -3, 0 5 -1, 0 5 -2"></Coordinate>
+					</IndexedFaceSet>
+				</shape> 
+				</Anchor>
+				
+					<!-- домик -->
+					<Group DEF='House'>
+
+						 <Transform translation="6 1 0">
+							<Shape>
+								<Appearance>
+									<Material diffuseColor='1 1 0'/>
+								</Appearance>
+								<Box></Box>
+							</Shape>
+						</Transform>
+
+						<Transform translation="6 2.5 0">
+							<Shape DEF='Roof'>
+								<Appearance>
+									<Material diffuseColor='1 0 0'/>
+								</Appearance>
+								<Cone bottomRadius="2" height="1">
+								</Cone>
+							</Shape>
+						</Transform>
+
+					</Group>
+				
+				<!-- reuse, make smaller and put on top of the house -->
+				<Transform translation="3 2.5 0" scale="0.5 0.5 0.5">    
+					<Shape USE="House"/>
+				</Transform>
+
+				<!-- reuse, squeeze and put aside -->
+				<Transform translation="3.5 0 0" scale="1.0 0.5 0.5">    
+					<Shape USE="House"/>
+				</Transform>
+								
+					
+				<Transform translation='-5 0.99 0' rotation='1 0 0 -1.5708'>
+					<Shape>
+						<IndexedTriangleStripSet index='0 1 2 3 4 5 6 7 8 9 10 11 12 -1' solid='false'>
+							<Coordinate point='-4.0 -1.0 -.5 -4.5 -2.0 -.5 -3.0 -.5 0 -2.5 -1.5 -.5 -2.0 -.5 -1 -1.5 -1.5 -.5 -.5 .5 -.5 0 0 0 1 .5 -.5 1.5 -2.0 -1 2.5 -2.0 -.5 2.5 -2.5 -.5 3.5 -2.0 -1.0'/>
+						</IndexedTriangleStripSet> 
+						<Appearance>
+							<Material diffuseColor='0 .3 .7'/>
+						</Appearance>
+					</Shape>
+				</Transform>
+					
+				<Transform translation="0 0 -14">
+					<shape>     <!--форма-->
+						<Appearance>
+							<Material diffuseColor="0.4 0.4 0.1"></Material>
+						</Appearance> 
+						<ElevationGrid  solid="false" xDimension="9" zDimension="9" height="0.0, 0.0, 0.5, 1.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.5, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 3.0, 1.0, 0.5, 0.0, 1.0, 0.0, 0.0, 0.5, 2.0, 4.5, 2.5, 1.0, 1.5, 0.5, 1.0, 2.5, 3.0, 4.5, 5.5, 3.5, 3.0, 1.0, 0.0, 0.5, 2.0, 2.0, 2.5, 3.5, 4.0, 2.0, 0.5, 0.0, 0.0, 0.0, 0.5, 1.5, 1.0, 2.0, 3.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 1.5, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0"></ElevationGrid>
+					</shape>
+				</Transform>
+				
+				<Collision enabled='true'>
+					<Transform rotation='1 0 0 -1.5708'>
+					<shape>
+						<IndexedFaceSet coordIndex="0 1 2 3 0 -1" solid="false">
+						<Coordinate point="100 100 0, 100 -100 0, -100 -100 0, -100 100 0"></Coordinate>
+						</IndexedFaceSet>
+						<Appearance>
+							<Material diffuseColor="0.4 0.8 0.3"></Material>
+						</Appearance>
+					</shape>
+					</Transform>
+				</Collision>
+				
+				<Collision enabled='true'>
+					<!-- камень -->
+					<Transform translation="3 0.3 3" rotation="1 0 0 -1.5708">
+						<Shape>
+							<appearance>
+								<textureTransform scale='1 1'></textureTransform> 
+								<imageTexture url='stone.jpg'></imageTexture>
+							</appearance> 
+							<IndexedTriangleSet index='8 7 6 5 4 3 2 1 0' solid='false'>
+								<Coordinate point='-3 .5 -.5, 1.5 -3.5 -.5, 0 0 1, -3 .5 -.5, 0 0 1, 2.0 2.0 -.5, 0 0 1, 1.5 -3.5 -.5, 2.0 2.0 -.5'></Coordinate> 
+								<Color color='1 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0.9 0.9 0.9 0 1 0 0 0 1 0.9 0.9 0.9 1 0 0 0.9 0.9 0.9 0 0 1'></Color>
+							</IndexedTriangleSet>
+						</Shape>
+					</Transform>
+				</Collision>
+				
+				<!-- олень -->
+				<Transform rotation='0 0 1 1.5708' translation="-3 0 -5" scale="3 3 3">
+					<inline url="deer.x3d" DEF='DEER'/>
+				</Transform>
+				
+				<Transform rotation='0 0 1 1.5708' translation="-6 0 -5" scale="3 3 3">
+					<inline USE='DEER'/>
+				</Transform>	
+			</scene> 
+		</x3d>
+		<div id="tools" style="width: 500px;">
+			<input type="checkbox" checked="true" onclick="lightSwitch('point')">
+				<label>point light</label>
+			</input>
+			<input type="checkbox" checked="true" onclick="lightSwitch('spot')">
+				<label>spot light</label>
+			</input>
+			<input type="checkbox" checked="true" onclick="lightSwitch('directional')">
+				<label>directional light</label>
+			</input>
+			<input type="checkbox" checked="true" onclick="headlight()">
+				<label>headlight</label>
+			</input>
+		</div>
+	</body> 
 </html>
