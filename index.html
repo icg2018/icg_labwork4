@@ -35,8 +35,7 @@
 				<PointLight id='point' on='TRUE' intensity='0.9000' ambientIntensity='0.0000' color='0.0 0.6 0.0' location='2 10 0.5 '  attenuation='0 0 0' radius='20.0000'> </PointLight>
 				<SpotLight id='spot' on ="TRUE" beamWidth='0.9' color='1 1 1' cutOffAngle='0.78' location='0 0 12' radius='22'></SpotLight>
 				<fog visibilityRange="200" color="1,0.8,0.85" fogType="LINEAR"></fog>
-				
-				<Transform translation="7 0 0" scale="3 3 3">	
+					
 				<Anchor url="http://guap.ru" >
 				<shape>     <!--форма-->  
 					<Appearance>
@@ -134,11 +133,11 @@
 				
 				<!-- олень -->
 				<Transform rotation='0 0 1 1.5708' translation="-3 0 -5" scale="3 3 3">
-					<inline url="deer.x3d"/>
+					<inline url="deer.x3d" DEF='DEER'/>
 				</Transform>
 				
 				<Transform rotation='0 0 1 1.5708' translation="-6 0 -5" scale="3 3 3">
-					<inline url="deer.x3d"/>
+					<inline USE='DEER'/>
 				</Transform>	
 			</scene> 
 		</x3d>
