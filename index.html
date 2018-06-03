@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
   <head>  
     <meta charset="utf-8" />
@@ -7,7 +7,70 @@
     <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
     <script src="https://www.x3dom.org/download/x3dom.js"></script>
   </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+  <body>     
+
+   
+     <h1>Лабораторная работа № 4</h1>
+	<X3D width="1200px" height="700px">
+		<scene>
+			
+			
+			<Viewpoint position='-15 7 -18' orientation ='0 1 0 4'></Viewpoint>
+			<NavigationInfo avatarSize='[0.15,2,1]' headlight='false'
+speed='2.5' type="FLY" ></NavigationInfo>
+ 
+			
+			<transform translation ='0 3.2 0' scale='50 50 50' rotation='1 0 0 -1.57'>
+			<shape>
+				<appearance>		
+					<ImageTexture url='fur.jpg'></ImageTexture>
+				
+				</appearance>
+				<plane ></plane>
+			</shape>
+
+			</transform>
+			<transform translation ='1 5.4 1' scale='1 1.5 1'>
+				 <Inline url="grl.x3d"></Inline>	
+			</transform>
+			<transform translation='0.5 5.4 -6' rotation='0 1 0 0.8' scale='1 1.5 1'>
+				 <Inline url='donut.x3d'></Inline>	
+			</transform>
+			<transform translation='6 5.4 0' rotation='0 1 0 1.4' scale='1 1.5 1'>
+				 <Inline url='donut.x3d'></Inline>	
+			</transform>
+			<transform translation='-3 5.4 -13' rotation='0 1 0 1.4' scale='1 1.5 1'>
+				 <Inline url='donut.x3d'></Inline>	
+			</transform>
+			<transform translation='5 5.4 -12' rotation='0 1 0 1.4' scale='1 1.5 1'>
+				 <Inline url='donut.x3d'></Inline>	
+			</transform>
+			<transform translation='13 5.4 -15' rotation='0 1 0 1.4' scale='1 1.5 1'>
+				 <Inline url='donut.x3d'></Inline>	
+			</transform>
+	
+
+			<SpotLight id='spot' on ="TRUE" beamWidth='0.9' color='1 0 0' cutOffAngle='0.78' location='1 15 10' radius='30' >  </SpotLight> 
+
+		<Fog visibilityRange='50'></Fog>
+			<directionalLight id="directional" direction='0 0 1' on ="TRUE" intensity='1.0' shadowIntensity='0.0'> </directionalLight> 
+<Anchor url="lr3.html" parameter="target='_self'"> 
+			  
+			<transform translation ='17 10 -7' scale='5 5 5 '>
+			<shape>
+				<appearance>
+					<ImageTexture url='sl.jpg'></ImageTexture>
+				</appearance>
+			<box></box>
+			</shape>
+			</transform>
+			</Anchor>
+<background backurl="sky.jpg">
+	</background>
+
+		</scene>
+</X3D>
+</body>
 </html>
+
+
