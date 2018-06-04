@@ -1,13 +1,458 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 4</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<title>Zhitnikov 4541</title>
+		<p>Lab#4</p>
+		<script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.js'></script>
+		<link rel='stylesheet' type='text/css' href='https://www.x3dom.org/release/x3dom.css'/>
+	</head>
+	<body>
+		<X3D  showStat='true' showLog='true' x='0px' y='0px' width='1280px' height='1024px'>
+			<Scene>
+				<transform scale='2 2 2'>
+					<!--
+					<shape>
+						<IndexedLineSet coordIndex="0 1 –1 0 2 -1 0 3 -1 0 4 -1 0 5 -1 0 6 -1"
+										 colorPerVertex='true'>
+						 <Coordinate point="0 0 0, 0 0 3, 0 0 -3, 3 0 0, -3 0 0, 0 3 0, 0 -3 0"></Coordinate>
+						</IndexedLineSet>
+					</shape> --> 
+					<Fog color="#fff" visibilityRange="200"></Fog>
+					<transform DEF='RedCar' translation='4 0.8 -3'>
+						<!-- ROOF --> 
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedTriangleSet index='0 1 2 3 4 5' solid='false'>
+							<Coordinate point=' 0.8 0.5 -0.7,
+												0.8 0.5 0.7,
+												-0.8 0.5 -0.7,
+												0.8 0.5 0.7,
+												-0.8 0.5 0.7,
+												-0.8 0.5 -0.7'/>
+							</IndexedTriangleSet>
+						</Shape>
+						
+						<!-- Front windshield -->
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedTriangleSet index='0 1 2 3 4 5' solid='false'>
+							<Coordinate point=' -1.2 0 0.7,
+												-0.8 0.5 -0.7,
+												-1.2 0 -0.7,
+												-1.2 0 0.7,
+												-0.8 0.5 0.7,
+												-0.8 0.5 -0.7'/>
+							</IndexedTriangleSet>
+						</Shape>
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '0 0 1'/>
+							</Appearance>
+							<IndexedTriangleSet index='0 1 2 3 4 5' solid='false'>
+							<Coordinate point=' -1.201 0 0.6,
+												-0.801 0.5 -0.6,
+												-1.201 0 -0.6,
+												-1.201 0 0.6,
+												-0.801 0.5 0.6,
+												-0.801 0.5 -0.6'/>
+							</IndexedTriangleSet>
+						</Shape>
+						
+						<!-- Rear windshield -->
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedTriangleSet index='0 1 2 3 4 5' solid='false'>
+							<Coordinate point=' 1.2 0 0.7,
+												0.8 0.5 -0.7,
+												1.2 0 -0.7,
+												1.2 0 0.7,
+												0.8 0.5 0.7,
+												0.8 0.5 -0.7'/>
+							</IndexedTriangleSet>
+						</Shape>
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '0 0 1'/>
+							</Appearance>
+							<IndexedTriangleSet index='0 1 2 3 4 5' solid='false'>
+							<Coordinate point=' 1.201 0 0.6,
+												0.801 0.5 -0.6,
+												1.201 0 -0.6,
+												1.201 0 0.6,
+												0.801 0.5 0.6,
+												0.801 0.5 -0.6'/>
+							</IndexedTriangleSet>
+						</Shape>
+						
+						<!-- Hood -->
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedTriangleSet index='0 1 2 3 4 5' solid='false'>
+							<Coordinate point=' -2.2 0 0.7,
+												-1.2 0 0.7,
+												-2.2 0 -0.7,
+												-1.2 0 0.7,
+												-2.2 0 -0.7,
+												-1.2 0 -0.7'/>
+							</IndexedTriangleSet>
+						</Shape>
+						
+						<!-- Trunk -->
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedTriangleSet index='0 1 2 3 4 5' solid='false'>
+							<Coordinate point=' 2.2 0 0.7,
+												1.2 0 0.7,
+												2.2 0 -0.7,
+												1.2 0 0.7,
+												2.2 0 -0.7,
+												1.2 0 -0.7'/>
+							</IndexedTriangleSet>
+						</Shape>
+						
+						<!-- front side -->
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedTriangleSet index='0 1 2 3 4 5' solid='false'>
+							<Coordinate point=' -2.2 -0.5 0.7,
+												-2.2 0 0.7,
+												-2.2 0 -0.7,
+												-2.2 -0.5 0.7,
+												-2.2 -0.5 -0.7,
+												-2.2 0 -0.7'/>
+							</IndexedTriangleSet>
+						</Shape>
+						
+						<!-- rear side -->
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedTriangleSet index='0 1 2 3 4 5' solid='false'>
+							<Coordinate point=' 2.2 -0.5 0.7,
+												2.2 0 0.7,
+												2.2 0 -0.7,
+												2.2 -0.5 0.7,
+												2.2 -0.5 -0.7,
+												2.2 0 -0.7'/>
+							</IndexedTriangleSet>
+						</Shape>
+
+						<!-- LEFT TOP SIDE -->
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedFaceSet solid='false'
+											coordIndex='0 1 2 3'>
+							<Coordinate point=' -1.2 0 0.7,
+												1.2 0 0.7,
+												0.8 0.5 0.7,
+												-0.8 0.5 0.7
+														'/>
+							</IndexedFaceSet>
+						</Shape>
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '0 0 1'/>
+							</Appearance>
+							<IndexedFaceSet solid='false'
+											coordIndex='0 1 2 3'>
+							<Coordinate point=' -0.7 0.1 0.701,
+												-0.2 0.1 0.701,
+												-0.2 0.4 0.701,
+												-0.7 0.4 0.701
+														'/>
+							</IndexedFaceSet>
+						</Shape>
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '0 0 1'/>
+							</Appearance>
+							<IndexedFaceSet solid='false'
+											coordIndex='0 1 2 3'>
+							<Coordinate point=' 0.7 0.1 0.701,
+												0.2 0.1 0.701,
+												0.2 0.4 0.701,
+												0.7 0.4 0.701
+														'/>
+							</IndexedFaceSet>
+						</Shape>
+						
+						
+						<!-- left side -->
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedFaceSet solid='false'
+											coordIndex='0 1 2 3'>
+							<Coordinate point=' -2.2 -0.5 0.7,
+												2.2 -0.5 0.7,
+												2.2 0 0.7,
+												-2.2 0 0.7
+														'/>
+							</IndexedFaceSet>
+						</Shape>
+						
+						
+						<!-- RIGHT TOP SIDE -->
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedFaceSet solid='false'
+											coordIndex='0 1 2 3'>
+							<Coordinate point=' -1.2 0 -0.7,
+												1.2 0 -0.7,
+												0.8 0.5 -0.7,
+												-0.8 0.5 -0.7
+														'/>
+							</IndexedFaceSet>
+						</Shape>
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '0 0 1'/>
+							</Appearance>
+							<IndexedFaceSet solid='false'
+											coordIndex='0 1 2 3'>
+							<Coordinate point=' -0.7 0.1 -0.701,
+												-0.2 0.1 -0.701,
+												-0.2 0.4 -0.701,
+												-0.7 0.4 -0.701
+														'/>
+							</IndexedFaceSet>
+						</Shape>
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '0 0 1'/>
+							</Appearance>
+							<IndexedFaceSet solid='false'
+											coordIndex='0 1 2 3'>
+							<Coordinate point=' 0.7 0.1 -0.701,
+												0.2 0.1 -0.701,
+												0.2 0.4 -0.701,
+												0.7 0.4 -0.701
+														'/>
+							</IndexedFaceSet>
+						</Shape>
+						
+						<!-- right side -->
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedFaceSet solid='false'
+											coordIndex='0 1 2 3'>
+							<Coordinate point=' -2.2 -0.5 -0.7,
+												2.2 -0.5 -0.7,
+												2.2 0 -0.7,
+												-2.2 0 -0.7
+														'/>
+							</IndexedFaceSet>
+						</Shape>
+						
+						
+						<!-- BOTTOM -->
+						
+						<Shape>
+							<Appearance>
+								<Material diffuseColor = '1 0 0'/>
+							</Appearance>
+							<IndexedFaceSet solid='false'
+											coordIndex='0 1 2 3'>
+							<Coordinate point=' -2.2 -0.5 0.7,
+												2.2 -0.5 0.7,
+												2.2 -0.5 -0.7,
+												-2.2 -0.5 -0.7
+														'/>
+							</IndexedFaceSet>
+						</Shape>
+						
+						<!-- Wheels --> 
+						<!-- Front left -->
+						<transform translation='-1.4 -0.6 0.8'>
+							<shape>
+								<appearance>
+									<material diffuseColor="#000000"></material>
+								</appearance>
+								<torus innerRadius='0.1' outerRadius='0.3'></torus>
+							</shape>
+						</transform>
+						
+						<!-- Front left disk -->
+						<transform translation='-1.4 -0.6 0.8' rotation='1 0 0 1.57'>
+							<shape>
+								<appearance>
+									<material diffuseColor="#778899"></material>
+								</appearance>
+								<cylinder height='0.05' radius='0.2'></cylinder>
+							</shape>
+						</transform>
+						
+						<!-- Rear left -->
+						
+						<transform translation='1.4 -0.6 0.8'>
+							<shape>
+								<appearance>
+									<material diffuseColor="#000000"></material>
+								</appearance>
+								<torus innerRadius='0.1' outerRadius='0.3'></torus>
+							</shape>
+						</transform>
+						
+						<!-- Rear left disk -->
+						<transform translation='1.4 -0.6 0.8' rotation='1 0 0 1.57'>
+							<shape>
+								<appearance>
+									<material diffuseColor="#778899"></material>
+								</appearance>
+								<cylinder height='0.05' radius='0.2'></cylinder>
+							</shape>
+						</transform>
+						
+						<!-- Front right -->
+						<transform translation='-1.4 -0.6 -0.8'>
+							<shape>
+								<appearance>
+									<material diffuseColor="#000000"></material>
+								</appearance>
+								<torus innerRadius='0.1' outerRadius='0.3'></torus>
+							</shape>
+						</transform>
+						
+						<!-- Front right disk -->
+						<transform translation='-1.4 -0.6 -0.8' rotation='1 0 0 1.57'>
+							<shape>
+								<appearance>
+									<material diffuseColor="#778899"></material>
+								</appearance>
+								<cylinder height='0.05' radius='0.2'></cylinder>
+							</shape>
+						</transform>
+						
+						<!-- Rear right -->
+						
+						<transform translation='1.4 -0.6 -0.8'>
+							<shape>
+								<appearance>
+									<material diffuseColor="#000000"></material>
+								</appearance>
+								<torus innerRadius='0.1' outerRadius='0.3'></torus>
+							</shape>
+						</transform>
+						
+						<!-- Rear right disk -->
+						<transform translation='1.4 -0.6 -0.8' rotation='1 0 0 1.57'>
+							<shape>
+								<appearance>
+									<material diffuseColor="#778899"></material>
+								</appearance>
+								<cylinder height='0.05' radius='0.2'></cylinder>
+							</shape>
+						</transform>
+					</transform>
+					
+					<transform DEF='GreenCar' translation='3 0.8 3'>
+						<inline url="green_car.x3d"/>
+					</transform>
+					
+					<!-- road lightning -->
+					<Group DEF='road_light_col'>
+						<SpotLight ambientIntensity='0' attenuation='1,0,0' beamWidth='1.5707963' color='0,1,1' 
+						cutOffAngle='1.5707963' direction='0,-1,0' global='false' intensity='1' location='0,5.5,10.2' 
+						metadata='X3DMetadataObject' on='true' radius='5' shadowCascades='1' shadowFilterSize='0' 
+						shadowIntensity='0' shadowMapSize='1024' shadowOffset='0' shadowSplitFactor='1' 
+						shadowSplitOffset='0.1' zFar='-1' zNear='-1' ></SpotLight>
+						<transform translation='0 2.8 12'>
+							<Collision enabled="true">
+								<Shape DEF='column'>
+									<Appearance>
+										<ImageTexture url='wood.jpg'></ImageTexture>
+									</Appearance>
+									<Cylinder height='6' radius='0.2'></Cylinder>
+								</Shape>
+							</Collision>
+						</transform>
+
+						<transform translation='0 5.9 10.2'>
+							<Collision enabled="true">
+							<Anchor url="http://guap.ru" parameter="target='_self'">
+								<Shape DEF='laaamp'>
+									<Appearance>
+										<Material diffuseColor="#fdff00"/>
+									</Appearance>
+									<Sphere radius='0.3'></Sphere>
+								</Shape>
+							</Collision>
+						</transform>
+						
+						<transform rotation='1 0 0 1.87' translation='0 6 11.2'>
+							<Collision enabled="true">
+								<Shape DEF='holder'>
+										<Appearance>
+											<ImageTexture url='metal.jpg'></ImageTexture>
+										</Appearance>
+										<Cylinder height='2' radius='0.07'></Cylinder>
+								</Shape>
+							</Collision>
+						</transform>
+					</Group>
+					
+					<transform rotation='0 1 0 3.14'>
+						<Collision enabled="true">
+							<Group USE='road_light_col'></Group>
+						</Collision>
+					</transform>
+					
+					<!-- terrain -->
+					<transform translation='-10 -1 -12'>
+						<Collision enabled="true">
+							<shape>
+								<Appearance>
+									<ImageTexture url="asphalt_texture.jpg" repeatT="false"></ImageTexture>
+								</Appearance>
+							   <ElevationGrid xDimension="7" zDimension="6"
+									  height="1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5,
+											  1.2, 0.5, 0.25, 1.2, 1.2, 1.3, 1.2,
+											  0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8,
+											  0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8,
+											  0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8,
+											  1, 1, 1, 1, 1, 1, 1"
+									  xSpacing="5.0" zSpacing="5.0" solid="false">
+							   </ElevationGrid>
+							</shape>
+						</Collision>
+					</transform>
+					<directionalLight id="up-down" direction='0 -1 0' on ="TRUE" intensity='0.8' shadowIntensity='0.5'  shadowCascades="1" shadowFilterSize="16" shadowMapSize="512">
+					<Viewpoint id="front_left_side" position="-19.48528 8.88995 -23.52727" orientation="0.06148 0.99310 0.09988 3.83759"></Viewpoint>
+					<Viewpoint id="back_right_side" position="39.74865 9.50980 26.76231" orientation="-0.23281 0.96221 0.14124 0.91051"></Viewpoint>
+					<!--<NavigationInfo type='FLY'   avatarSize='0.25, 1, 0.30' visibilityLimit='0.0' speed='6' headlight="false" ></NavigationInfo>
+					-->
+				</transform>
+			</Scene>
+		</X3D>
+	</body>
 </html>
