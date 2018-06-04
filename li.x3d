@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">
+<X3D>
+ <head></head>
+ <Scene>
+  <Group>
+   <Viewpoint description='Front View' position='0 0 40'></Viewpoint>
+   <Viewpoint description='Left View' orientation='0 1 0 -1.57' position='-15 0 0'></Viewpoint>
+   <Viewpoint description='Top View' position='-15 0 -14' orientation='0 1 0 -2.3'></Viewpoint>
+  </Group>
+  <Background skyColor="0.02 0.02 0.02"></Background>
+  <NavigationInfo headlight='false' type="ANY"/>
+
+  <transform translation="-6 0 0">
+   <Shape>
+    <Appearance>
+	<imagetexture url="../Textures/mercury.jpg" repeats="true" repeatt="true" scale="true"></imagetexture>
+    </Appearance>
+    <Sphere radius="0.06"></Sphere>
+   </Shape>
+  </transform>
+
+  <transform translation="-5 0 0">
+   <Shape>
+    <Appearance>
+	<imagetexture url="../Textures/venus.jpg" repeats="true" repeatt="true" scale="true"></imagetexture>
+    </Appearance>
+    <Sphere radius="0.12"></Sphere>
+   </Shape>
+  </transform>
+
+  <transform translation="-4 0 0">
+   <Shape>
+    <Appearance>
+	<imagetexture url="../Textures/earth.jpg" repeats="true" repeatt="true" scale="true"></imagetexture>
+    </Appearance>
+    <Sphere radius="0.11"></Sphere>
+   </Shape>
+  </transform>
+
+  <transform translation="-3 0 0">
+   <Shape>
+    <Appearance>
+	<imagetexture url="../Textures/mars.jpg" repeats="true" repeatt="true" scale="true"></imagetexture>
+    </Appearance>
+    <Sphere radius="0.1"></Sphere>
+   </Shape>
+  </transform>
+
+  <transform translation="0 0 0">
+   <Shape>
+    <Appearance>
+	<imagetexture url="../Textures/jupiter.jpg" repeats="true" repeatt="true" scale="true"></imagetexture>
+    </Appearance>
+    <Sphere radius="2"></Sphere>
+   </Shape>
+  </transform>
+
+  <transform translation="4.5 0 0">
+   <Shape>
+    <Appearance>
+	<imagetexture url="../Textures/saturn.jpg" repeats="true" repeatt="true" scale="true"></imagetexture>
+    </Appearance>
+    <Sphere radius="1.8"></Sphere>
+   </Shape>
+  </transform>
+
+  <transform translation="8.5 0 0">
+   <Shape>
+    <Appearance>
+	<imagetexture url="../Textures/uranus.jpg" repeats="true" repeatt="true" scale="true"></imagetexture>
+    </Appearance>
+    <Sphere radius="1.1"></Sphere>
+   </Shape>
+  </transform>
+  <transform translation="11.5 0 0">
+   <Shape>
+    <Appearance>
+	<imagetexture url="../Textures/neptune.jpg" repeats="true" repeatt="true" scale="true"></imagetexture>
+    </Appearance>
+    <Sphere radius="1"></Sphere>
+   </Shape>
+  </transform>
+ </Scene>
+</X3D>

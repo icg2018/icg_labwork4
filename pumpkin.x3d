@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">
+<X3D>
+ <Scene>
+   <transform translation="0.1 1.5 0.1">
+   <Shape>
+     <Appearance>
+       <Material diffusecolor="1 0 1"/>
+     </Appearance>
+     <box size="0.1 0.1 0.1"/>
+   </Shape>
+ </transform>
+  <Group>
+   <viewpoint description='FrontRight'	position="1.8 0 2" orientation="0 1 0 0.707" fieldOfView="0.785398" centerOfRotation="0,0,0"></viewpoint>
+   <viewpoint description='FrontLeft' position="-1.8 0 2" orientation="0 1 0 -0.707" fieldOfView="0.785398" centerOfRotation="0,0,0"></viewpoint>
+  </Group>
+  <Background skyColor="0.5 0.2 0.3"></Background>
+  <fog visibilityRange="10" color="0.8 0.8 0.8" fogType="LINEAR"></fog>
+  <NavigationInfo headlight='false' type="fly"></NavigationInfo>
+  <DirectionalLight direction="0 1 0"></DirectionalLight>
+  <Collision DEF='MyCollisionNode' enabled='true'>
+   <Group def="Head">
+    <transform translation="-0.401 0 0">
+      <Shape def="border">
+        <Appearance def="pumpkin">
+          <imagetexture url="../Textures/pumpkin.jpg" repeats="true" repeatt="true" scale="true" hidechildren="true"></imagetexture>
+          <texturetransform scale="100 100"></texturetransform>
+        </Appearance>
+        <box size="0.2 1 1"></box>
+      </Shape>
+    </transform>
+    <transform translation="0.401 0 0">
+      <Shape use="border"></Shape>
+    </transform>
+    <transform translation="0 0 -0.401" rotation="0 1 0 1.5708">
+      <Shape use="border"></Shape>
+    </transform>
+    <transform translation="0 0.401 0" rotation="0 0 1 1.5708">
+      <Shape use="border"></Shape>
+    </transform>
+    <transform translation="0 0.400 0.401">
+      <Shape def="face">
+        <Appearance use="pumpkin"></Appearance>
+        <box size="1 0.2 0.2"></box>
+      </Shape>
+    </transform>
+    <transform translation="0 -0.401 0.401">
+      <Shape use="face"></Shape>
+    </transform>
+    <transform translation="0 0 0.401">
+      <Shape use="face"></Shape>
+    </transform>
+    <transform translation="0 0.201 0.401">
+      <Shape>
+        <Appearance use="pumpkin"></Appearance>
+        <box size="0.2 0.2 0.2"></box>
+      </Shape>
+    </transform>
+
+    <transform translation="0 -0.501 0">
+      <Shape>
+        <Appearance>
+          <imagetexture url="../Textures/dirt.jpg" repeats="true" repeatt="true" scale="true" hidechildren="true"></imagetexture>
+          <texturetransform scale="10 10"></texturetransform>
+        </Appearance>
+        <box size="2 0.02 2"></box>
+      </Shape>
+    </transform>
+
+    <transform translation="0 0.601 0">
+      <Shape>
+        <Appearance>
+          <imagetexture url="../Textures/Terrain.jpg" repeats="true" repeatt="true" scale="true" hidechildren="true"></imagetexture>
+          <texturetransform scale="100 100"></texturetransform>
+        </Appearance>
+        <box size="0.2 0.5 0.2"></box>
+      </Shape>
+    </transform>
+   </Group>
+ </Collision>
+  </Scene>
+</X3D>
