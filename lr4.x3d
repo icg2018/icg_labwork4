@@ -1,102 +1,55 @@
-<x3d  width='1300px' height='580px'  >
-  <scene>
-        <Background xmlns="http://www.w3.org/1999/xhtml" skyColor="0,0,0,0,0,0,0,0,0.2"
-              skyAngle="1.309,1.6" groundColor="0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6"
-              groundAngle="1.309,1.570796" backUrl="" bottomUrl="" frontUrl="" leftUrl="" rightUrl="" topUrl="">
-        </Background>
-          <!-- Дно -->
-        <transform translation='0 -0.5 0' >
-          <shape>
-            <appearance>
-              <material diffuseColor=#8B4513 ></material>
-            </appearance>
-            <cylinder  radius="7" height="0.2"></cylinder>
-          </shape>
-        </transform>
-
-        <!-- Стекло -->
-        <transform translation='0 3 0'>
-          <Collision enabled="true">
-            <shape>
-             <appearance>
-               <material ambientIntensity="0.5" emissiveColor="0,0,0" shininess="0.5"
-                   specularColor="#7B68EE"diffuseColor=#1E90FF transparency= 0.8></material>
-             </appearance>
-             <sphere radius='8'/>
-           </shape>
-         </Collision>
-       </transform>
-       <!-- Подставка -->
-      <transform translation='0 -3 0' >
-        <Collision enabled="true">
-            <Anchor url="https://youtu.be/LHR_qHT-NgI" parameter="target='_self'"/>
-          <shape>
-
-            <appearance>
-              <material  emissiveColor="0,0,0" shininess="0.2"
-                          specularColor="#DCDCDC"  diffuseColor=#2F4F4F >
-              </material>
-            </appearance>
-            <cylinder  radius="7" height="5" bottom='TRUE' bottomRadius="20" ></cylinder>
-          </shape>
-        </Anchor>
-        </Collision>
-      </transform>
-
-      <!--Подключение сцены x3d -->
-      <inline DEF="house" url="lr4.x3d"></inline>
-
-      <!--USE-->
-      <transform translation='4 0 3' rotation='0 1 0 1'>
-        <shape USE="house"></shape>
-      </transform>
-
-
-      <!-- Источники света -->
-      <Group DEG = 'Light'>
-          <pointlight intensity="2" on="TRUE" radius="10" attenuation="0 0 0" location="2 3 0.5 "
-                      color="#191970" ambientintensity="0"  >
-          </pointlight>
-
-          <directionallight shadowintensity="0.5" intensity="0.5" on="TRUE" direction="1 -1 0"
-                          color="1,1,1" shadowCascades="1"	shadowSplitFactor="1" shadowSplitOffset="0.1">
-          </directionallight>
-
-          <spotlight  intensity="3" on="TRUE" direction="0,0,-1" radius="22" 	location="0 0 12"
-                      color="0 0 1" cutoffangle="0.78" shadowCascades="1" shadowSplitFactor="1" shadowSplitOffset="0.1">
-          </spotlight>
-    </Group>
-      <transform rotation="1 0 0 -1.57" translation="0 -5.6 0">
-        <shape>
-          <appearance>
-            <material diffusecolor="0.7 0.7 0.7" ambientIntensity="0.2" emissiveColor="0,0,0"
-                      shininess="0.2" specularColor="0,0,0">
-            </material>
-          </appearance>
-          <plane size="55 30"> </plane>
-        </shape>
-      </transform>
-
-      <NavigationInfo avatarSize = '0.25,1.6,0.75' headlight = 'false' speed ='10' type = "FLY" />
-
-      <Fog  color='#CD5C5C'  fogType='LINEAR' visibilityRange='150' ></Fog>
-      <!-- Точки обзора -->
-      <Group DEF = 'Viewpoint'>
-            <viewpoint id="outside" orientation="-0.99104 -0.13344 -0.00551 0.46917" position="-3 23 48"
-                      fieldOfView="0.785398">
-            </viewpoint>
-
-            <Viewpoint id="inside" position="0 3 5" orientation="-0.99104 -0.13344 -0.00551 0.46917">
-            </Viewpoint>
-    </Group>
-      <!-- Переключение между точками общора -->
-      <Group DEF = 'Button'>
-          <button
-            onclick="document.getElementById('outside').setAttribute('set_bind','true');">Outside
-          </button>
-          <button
-            onclick="document.getElementById('inside').setAttribute('set_bind','true');">Inside
-          </button>
-        </Group>
-      </scene>
-    </x3d>
+<scene>
+		<!--Длинная часть-->
+		<transform translation="-0.5 0 0">
+			<shape>
+				<Appearance>
+					<material 	
+								specularColor="#DA70D6" diffuseColor="#FF00FF">
+					</material>
+				</Appearance>
+				<box size="3 1 1"/>
+			</shape>
+		</transform>
+		
+		<!--Куб-->
+		<transform translation="0.5 0 -1">
+			<shape>
+				<Appearance>
+					<Material diffuseColor='#20B2AA'/>
+				</Appearance>
+				<box size="1 1 1"/>
+			</shape>
+		</transform>
+		<!-- Крыша -->
+		<Shape>
+			<Appearance>
+				<imagetexture url="pic.jpg" repeats="true" repeatt="true"/>
+				<texturetransform scale="2 2 "></texturetransform>
+			</Appearance> 
+			<IndexedFaceSet colorPerVertex="true" convex="true"
+						creaseAngle="0" normalPerVertex="true" solid="false"
+						coordIndex="0 1 2 3-1
+									2 3 4 5 -1
+									6 7 8 9">
+				<Coordinate point="-2 0.5 -0.5, 1 0.5 -0.5, 1 1.5 0, -2 1.5 0,
+									-2 0.5 0.5, 1 0.5 0.5,
+									1 1.5 0, 0 1.5 0, 0 0.5 -1.5, 1 0.5 -1.5">
+				</Coordinate>
+			</IndexedFaceSet>
+		</Shape>
+		<Shape>
+			<Appearance>
+				<Material diffuseColor='#A9A9A9'/>
+			</Appearance> 
+			<IndexedTriangleSet index='0 1 2 3 4 5 6 7 8 9 10 11' solid='false'>
+				<Coordinate point='-2 0.5 -0.5, -2 0.5 0.5, -2 1.5 0,
+									1 0.5 0.5, 1 0.5 -0.5, 1 1.5 0
+									1 1.5 0, 1 0.5 -1.5, 1 0.5 -0.5,
+									0 1.5 0, 0 0.5 -1.5, 0 0.5 -0.5'>
+				</Coordinate>
+			</IndexedTriangleSet>
+		</Shape>
+			
+			
+</scene>	
+ 
