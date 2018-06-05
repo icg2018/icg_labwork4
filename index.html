@@ -1,13 +1,36 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 4</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+<head>
+  <meta charset="utf-8">
+  <title>Lab1</title>
+  <script src="http://www.x3dom.org/download/dev/x3dom.js"></script>
+  <link rel="stylesheet" href="http://www.x3dom.org/download/dev/x3dom.css">
+  <style>
+     body {
+       font-family: arial;
+     }
+  </style>
+</head>
+<body>
+
+<article>
+  <h1>Лабораторная работа №4</h1>
+  <p>Гетман Антон / гр.4541</p>
+</article>
+<x3d style="width:100%;height:500px;">
+ <scene>
+  <transform translation="0 3 0">
+    <inline url="lr1.x3d">
+  </transform>
+  <!-- Туман-->
+  	<background groundColor='0.2 0.5 0.1' skyColor='0.16 0.3 0.31' />
+  	<Fog color='#00ff00' visibilityRange="100"></Fog>
+  <PointLight id='point' on='TRUE' intensity='0.5' color='#fff' location='0 0 6' radius='6.0000' ></PointLight>
+  <directionalLight id="directional" direction='1 -1 0' on ="TRUE" intensity='0.5' shadowCascades="1" shadowFilterSize="16" shadowMapSize="512">
+  </directionalLight>
+  <Viewpoint position="3 3 6"> </Viewpoint>
+  <NavigationInfo avatarsize="0.2 1.6 0.75" speed="2" type="Walk"></NavigationInfo>
+ </scene>
+</x3d>
+</body>
 </html>
