@@ -1,0 +1,94 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="x3dom/x3dom.css" />
+    <script src="x3dom/x3dom-full.js"></script>
+
+  </head>
+ <body>
+	<X3D width='800px' height='800px'>
+<Scene>
+	<Transform>
+<PointLight id='point' on='TRUE' intensity='0.9000' color='1 0 0' location='0 0 0 ' radius='10' >
+ </PointLight>
+
+	</Transform>
+	<Transform rotation='0 1 0 0.78'>
+		<SpotLight id='spot' on ="TRUE" beamWidth='0.9' color='0 1 0' cutOffAngle='0.78' location='-5 -3 10' radius='22' >
+		</SpotLight>
+	</Transform>
+	<Transform DEF='PointSet' translation='2 0 0 '>
+		 <Shape DEF='MyPointSet'>
+			 <Appearance>
+				 <Material></Material>
+			 </Appearance>
+			 <PointSet>
+				  <Color color='1 0 0, 0 1 0, 0 0 1, 0.8 0.8 0.8'></Color>
+				  <Coordinate point='−1 0 0, -0.5 0 0, 0 0 0 , 0.5 0 0'></Coordinate>
+			 </PointSet>
+		 </Shape>
+	</Transform>
+	<Transform DEF='LineSet' translation='2 0 0 '>
+		 <Shape DEF='MyLineSet'>
+			 <Appearance>
+				 <Material emissivecolor='1 0 0'></Material>
+			 </Appearance>
+		<IndexedLineSet coordIndex='0 1 2 3 0 –1 2 6 5 1 –1'
+		                colorIndex='0 1 2 3 4 -1 5 6 0 1 -1'
+			              colorPerVertex='true'>
+		   <Coordinate point='2 0 2, 2 0 2, 2 0 -2, -2 0 –2,
+													-2 4 2, 2 4 2, 2 4 -2, -2 4 -2'></Coordinate>
+			 </IndexedLineSet>
+		 </Shape>
+	</Transform>
+	<Transform DEF='IndexedFaceSet' translation='0 0 -5' scale='2 1 1'>
+		 <Shape DEF='MyIndexedFaceSet'>
+			 <Appearance>
+				 <Material diffusecolor='1 0 1'></Material>
+			 </Appearance>
+<IndexedFaceSet ccw="true" colorPerVertex="true" convex="true"
+              creaseAngle="0" normalPerVertex="true" solid="false"
+				      coordIndex="0 4 7 0 -1 3 6 2 0 -1 -1 4 1 6 7 -1 6 2 3 2 -1"
+				      colorIndex="0 1 5 3 -1 3 5 6 0 -1 0 2 3 4 -1 5 3 0 1 -1">
+		<Coordinate point="-1 0 1, 1 0 1, 1 0 -1, -1 0 -1,
+				              -1 4 1, 1 4 1, 1 4 -1, -1 4 -1"></Coordinate>
+
+ </IndexedFaceSet>
+		 </Shape>
+	</Transform>
+	<Transform DEF='ElevationGrid ' translation='-17 -4 -10'>
+		 <Shape DEF='MyElevationGrid '>
+			 <Appearance>
+				 <Material  emissiveColor='0 0 0'></Material>
+				  <ImageTexture url='t.png' repeatS='true'></ImageTexture>
+			 </Appearance>
+      <ElevationGrid xDimension='7' zDimension='6'
+          height="1.5, 10, 0.5, 0.5, 1, 1.5, 0,
+					        1, 0.5, 0.25, 0.25, 0.5, 1, 0,
+				          0.5, 0.25, 0, 0, 0.25, 0.5, 0,
+				          0.5, 0.25, 0, 0, 0.25, 0.5, 0,
+				          1, 0.5, 0.25, 0.25, 0.5, 1, 0,
+							    1.5, 1, 0.5, 0.5, 1, 1.5, 0"
+	       xSpacing="5.0" zSpacing="5.0" solid="5.0">
+      </ElevationGrid>
+		 </Shape>
+	</Transform>
+	<Transform DEF='IndexedTriangleSet ' translation='-4 -9 0' scale='3 3 3'>
+		 <Shape DEF='MyIndexedTriangleSet '>
+			 <Appearance>
+				 <Material></Material>
+			 </Appearance>
+      <IndexedTriangleSet index='0 1 2 3 4 5 6 7 5' solid='false'>
+				<Coordinate point="0 4 0 0 3 1 1 3 0
+																		0 4 0 -0.5 3 -0.5 0 3 1
+																		0 4 0 1 3 0 -0.5 3 -0.5
+																		1 3 0 0 3 1 -0.5 3 -0.5"/>
+			  	 <ColorRGBA color='0 .8 0 1, 0 1 1 1, 1 0 0 0, 1 .5 0 0,
+				                     .8 0 1 0, 1 1 0 1, .6 .3 .1 0, 1 0 .5 1, 0 1 .5 0'></ColorRGBA>
+		 </IndexedTriangleSet>
+		 </Shape>
+	</Transform>
+
+</Scene>
+</body>
+</html>
