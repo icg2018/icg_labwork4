@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 4</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Lab4</title>
+    <link rel="stylesheet" type="text/css" href="../x3d/x3dom.css" />
+    <script type="text/javascript" src="../x3d/x3dom-full.js"></script>
   </head>
   <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+  <X3D style="left:0px; top:0px; width:100%; height:100%; border: none;">
+    <scene>
+		<directionalLight on='FALSE' direction='0 -1 0' intensity='2.0' shadowIntensity='0.0'>
+		</directionalLight>
+		<PointLight on='FALSE' intensity='0.9000' color='0.0 1 0.0' location='0 3 0' radius='50'></PointLight>
+		<SpotLight on="TRUE" beamWidth='0.9' color='0 0 1' cutOffAngle='0.78' location='0 10 0' radius='50'></SpotLight>
+        <Inline url="./X3D_Modules/Pumpkin.x3d"/></Inline>
+    </scene>
+    </X3D>
+  </body>
 </html>
