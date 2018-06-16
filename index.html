@@ -1,13 +1,62 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 4</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
-</html>
+﻿<!DOCTYPE html>
+<html lang="ru"> 
+        <head> 
+            <title>lr4</title> 
+             <script type='text/javascript' src='http://x3dom.org/download/dev/x3dom-full.js'> </script>
+            <link rel='stylesheet' type='text/css' href='http://x3dom.org/download/dev/x3dom.css'></link> 
+        </head> 
+        <body> 
+            <h1>ЛР4</h1> 
+            <p> 
+                Группирование. Гиперссылки. Тиражирование. Встраивание. Освещение. Навигация
+            </p>
+                <x3d width='1000px' height='400px'> 
+                    <scene> 
+
+                         <NavigationInfo avatarSize='[1,1,1]' 
+                            headlight='true' metadata='X3DMetadataObject' speed='1.0' transitionTime='1.0'
+                            type='"FLY"' typeParams='[-0.4,60,0.05,2.8]'
+                            visibilityLimit='50' >
+                             <Collision DEF='MyCollisionNode' enabled='true' bboxCenter='0,0,0' bboxSize='-1,-1,-1'>
+                            </Collision> 
+                        </NavigationInfo>
+
+                        <Viewpoint centerOfRotation='0,0,0' fieldOfView='0.39'
+                             orientation='0,0,0,1' position='0,0,1'>
+                        </Viewpoint>
+  
+                        <Group DEF="deer">
+                            <Anchor url="https://pp.userapi.com/c845121/v845121975/4a5e2/qgDVx4zF8iI.jpg">
+                                <Transform DFE="box" translation='0 0 0' scaleOrientation='0 1 1 0.707'>
+                                <shape>
+                                    <appearance>
+                                        <material diffuseColor ='0.55 0.6 1'></material>
+                                        <ImageTexture url='https://pp.userapi.com/c845121/v845121975/4a5e2/qgDVx4zF8iI.jpg'></ImageTexture>
+                                    </appearance>
+                                    <box></box>
+                                </shape>
+                                </Transform>
+                            </Anchor>
+
+                            <Anchor url="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D1%8C">
+                                <Transform translation='0 1 -0.65'>
+                                    <Inline url='"https://doc.x3dom.org/tutorials/models/inline/example.html"'> </Inline>
+                                </Transform>
+                            </Anchor>
+                        </Group> 
+
+                        <Transform translation='0 0 -7' scaleOrientation='0 1 1 0.707'>
+                            <shape USE="deer"> </shape>
+                        </Transform>
+
+                        <DirectionalLight direction='0 5 0' intensity="10" color="1,0,0"></DirectionalLight>
+                        <PointLight intensity='8' color='0,1,1' ></PointLight>
+                        <SpotLight beamWidth='0.9' color='1 1 0' cutOffAngle='0.78' location='0 0 12' radius='22' intensity='5' ></SpotLight> 
+
+                        <Fog color='(0,0,0)' fogType='LINEAR' visibilityRange='13' ></Fog> 
+
+
+                    </scene> 
+                </x3d> 
+        </body> 
+    </html>
