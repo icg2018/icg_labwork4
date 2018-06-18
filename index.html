@@ -22,7 +22,7 @@
 			<Shape> 
 				<Appearance> 
 					<material diffuseColor="green"></material>
-					<ImageTexture URL='wood.jpg'/>
+					<ImageTexture URL='wood.jpg'></ImageTexture>
 				</Appearance> 
 		<IndexedFaceSet  solid="false"  
 		coordIndex="
@@ -57,7 +57,7 @@
 			<Shape> 
 				<Appearance> 
 					<material diffuseColor="green"></material>
-					<ImageTexture URL='ss11.jpg'/>
+					<ImageTexture URL='ss11.jpg'></ImageTexture>
 				</Appearance> 
 		<IndexedFaceSet  solid="false" 
 		coordIndex="
@@ -81,7 +81,7 @@
 			<Shape> 
 				<Appearance> 
 					<material diffuseColor="green"></material>
-					<ImageTexture URL='potolok.jpg'/>
+					<ImageTexture URL='potolok.jpg'></ImageTexture>
 				</Appearance> 
 		<IndexedFaceSet  solid="false" 
 		coordIndex="
@@ -96,28 +96,28 @@
 		</Transform>
 		
 		<Group DEF='road_light_col'>
-						<SpotLight ambientIntensity='0' attenuation='1,0,0' beamWidth='1.5707963' color='0,1,1' 
-						cutOffAngle='1.5707963' direction='0,-1,0' global='false' intensity='1' location='0,5.5,10.2' 
-						metadata='X3DMetadataObject' on='true' radius='5' shadowCascades='1' shadowFilterSize='0' 
-						shadowIntensity='0' shadowMapSize='1024' shadowOffset='0' shadowSplitFactor='1' 
-						shadowSplitOffset='0.1' zFar='-1' zNear='-1' ></SpotLight>
-						<transform translation='-20 2.2 40'>
-							<Collision enabled="true">
-								<Shape DEF='column'>
-									<Appearance>
-										<material def='material' diffuseColor='1 1 1'/>
-									</Appearance>
-									<Cylinder height='6' radius='0.2'></Cylinder>
-								</Shape>
-							</Collision>
-						</transform>
+				<SpotLight ambientIntensity='0' attenuation='1,0,0' beamWidth='1.5707963' color='0,1,1' 
+				cutOffAngle='1.5707963' direction='0,-1,0' global='false' intensity='1' location='0,5.5,10.2' 
+				metadata='X3DMetadataObject' on='true' radius='5' shadowCascades='1' shadowFilterSize='0' 
+				shadowIntensity='0' shadowMapSize='1024' shadowOffset='0' shadowSplitFactor='1' 
+				shadowSplitOffset='0.1' zFar='-1' zNear='-1' ></SpotLight>
+				<Transform translation='-20 2.2 40'>
+					<Collision enabled="true">
+						<Shape DEF='column'>
+							<Appearance>
+							<material def='material' diffuseColor='1 1 1'/>
+							</Appearance>
+						<Cylinder height='6' radius='0.2'></Cylinder>
+						</Shape>
+					</Collision>
+				</Transform>
 		</Group>
 						
-		<transform rotation='0 1 0 3.14'>
-						<Collision enabled="true">
-							<Group USE='road_light_col'></Group>
-						</Collision>
-					</transform>
+		<Transform rotation='0 1 0 3.14'>
+			<Collision enabled="true">
+				<Group USE='road_light_col'></Group>
+			</Collision>
+		</Transform>
 		
 		<!-- крыша -->
 		
@@ -125,7 +125,7 @@
 			<Shape> 
 				<Appearance> 
 					<material diffuseColor="green"></material>
-					<ImageTexture URL='potolok.jpg'/>
+					<ImageTexture URL='potolok.jpg'></ImageTexture>
 				</Appearance> 
 				<IndexedFaceSet  solid="false" 
 				coordIndex="
@@ -148,7 +148,7 @@
 			<Shape> 
 				<Appearance> 
 					<material diffuseColor="green"></material>
-					<ImageTexture URL='ss11.jpg'/>
+					<ImageTexture URL='ss11.jpg'></ImageTexture>
 				</Appearance> 
 				<IndexedFaceSet  solid="false" 
 				coordIndex="
