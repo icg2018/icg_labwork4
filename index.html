@@ -1,13 +1,460 @@
-<!DOCTYPE html>
+<!--DOCTYPE html-->
 <html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 4</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+<head>
+  <meta charset="utf-8"></meta>
+  <title>Лаба 3</title>
+  <link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css" />
+  <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+  <!--<meta http-equiv="Refresh" content="10" />-->
+</head>
+  <h1>Лаба 3</h1>
+  <X3D style="width:900px; height:600px">
+    <Scene>
+      <Background backUrl="top.jpg" bottomUrl="niz.jpg" 
+      frontUrl="front.jpg" leftUrl="left.jpg" 
+      rightUrl="right_1.jpg" topUrl="verch.jpg"></Background>
+      <!--Туман
+      <Fog visibilityRange="25" color ="0.4 0 0.2" fogType="EXPONENTIAL"></Fog> -->
+      <!--пол-->
+      <Transform rotation="0 0 1 1.57" translation="0 -1.2 0">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="чистый-кирпич_111.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.1 5 5"></Box>
+      </Shape>
+      </Transform>
+      <Collision enabled="true">
+      <!--стена 1-->
+      <Transform  rotation="1 0 0 1.57" translation="-2.42 0.58 0">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="мех_67.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.1 5 3.5"></Box>
+      </Shape>
+      </Transform> 
+      <!--стена 2-->
+      <Transform  rotation="0 1 0  1.57" translation="0 0.58 -2.42">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="мех_67.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.1 3.5 5"></Box>
+      </Shape>
+      </Transform> 
+      </Collision>
+       <!--стол-->
+      <Transform  rotation="0 0 1 1.57" translation="-1 -0.7 -1">
+        <transform rotation="1 0 0 2.54">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="стекловолокно_38.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.07 1.5 1.5"></Box>
+      </Shape>
+        </transform>
+      </Transform> 
+       <!--ножка-->
+      <Transform  rotation="0 0 1 1.57" translation="-1 -0.95 -1.0">
+        <transform rotation="1 0 0 2.54">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="новая-фанера_12.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.5 0.5 0.5"></Box>
+      </Shape>
+        </transform>
+      </Transform> 
+      <!--ковёр-->
+      <Transform  rotation="0 0 1 1.57" translation="-0.5 -1.145 -0.7">
+        <transform rotation="1 0 0 2.54">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="0130081_PE284293_S5.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.02 3 2"></Box>
+      </Shape>
+        </transform>
+      </Transform> 
+      <!--окно 1-->
+      <Transform  rotation="1 0 0 1.57" translation="-2.42 1 -0.7">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="depositphotos_109467700-stock-photo-old-glass-blocks-in-the.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.15 3 1.5"></Box>
+      </Shape>
+      </Transform> 
+      <!--окно 2-->
+      <Transform  rotation="0 1 0 1.57" translation="-0.7 1 -2.42">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="depositphotos_109467700.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.15 1.5 3"></Box>
+      </Shape>
+      </Transform>
+      <!--табличка не курить-->
+      <Transform  rotation="0 1 0 1.57" translation="1.5 0.5 -2.37">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="китайские-знаки_ 32.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.02 0.3 0.7"></Box>
+      </Shape>
+      </Transform>  
+      <!--ссылка на первый канал-->
+      <Anchor url="https://www.1tv.ru/live" parameter="target='_self'">
+      <!--тв основа-->
+      <Transform  rotation="0 1 0 1.57" translation="-1 -0.3 -1">
+        <transform rotation="0 1 0 2.54">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="старая-фанера_82.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="1 0.8 0.4"></Box>
+      </Shape>
+        </transform>
+      </Transform>
+      <!--тв экран-->
+      <Transform  rotation="0 1 0 1.57" translation="-0.95 -0.3 -0.8">
+        <transform rotation="0 1 0 2.54">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="S2j7AA5QQzY.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.7 0.55 0.1"></Box>
+      </Shape>
+        </transform>
+      </Transform>
+      <!--тв кнопки-->
+      <Transform  rotation="0 1 0 1.57" translation="-0.65 -0.3 -1.2">
+        <transform rotation="0 1 0 2.54">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="19_123.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.2 0.79 0.1"></Box>
+      </Shape>
+        </transform>
+      </Transform>   
+      <!--тв марка-->
+      <Transform  rotation="0 1 0 1.57" translation="-1.1 -0.61 -0.6">
+        <transform rotation="0 1 0 2.54">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="19_123 (1).jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Box size="0.09 0.04 0.15"></Box>
+      </Shape>
+        </transform>
+      </Transform> 
+      </Anchor>
+      <!--конец ссылки-->
+      <!--точечки-->  
+      <Shape>
+        <PointSet>
+          <Color color="0.7 0 0.4, 1 0.6 0.4, 1 0.6 0.4, 0.7 0 0.4, 0.7 0 0.4, 1 0.6 0.4"></Color>
+          <Coordinate point="-2.35 0 0, -2.35 2 0, -2.35 0 -2, -2.35 2 -2, -2.35 2 2, -2.35 0 2"></Coordinate>
+        </PointSet>
+      </Shape>
+      <!--линии 1-->
+      <Shape>
+        <IndexedLineSet coordIndex="0 1 2 3 0 -1 2 6 5 1 -1"
+                        colorIndex="0 1 2 3 4 -1 5 6 0 1 -1"
+                        colorPerVertex='true'>
+          <Coordinate point="-2.5 -1.15 2.5, 2.5 -1.15 2.5, 2.5 -1.15 -2.5, -2.5 -1.15 -2.5">
+          </Coordinate>
+          <Color color="0 0 1, 0 1 0, 0 1 1, 1 0 0, 1 0 1, 1 1 0, 1 1 1"></Color>
+        </IndexedLineSet>
+      </Shape>
+      <!--линии 2-->
+      <Shape>
+        <IndexedLineSet coordIndex="0 1 2 3 0 -1 2 6 5 1 -1"
+                        colorIndex="0 1 2 3 4 -1 5 6 0 1 -1"
+                        colorPerVertex='true'>
+          <Coordinate point="-2.5 -1.2 2.5, 2.5 -1.2 2.5, 2.5 -1.2 -2.5, -2.5 -1.2 -2.5">
+          </Coordinate>
+          <Color color="0 0 1, 0 1 0, 0 1 1, 1 0 0, 1 0 1, 1 1 0, 1 1 1"></Color>
+        </IndexedLineSet>
+      </Shape>
+      <!--линии 3-->
+      <Shape>
+        <IndexedLineSet coordIndex="0 1 2 3 0 -1 2 6 5 1 -1"
+                        colorIndex="0 1 2 3 4 -1 5 6 0 1 -1"
+                        colorPerVertex='true'>
+          <Coordinate point="-2.5 -1.25 2.5, 2.5 -1.25 2.5, 2.5 -1.25 -2.5, -2.5 -1.25 -2.5">
+          </Coordinate>
+          <Color color="0 0 1, 0 1 0, 0 1 1, 1 0 0, 1 0 1, 1 1 0, 1 1 1"></Color>
+        </IndexedLineSet>
+      </Shape>
+      <!--скульптура-->
+      <Shape>
+        <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true"
+                        creaseAngle="0" solid="false"
+                        coordIndex="0 4 5 6 -1"
+                        colorIndex="4 5 6 0 -1">
+          <Coordinate point="-2 -1.2 2, -1 -3.2 1, -3 0 0, 1 2 -0,
+                             -2 0 2, -2 0 1, -1.5 1 1, 0 2 -1">                  
+          </Coordinate>
+          <Color color="0 0 1, 0 1 0, 0 1 1, 1 0 0, 1 0 1, 1 1 0, 1 1 1"></Color>
+        </IndexedFaceSet>
+      </Shape>
+      <!--совсем крыша поехала-->
+      <Shape>
+        <IndexedTriangleSet index="0 1 2 3 4 5 6 7 8" solid="false">
+          <Coordinate point="-2.5 2.33 2.5, 0 3.33 0, 2.5 2.33 2.5,
+                            -2.5 2.33 -2.5, 0 3.33 0, 2.5 2.33 -2.5,
+                            -2.5 2.33 2.5, 0 3.33 0, 2.5 2.33 -2.5">                    
+          </Coordinate>
+          <ColorRGBA color="0 1 1 0.4, 0 1 1 1, 1 0 0 0, 1 0.5 0 0,
+                            0.8 0 1 0, 1 1 0 1, 0.6 0.3 0.1 0, 1 0 0.5 1, 0 1 0.5 0"> 
+          </ColorRGBA>
+        </IndexedTriangleSet>
+      </Shape>
+      <!--тюль-->
+      <Transform translation='0 1.75 -2.208' rotation='1 0 0 1.57'>
+        <Shape>
+          <ElevationGrid xDimension="5" zDimension="4" xSpacing="0.3" zSpacing="0.7" solid="false"
+          height="0, 0.1, 0.15, -0.05, 0, 
+                 -0.05, -0.1, 0, -0.15, 0,  
+                  0, 0.1, 0.15, -0.05, 0,
+                  -0.05, -0.1, 0, -0.15, 0">
+          </ElevationGrid>
+          <Appearance>
+            <ImageTexture url="тюль_37.jpg">
+            </ImageTexture>
+          </Appearance>
+        </Shape>
+      </Transform>
+      <!--гардина-->
+      <Transform rotation="1 0 0 1.57" translation="-0.2 1.75 -2.3">
+        <transform rotation="0 0 1 1.57">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="новая-фанера_12.jpg">
+        </ImageTexture>
+        </Appearance>
+          <Cylinder height="4" radius="0.05"></Cylinder>
+      </Shape>
+        </transform>
+      </Transform>
+      <!--кольцо 1-->
+      <Transform scale="0.1 0.1 0.1" rotation="0 1 0 1.57" translation="0.03 1.75 -2.3">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="чистый-кирпич_111.jpg">
+        </ImageTexture>
+        </Appearance>
+          <Torus innerRadius="0.1" outherRadius="0.1"></Torus>
+      </Shape>
+      </Transform>
+      <!--кольцо 1-->
+      <Transform scale="0.1 0.1 0.1" rotation="0 1 0 1.57" translation="1.1 1.75 -2.3">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="чистый-кирпич_111.jpg">
+        </ImageTexture>
+        </Appearance>
+          <Torus innerRadius="0.1" outherRadius="0.1"></Torus>
+      </Shape>
+      </Transform>
+      <!--текст-->
+      <Transform rotation="1 1 0 1.57 1.57" translation="0 20 -20">
+      <Shape>
+        <Appearance>
+          <Material diffusecolor="1 1 0.5"  specularcolor="1 1 0" shininess="0.7">
+          </Material>
+        </Appearance>
+        <Text string="Что смотришь, пёс" maxExtent ="30" lenght="35" solid="false">
+            <FontStyle size="1" family="SANS" style="BOLD" horizontal="true" leftToRignt="false" topToBottom="true" language="ru" justify="MIDDLE" spacing="2">
+            </FontStyle>
+        </Text> 
+      </Shape>
+      </Transform>
+      <!--основа антенны-->
+      <Transform translation="-1 0.07 -1">
+      <Shape>
+        <Appearance>
+          <Material diffusecolor="0.7 0.6 0.5"  specularcolor="0.1 0 0" shininess="0.7">
+          </Material>
+        </Appearance>
+        <Sphere radius="0.1"></Sphere>
+      </Shape>
+      </Transform>
+      <!--рог антенны 1-->
+      <Transform translation="-1.01 0.5 -1.23" rotation="1 0 0 3.14"> 
+        <transform rotation="1 0 0 2.54">
+      <Shape>
+        <Appearance>
+          <ImageTexture url="стекловолокно_38.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Cone bottomRadius="0.01" height="1"></Cone>
+      </Shape>
+        </transform>
+      </Transform>
+      <!--рог антенны 2-->
+      <Transform translation="-1 0.5 -1" rotation="0 1 0 3.14"> 
+      <Shape>
+        <Appearance>
+          <ImageTexture url="стекловолокно_38.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Cone bottomRadius="0.01" height="1"></Cone>
+      </Shape>
+      </Transform>
+      <!--они-->
+      <Transform translation="2 -0.55 -2">
+      <Group DEF="Gr_1_oni">
+        <Transform scale="0.3 0.5 0.3">
+          <Shape>
+            <Appearance>
+            <ImageTexture url="kSwEJxH7ie8.jpg"></ImageTexture>
+            </Appearance>
+            <Sphere radius="1"></Sphere>
+          </Shape>
+        </Transform>
+        <Group DEF="Gr_2_oni">
+        <Transform scale="0.3 1 0.3" translation="-0.1 -0.5 0">
+          <Shape>
+            <Appearance>
+            <ImageTexture url="стекловолокно_38.jpg"></ImageTexture>
+            </Appearance>
+            <Sphere radius="0.11"></Sphere>
+          </Shape>
+        </Transform>
+        </Group>
+        <Group DEF="Gr_3_oni">
+        <Transform scale="0.3 1 0.3" translation="0.1 -0.5 0">
+          <Shape>
+            <Appearance>
+            <ImageTexture url="стекловолокно_38.jpg"></ImageTexture>
+            </Appearance>
+            <Sphere radius="0.11"></Sphere>
+          </Shape>
+        </Transform>
+        </Group>
+        <Group DEF="Gr_4_oni">
+        <Transform scale="0.3 1 0.3" translation="0.1 -0.6 0.09" rotation="1 0 0 1.57">
+          <Shape>
+            <Appearance>
+            <ImageTexture url="стекловолокно_38.jpg"></ImageTexture>
+            </Appearance>
+            <Sphere radius="0.11"></Sphere>
+          </Shape>
+        </Transform>
+        </Group>
+        <Group DEF="Gr_5_oni">
+        <Transform scale="0.3 1 0.3" translation="-0.1 -0.6 0.09" rotation="1 0 0 1.57">
+          <Shape>
+            <Appearance>
+            <ImageTexture url="стекловолокно_38.jpg"></ImageTexture>
+            </Appearance>
+            <Sphere radius="0.11"></Sphere>
+          </Shape>
+        </Transform>
+        </Group>
+      </Group>
+      </Transform>
+      <!--использование тиражирования-->
+      <Transform DEF="oni_2" translation="0 -0.55 0" rotation="0 1 0 1.57">
+        <transform rotation="0 1 0 2.54">
+        <Shape USE="Gr_1_oni"></Shape>
+        </transform>
+      </Transform>
+      <!--свет-->
+      <PointLight ambientIntensity="0.9" location="-50 70 -50" color="0.1 1 1" intensity="0.2" attenuation="1 0 0"></PointLight>
+      <!--лампа-->
+      <Transform translation="-4 -0.41 0">
+      <Group DEF="lampa">
+        <Transform translation="2 0.5 0">
+          <Shape>
+            <Appearance>
+            </Appearance>
+            <Sphere radius="0.1"></Sphere>
+          </Shape>
+        </Transform>
+        <Transform translation="2 0.25 0" rotation="1 0 0 3.14"> 
+        <Shape>
+        <Appearance>
+          <Material></Material>
+        </Appearance>
+          <Cone bottomRadius="0.15" height="0.5"></Cone>
+        </Shape>
+        </Transform>
+        <Transform translation="2 -0.25 0" rotation="1 0 0 3.14"> 
+        <Shape>
+        <Appearance>
+          <Material></Material>
+        </Appearance>
+          <Cylinder height="1" radius="0.01"></Cylinder>
+        </Shape>
+        </Transform>
+        <Transform translation="2 -0.25 0" rotation="1 0 0 3.14"> 
+        <Shape>
+        <Appearance>
+          <Material></Material>
+        </Appearance>
+          <Cylinder height="0.1" radius="0.05"></Cylinder>
+        </Shape>
+        </Transform>
+        <Transform translation="2 -0.75 0" rotation="1 0 0 3.14"> 
+        <Shape>
+        <Appearance>
+          <Material></Material>
+        </Appearance>
+          <Cylinder height="0.1" radius="0.15"></Cylinder>
+        </Shape>
+        </Transform>
+      </Group>
+      </Transform>
+      <SpotLight location="-2 0.09 0" direction="0 0 0" color="1 0.1 1" intensity="0.9"></SpotLight>
+      <!--ус конус-->
+      <Transform rotation="0 0 0 1.57" translation="0 -21.25 0">
+      <Shape>
+        <Appearance>
+        <ImageTexture url="асфальт_6.jpg">
+        </ImageTexture>
+          <Material></Material>
+        </Appearance>
+          <Cone height="40" bottomRadius="20" topRadius="8"></Cone>
+      </Shape>
+      <!--камера-->
+      <Viewpoint description="Начальный вид" position="0 22 20" centerOfRotation= "0 0 0"S></Viewpoint>
+      <Viewpoint description="Начальный вид" position="0 50 50" centerOfRotation= "0 0 0"S></Viewpoint>
+      <!--Навигация-->
+      <NavigationInfo avatarSize="0.25 2 0.5" headlight="TRUE" type="LOOKAT" speed="3"></NavigationInfo>
+    </Scene>
+  </X3D>
+</body>
 </html>
