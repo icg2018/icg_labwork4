@@ -35,73 +35,76 @@
       <DirectionalLight location="0 25 -40" direction="0 0 1" color="1 1 1" intensity="0.1" shadowIntensity="0.8" shadowMapSize="512"></DirectionalLight>
       <!--Если нажать на цепь, то переход на мою стр вк-->
       <Anchor url="https://vk.com/helenchan" parameter="target='_self'"></Anchor>
-        <!--Ограда-->
-        <Transform translation="-9.8 5 -25">
-          <Group DEF="G1">
-            <Transform rotation="1 0 0 -0.9">
-              <Shape DEF="ring">
-                <Torus innerRadius="0.2" outerRadius="1.0"></Torus>
-                <Appearance>
-                  <Material diffuseColor='#ab8b3f' specularColor='1 1 1'></Material>
-                </Appearance>
-              </Shape>
-            </Transform>
-            <Transform translation="1 0 0" rotation="1 0 0 -1.8"> 
-              <Shape USE="ring"></Shape>
-            </Transform>
-            <Transform translation="2 -0.4 0" rotation="1 0 0 -0.9"> 
-              <Shape USE="ring"></Shape>
-            </Transform>
-            <Transform translation="3 -0.5 0" rotation="1 0 0 -1.8"> 
-              <Shape USE="ring"></Shape>
-            </Transform>
-            <Transform translation="4 -0.6 0" rotation="1 0 0 -0.9"> 
-              <Shape USE="ring"></Shape>
-            </Transform>
-            <Transform translation="5 -0.7 0" rotation="1 0 0 -1.8"> 
-              <Shape USE="ring"></Shape>
-            </Transform>
-          </Group>
-          <Transform translation="6 -0.4 0">
-            <Group USE="G1"></Group>
+      <!--Ограда-->
+     <Transform translation="-9.8 5 -25">
+        <Group DEF="G1">
+          <Transform rotation="1 0 0 -0.9">
+            <Shape DEF="ring">
+              <Torus innerRadius="0.2" outerRadius="1.0"></Torus>
+              <Appearance>
+                <Material diffuseColor='#ab8b3f' specularColor='1 1 1'></Material>
+              </Appearance>
+            </Shape>
           </Transform>
-          <Transform translation="12 -0.4 0"> 
-            <Group USE="G1"></Group>
-          </Transform> 
-          <Transform translation="7 -0.3 0" rotation="1 0 0 -1.8"> 
+          <Transform translation="1 0 0" rotation="1 0 0 -1.8"> 
             <Shape USE="ring"></Shape>
           </Transform>
-          <Transform translation="8 -0.2 0" rotation="1 0 0 -0.9"> 
+          <Transform translation="2 -0.4 0" rotation="1 0 0 -0.9"> 
             <Shape USE="ring"></Shape>
           </Transform>
-          <Transform translation="9 0 0" rotation="1 0 0 -1.9"> 
+          <Transform translation="3 -0.5 0" rotation="1 0 0 -1.8"> 
             <Shape USE="ring"></Shape>
           </Transform>
-          <Transform translation="-13 -4 0">
-            <Group DEF="palka">
+          <Transform translation="4 -0.6 0" rotation="1 0 0 -0.9"> 
+            <Shape USE="ring"></Shape>
+          </Transform>
+          <Transform translation="5 -0.7 0" rotation="1 0 0 -1.8"> 
+            <Shape USE="ring"></Shape>
+          </Transform>
+        </Group>
+        <Transform translation="6 -0.4 0">
+          <Group USE="G1"></Group>
+        </Transform>
+        <Transform translation="12 -0.4 0"> 
+          <Group USE="G1"></Group> 
+        </Group>
+        <Transform translation="6 -1 0" rotation="1 0 0 -0.9"> 
+          <Shape USE="ring"></Shape>
+        </Transform>
+        <Transform translation="7 -0.3 0" rotation="1 0 0 -1.8"> 
+          <Shape USE="ring"></Shape>
+        </Transform>
+        <Transform translation="8 -0.2 0" rotation="1 0 0 -0.9"> 
+          <Shape USE="ring"></Shape>
+        </Transform>
+        <Transform translation="9 0 0" rotation="1 0 0 -1.9"> 
+          <Shape USE="ring"></Shape>
+        </Transform>
+        <Transform translation="-13 -4 0">
+          <Group DEF="palka">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='#ab8b3f' specularColor='1 1 1'></Material>
+              </Appearance>
+              <Cylinder radius="0.7" height="10"></Cylinder>
+            </Shape>
+            <Transform translation="0 6 0">
               <Shape>
                 <Appearance>
                   <Material diffuseColor='#ab8b3f' specularColor='1 1 1'></Material>
                 </Appearance>
-                <Cylinder radius="0.7" height="10"></Cylinder>
-              </Shape>
-              <Transform translation="0 6 0">
-                <Shape>
-                  <Appearance>
-                    <Material diffuseColor='#ab8b3f' specularColor='1 1 1'></Material>
-                  </Appearance>
-                  <Sphere radius="1"></Sphere>
-                </Shape> 
-              </Transform>
-            </Group>
-          </Transform>
-          <Transform translation="10 -4 0">
-            <Group USE="palka"></Group>
-          </Transform> 
+                <Sphere radius="1"></Sphere>
+              </Shape> 
+            </Transform>
+          </Group>
         </Transform>
-        <!--Загадочный туман-->
-        <Fog visibilityRange="500"></Fog>
-      </Scene>
+        <Transform translation="10 -4 0">
+          <Group USE="palka"></Group>
+        </Transform> 
+      </Transform>
+      <!--Загадочный туман-->
+      <Fog visibilityRange="500"></Fog>
+    </Scene>
   </X3D>
 </body>
 </html>
