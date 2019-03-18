@@ -22,7 +22,7 @@
       <!--Камера-->
       <Viewpoint description="Начальный вид" position="0 10 30"></Viewpoint>
       <!--Навигация-->
-      <NavigationInfo avatarSize="5 10 0" type="LOOKAT"></NavigationInfo>
+      <NavigationInfo avatarSize="15 20 0" type="WALK" speed="7"></NavigationInfo>
       <!--На этом месте висит картина-->
       <Transform translation="0 20 -30">
         <Inline url="picture.x3d"></Inline>
@@ -34,8 +34,9 @@
       <SpotLight location="0 30 -40" direction="0.5 -1 0" color="0 1 0" intensity="2" beamWidth="0.2" cutOffAngle="0.7"></SpotLight>
       <DirectionalLight location="0 25 -40" direction="0 0 1" color="1 1 1" intensity="0.1" shadowIntensity="0.8" shadowMapSize="512"></DirectionalLight>
       <!--Если нажать на цепь, то переход на мою стр вк-->
-      <Anchor url="https://vk.com/helenchan" parameter="target='_self'"></Anchor>
+      <Anchor url="https://vk.com/helenchan" parameter="target='_self'">
       <!--Ограда-->
+    <Collision enabled="true" bboxCenter="0 5 -25" bboxSize="20 20 20">
      <Transform translation="-9.8 5 -25">
           <Group DEF="G1">
             <Transform rotation="1 0 0 -0.9">
@@ -102,6 +103,8 @@
             </Transform> 
           </Transform>
         </Transform>
+      </Collision>
+        </Anchor>
       <!--Загадочный туман-->
       <Fog visibilityRange="500"></Fog>
     </Scene>
