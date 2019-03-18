@@ -1,17 +1,17 @@
 {
-  "name": "labwork4",
-  "description": "labwork4",
+  "name": "icg_labwork3",
+  "description": "icg_labwork3",
   "scripts": {
     "test": "grunt"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/icg2018/labwork4.git"
+    "url": "https://github.com/icg-course/icg_labwork3.git"
   },
   "bugs": {
-    "url": "https://github.com/icg2018/labwork4/issues"
+    "url": "https://github.com/icg-course/icg_labwork3/issues"
   },
-  "homepage": "https://github.com/icg2018/labwork4",
+  "homepage": "https://github.com/icg-course/icg_labwork3",
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-xml-validator": "^1.1.3"
