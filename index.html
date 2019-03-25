@@ -1,13 +1,151 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 3</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+<head>  
+  <meta charset="utf-8" />
+  <title>Лабораторная работа №3</title>
+  <link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css" />
+  <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+</head>
+<body>
+  <h1>Галерея</h1>
+  <X3D style="width:100%; height:100%">
+    <Scene>
+      <!--Помещение-->
+      <Transform translation="0 15 0">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='gray'></Material>
+          </Appearance>
+          <Box size="60 30 100" solid="false"></Box>
+        </Shape>
+      </Transform>
+      <!--Камера-->
+      <Viewpoint description="Начальный вид" position="0 10 -35" orientation="0 1 0 3.14"></Viewpoint>
+      <!--Навигация-->
+      <NavigationInfo avatarSize="1.5 2.0 0" type="FLY" speed="7"></NavigationInfo>
+
+      <Transform translation="0 0 -20" scale = "0.02 0.02 0.02">
+
+       <Inline url="kreslo.x3d"></Inline>
+
+       <Transform translation="-500 0 0">
+         <Inline url="kreslo.x3d"></Inline> 
+       </Transform>
+
+       <Transform translation="-1000 0 0">
+         <Inline url="kreslo.x3d"></Inline> 
+       </Transform>
+
+       <Transform translation="500 0 0">
+         <Inline url="kreslo.x3d"></Inline> 
+       </Transform>
+
+       <Transform translation="1000 0 0">
+         <Inline url="kreslo.x3d"></Inline> 
+       </Transform>
+     </Transform>
+
+     <Transform translation="0 0 -5">
+       <Shape DEF="r9d">
+        <Appearance>
+          <Material diffuseColor='gray'></Material>
+        </Appearance>
+        <Box size="60 4 20" solid="false"></Box>
+      </Shape>
+    </Transform>
+
+    <Transform translation="0 2 -10" scale = "0.02 0.02 0.02">
+
+     <Inline url="kreslo.x3d"></Inline>
+
+     <Transform translation="-500 0 0">
+       <Inline url="kreslo.x3d"></Inline> 
+     </Transform>
+
+     <Transform translation="-1000 0 0">
+       <Inline url="kreslo.x3d"></Inline> 
+     </Transform>
+
+     <Transform translation="500 0 0">
+       <Inline url="kreslo.x3d"></Inline> 
+     </Transform>
+
+     <Transform translation="1000 0 0">
+       <Inline url="kreslo.x3d"></Inline> 
+     </Transform>
+   </Transform>
+
+
+   <Transform translation="0 4 5">
+     <Shape USE="r9d"></Shape>
+   </Transform>
+
+   <Transform translation="0 6 0" scale = "0.02 0.02 0.02">
+
+     <Inline url="kreslo.x3d"></Inline>
+
+     <Transform translation="-500 0 0">
+       <Inline url="kreslo.x3d"></Inline> 
+     </Transform>
+
+     <Transform translation="-1000 0 0">
+       <Inline url="kreslo.x3d"></Inline> 
+     </Transform>
+
+     <Transform translation="500 0 0">
+       <Inline url="kreslo.x3d"></Inline> 
+     </Transform>
+
+     <Transform translation="1000 0 0">
+       <Inline url="kreslo.x3d"></Inline> 
+     </Transform>
+   </Transform>
+
+   <Transform translation="0 15 15">
+    <Shape>
+      <Appearance>
+        <Material diffuseColor='gray'></Material>
+      </Appearance>
+      <Box size="60 30 20" solid="false"></Box>
+    </Shape>
+  </Transform>
+
+   <SpotLight location="-1 25 0" direction="0 -1 1" color="1 1 1" intensity="1" beamWidth="0.02" cutOffAngle="0.7"></SpotLight>
+    <PointLight location="-1 25 0.2" color="1 1 1" intensity="0.00" shadowIntensity="0.9" shadowMapSize="2000"></PointLight>
+
+
+  <Transform translation='0 25 4.1' >
+    <Shape>
+      <Appearance>
+        <Material diffuseColor='black'></Material>
+      </Appearance>
+      <Box size="6 3 2"></Box>
+    </Shape>
+
+    
+  
+    
+    <Transform translation='-1 0 -0.1' rotation="1 0 0 1.57">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='white'></Material>
+        </Appearance>
+        <Cylinder radius="0.9" height="2"></Cylinder>
+      </Shape>
+    </Transform>
+  </Transform>
+
+  <Transform translation='0 15 -35' >
+    <Shape>
+      <Appearance>
+            <ImageTexture url="mstit.jpg"></ImageTexture>
+          </Appearance>
+      <Box size="60 30 0.2"></Box>
+    </Shape>
+
+
+
+</Scene>
+</X3D>
+</body>
 </html>
