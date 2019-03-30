@@ -5,9 +5,120 @@
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
     <title>Лабораторная работа 3</title>
     <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
+    <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
   </head>
   <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
+    <article>
+      <h1>Лабораторная работа №3</h1>
+      <p>Павлов Михаил, гр. 4642</p>
+    </article>
+    <x3d id="x3d" xmlns="https://www.x3dom.org/x3dom"  style="width:85%; height:85%; border:none;">
+      <scene>
+        
+        <!-- ПАЛАТКА -->
+        <transform rotation="0 1 0 -0.5">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="#4B5320"></Material>
+            </Appearance>
+            <Pyramid height="8" xbottom="13" ybottom="11" xtop="5" ytop="5"></Pyramid> 
+          </Shape>
+
+          <group DEF="kolyshki">            
+            <transform translation="-9 -3.7 9">
+              <Shape DEF="kolyshek">
+                <Appearance>
+                  <Material diffuseColor='#c0c0c0'></Material>
+                </Appearance>
+                <cylinder radius="0.05" height="0.3" solid="false"></cylinder>
+              </Shape>
+            </transform>
+
+            <transform translation="8.9 -3.7 8.9">
+              <shape USE="kolyshek"></shape>
+            </transform>
+
+            <transform translation="8.9 -3.7 -9.1">
+              <shape USE="kolyshek"></shape>
+            </transform>
+
+            <transform translation="-9 -3.7 -9">
+              <shape USE="kolyshek"></shape>
+            </transform>
+          </group>
+
+          <group DEF="trosy">
+            <transform translation="-5.75 0 5.75" rotation="1 0 0 -1.1">
+              <transform rotation="0 1 0 -0.5">
+                <transform rotation="0 0 1 -0.68">
+                  <Shape DEF="tros">
+                    <Appearance>
+                      <Material diffuseColor='black'></Material>
+                    </Appearance>
+                    <cylinder radius="0.05" height="11.8" solid="false"></cylinder>
+                  </Shape>
+                </transform>
+              </transform>
+            </transform>
+
+            <transform translation="5.75 0 5.75" rotation="1 0 0 2">
+              <transform rotation="0 1 0 -0.605">
+                <transform rotation="0 0 1 -0.71">
+                  <Shape USE="tros"></Shape>
+                </transform>
+              </transform>
+            </transform>
+
+
+            <transform translation="5.75 0 -5.75" rotation="1 0 0 3.2">
+              <transform rotation="0 1 0 -0.8">
+                <transform rotation="0 0 1 -0.85">
+                  <Shape USE="tros"></Shape>
+                </transform>
+              </transform>
+            </transform>
+
+            <transform translation="-5.75 0 -5.75" rotation="1 0 0 -1.1">
+              <transform rotation="0 1 0 -0.95">
+                <transform rotation="0 0 1 -1.8">
+                  <Shape USE="tros"></Shape>
+                </transform>
+              </transform>
+            </transform>
+          </group>
+        </transform>
+
+        <!-- земля -->
+        <transform translation="-150 -5 70" scale="5.5 6 6" rotation="0 1 0 1.5">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor='green'/>
+            </Appearance>
+            <ElevationGrid xDimension="4" zDimension="4"
+                height="0.3, 0.35, 0.5, 0.5, 0.42, 0.3, 0,                        
+                        0.45, 0.5, 0.25, 0.25, 0.5, 0.3, 0,                        
+                        0.5, 0.25, 0, 0, 0.25, 0.5, 0,                        
+                        0.5, 0.25, 0, 0, 0.25, 0.5, 0,                        
+                        0.2, 0.5, 0.25, 0.25, 0.5, 0.35, 0,                        
+                        0.42, 0.32, 0.5, 0.5, 0.4, 0.2, 0,
+                        0.5, 0.25, 0, 0, 0.25, 0.5, 0,                        
+                        0.2, 0.5, 0.25, 0.25, 0.5, 0.35, 0,                        
+                        0.42, 0.32, 0.5, 0.5, 0.4, 0.2, 0,
+                        0.3, 0.35, 0.5, 0.5, 0.42, 0.3, 0,                        
+                        0.45, 0.5, 0.25, 0.25, 0.5, 0.3, 0,                        
+                        0.5, 0.25, 0, 0, 0.25, 0.5, 0,                        
+                        0.5, 0.25, 0, 0, 0.25, 0.5, 0,                        
+                        0.2, 0.5, 0.25, 0.25, 0.5, 0.35, 0,                        
+                        0.42, 0.32, 0.5, 0.5, 0.4, 0.2, 0,
+                        0.5, 0.25, 0, 0, 0.25, 0.5, 0,                        
+                        0.2, 0.5, 0.25, 0.25, 0.5, 0.35, 0,                        
+                        0.42, 0.32, 0.5, 0.5, 0.4, 0.2, 0"                
+                xSpacing="10.0" zSpacing="15.0" solid="false">
+            </ElevationGrid>
+          </Shape>
+        </transform>
+      </scene>
+    </x3d>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
   </body> 
 </html>
