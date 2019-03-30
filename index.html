@@ -153,13 +153,30 @@
             <transform translation="0 -4.2 -0.7">
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='white'></Material>
+                  <ImageTexture url="https://raw.githubusercontent.com/mihalichpalich/icg_labwork3/gh-pages/zola.jpg"></ImageTexture>
+                  <TextureTransform  scale="3 3"></TextureTransform>
                 </Appearance>
                 <Box size="4.5 0.01 1"></Box>
               </Shape>
             </transform>
           </Anchor>
         </transform>
+
+        <!-- скамейки -->
+        <group DEF="skameyki">          
+            <transform translation="-30 0 4">
+              <group DEF="skameyka">
+                <transform translation="-4 -3.3 0">
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='#DEB887'></Material>
+                    </Appearance>
+                    <cylinder radius="0.5" height="1.5" solid="false"></cylinder>
+                  </Shape>
+                </transform>
+              </group>
+            </transform>
+        </group>
 
         <!-- земля -->
         <transform translation="-100 -5 50" scale="4 4 4" rotation="0 1 0 1.5">
