@@ -12,7 +12,20 @@
     <h1>Temple</h1>
     <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom">
       <Scene>
-        <Viewpoint orientation="-1 0 0 0.35" position="150 100 300"></Viewpoint>
+        <Viewpoint orientation="-1 0 0 0.35" position="150 100 400"></Viewpoint>
+    <Group def="vid2">
+      <Group def="vid">
+        <Transform translation="150 80 0">
+          <Inline url="outer.x3d"></Inline>
+        </Transform>
+      </Group>
+        <Transform translation="0 0 300">
+          <Group use="vid"></Group>
+        </Transform>
+    </Group>
+    <Transform translation="0 0 300" rotation="0 1 0 1.57">
+      <Group use="vid2"></Group>
+    </Transform>
 <Transform translation="150 40.5 145">
 <!--Платформа-->
          <Group def="Plane">
@@ -47,14 +60,14 @@
                 </Shape>
             </Transform>-->
 <!--Сопло-->
-            <Transform translation="-9 2 15" , rotation="1 0 0 3.14">
+            <Transform translation="-9 2 15"  rotation="1 0 0 3.14">
                 <Shape>
                     <Appearance>
                         <Material diffuseColor='#663300'></Material>
                     </Appearance>
                     <Nozzle outerRadius="0.8" innerRadius="0.75" nozzleRadius="1" nozzleHeight="0.75" height="1.5"></Nozzle>
                 </Shape>
-                <Transform translation="0 -8.5 0" , rotation="1 0 0 3.14">
+                <Transform translation="0 -8.5 0"  rotation="1 0 0 3.14">
                     <Shape>
                         <Appearance>
                             <Material diffuseColor='#663300'></Material>
@@ -136,31 +149,12 @@
             </Shape>
           </Transform>
 <!--Конь-->
+<Anchor url="https://www.youtube.com/watch?v=O3rpmctmC_M" parametr="target='_self'">
           <Transform translation="150 60 150">
           <Group def="horse1">
             <Transform>
               <Shape>
-                <IndexedTriangleSet index='0 1 2
-                                           1 2 3
-                                           1 3 4
-                                           2 3 5
-                                           3 5 6
-                                           3 4 6
-                                           5 6 7
-                                           4 6 8
-                                           4 8 9
-                                           8 9 10
-                                           8 10 11
-                                           6 8 11
-                                           9 10 12
-                                           10 12 13
-                                           12 13 14
-                                           10 11 15
-                                           13 15 16
-                                           10 13 15
-                                           16 15 17
-                                           15 11 17
-                                           6 11 18' solid='false'>
+                <IndexedTriangleSet index='0 1 2 1 2 3 1 3 4 2 3 5 3 5 6 3 4 6 5 6 7 4 6 8 4 8 9 8 9 10 8 10 11 6 8 11 9 10 12 10 12 13 12 13 14 10 11 15 13 15 16 10 13 15 16 15 17 15 11 17 6 11 18' solid='false'>
                   <Coordinate point='0 0.5 0, 1 3.5 0, 8.7 5.7 0, 5 6.2 1, 0.3 8 0, 3.5 11.3 0, -1 11 0.5, -4 14 0, -1 8.11 1, -3.7 4.6 0, -3 9.6 0.5, -2.3 10.2 0.5, -4.82 5.1 0, -4.8 7.7 0, -5.5 5.4 0, -3.2 10.3 0.5, -3.7 10.8 0, -1.99 13.2 0.1, -2.2 12.2 0.3'></Coordinate>
                   <ColorRGBA color='0 0 1 1, 0 0 1 1, 0 0 1 1, 0 0 0 0.5, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 0 0 0 1, 0 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 0 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1'></ColorRGBA>
                 </IndexedTriangleSet>
@@ -179,6 +173,7 @@
             </Transform>
           </Group>
           </Transform>
+</Anchor>
 <!--IndexedFaceSet-->
         <Transform translation="149 45 150">
           <Shape>
@@ -193,46 +188,8 @@
       <Group def="point">
         <Shape>
           <Pointset>
-            <Coordinate point="0.95 -15.45 22.7,
-                               -4.6 -14.5 22.63,
-                               -8.2 -13.6 21.95,
-                               -11.65 -12.73 20.7,
-                               -14.9 -11.83 18.9,
-                               -17.85 -10.95 16.6,
-                               -20.4 -10.4 13.88,
-                               -22.52 -9.23 10.75,
-                               -24.12 -8.4 7.3,
-                               -25.17 -7.58 3.64,
-                               -25.63 -6.8 -0.18,
-                               -25.49 -6 -4.05,
-                               -24.74 -5.29 -7.87,
-                               -23.4 -4.56 -11.6,
-                               -21.5 -3.9 -15,
-                               -19.1 -3.18 -18.13,
-                               -16.13 -2.51 -20.85,
-                               -12.8 -1.84 -23.1,
-                               -9.16 -1.25 -24.8,
-                               -1.23 0.03 -26.44,
-                               2.85 0.65 -26.31,
-                               6.9 1.3 -24.17,
-                               10.8 1.9 -24.17,
-                               14.42 2.55 -22.2,
-                               17.7 3.2 -19.65,
-                               20.6 3.9 -16.6,
-                               23 4.6 -13.2,
-                               24.8 5.3 -9.4,
-                               26 6 -5.3,
-                               26.6 6.8 -1.1,
-                               26.5 7.6 3.2,
-                               25.7 8.4 7.4,
-                               24.3 9.2 11.4,
-                               22.2 10.1 15.2,
-                               19.6 10.9 18.6,
-                               16.4 11.8 21.6,
-                               12.8 12.7 24,
-                               8.9 13.6 25.9,
-                               4.7 14.6 27.1"></Coordinate>
-            <Color color="0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0, 0 0 0"></Color>
+            <Coordinate point="0.95 -15.45 22.7,-4.6 -14.5 22.63,-8.2 -13.6 21.95,-11.65 -12.73 20.7,-14.9 -11.83 18.9,-17.85 -10.95 16.6,-20.4 -10.4 13.88,-22.52 -9.23 10.75,-24.12 -8.4 7.3,-25.17 -7.58 3.64,-25.63 -6.8 -0.18,-25.49 -6 -4.05,-24.74 -5.29 -7.87,-23.4 -4.56 -11.6,-21.5 -3.9 -15,-19.1 -3.18 -18.13,-16.13 -2.51 -20.85,-12.8 -1.84 -23.1,-9.16 -1.25 -24.8,-1.23 0.03 -26.44,2.85 0.65 -26.31,6.9 1.3 -24.17,10.8 1.9 -24.17,14.42 2.55 -22.2,17.7 3.2 -19.65,20.6 3.9 -16.6,23 4.6 -13.2,24.8 5.3 -9.4,26 6 -5.3,26.6 6.8 -1.1,26.5 7.6 3.2,25.7 8.4 7.4,24.3 9.2 11.4,22.2 10.1 15.2,19.6 10.9 18.6,16.4 11.8 21.6,12.8 12.7 24,8.9 13.6 25.9,4.7 14.6 27.1"></Coordinate>
+            <Color color="1 0 0, 1 0 0, 1 0 0, 1 0 0, 1 0 0, 1 0 0, 1 0 0, 1 0 0, 1 0 0, 1 0 0, 1 0 0, 1 0 0, 0 0 1, 0 1 0, 0 1 0, 0 1 0, 0 1 0, 0 1 0, 0 1 0, 0 1 0, 0 1 0, 0 1 0, 0 1 0, 0 1 0, 0 1 0, 1 0 0, 0 0 1, 0 0 1, 0 0 1, 0 0 1, 0 0 1, 0 0 1, 0 0 1, 0 0 1, 0 0 1, 0 0 1, 0 0 1, 0 0 1, 0 1 0"></Color>
           </Pointset>
         </Shape>
       </Group>
@@ -242,8 +199,9 @@
       <Transform translation="0 60 0">
         <Group use="point"></Group>
       </Transform>
-  </Transform>
-      </Scene>
-    </X3D>
-  </body>
+    </Transform>
+
+  </Scene>
+  </X3D>
+</body>
 </html>
