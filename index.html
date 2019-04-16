@@ -1,13 +1,105 @@
-<!DOCTYPE html>
+<!--DOCTYPE html-->
 <html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 3</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+<head>
+  <meta charset="utf-8" />
+  <title>Gondola</title>
+  <link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css" />
+  <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+</head>
+<body>
+  <X3D style="left:0px; top:0px; width:100%; height:100%; border: none;">
+    <Scene>
+      <!--Туман-->
+      <Fog visibilityRange="250"></Fog>
+      <!--Комната-->
+      <Transform translation="0 15 0">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="green"></Material>
+          </Appearance>
+          <Box size="100 30 120" solid="false"></Box>
+        </Shape>
+      </Transform>
+      <!--Конец комнаты-->
+	  
+	  <!--Встраивание фотокамеры-->
+	  <Anchor url="gondola.png" parameter="target='_self'">
+        <Transform translation="0 0 20" scale = '3 3 3'>
+          <Inline url="camera.x3d"></Inline>
+        </Transform>
+	  </Anchor>
+        <!--Конец встраивания фотокамеры-->
+	  
+      <!--Камеры в группе-->
+      <Viewpoint description="Начальный вид" position="0 16 40"></Viewpoint>
+      <Viewpoint description="Вид камера 1" position="-20 28 -20" orientation="0.2 1 0.3 -2.36"></Viewpoint>
+      <Viewpoint description="Вид камера 2" position="20 28 -20" orientation="-0.2 1 0.3 2.36"></Viewpoint>
+      <!--Коцен камер в группе-->
+	  
+      <!--Навигация-->
+      <NavigationInfo avatarSize="3 16 0" type="WALK" speed="10"></NavigationInfo>
+      
+      <!--Ссылка на пикчу-->
+      <Anchor url="https://i.kym-cdn.com/photos/images/facebook/001/040/998/d91.png" parameter="target='_self'">
+        <!--Встраивание модельки-->
+        <Transform translation="0 10.5 0" rotation = "0 1 0 -3.1" scale = "3 3 3">
+          <Inline url="gondola.x3d"></Inline>
+        </Transform>
+        <!--Конец встраивания-->
+      
+	  
+	  <!--Земля-->
+	  <transform translation='0 0 -5' scale = "5 5 5">
+        <shape>
+            <appearance>
+              <ImageTexture url="earthmap1k.jpg" repeatS="True"  repeatT="True"></ImageTexture>
+              <TextureTransform translation = "0 0"></TextureTransform>
+              <TwoSidedMaterial shininess="0.0" backDiffuseColor="0 0 1" backShininess="0.0"
+               separateBackColor="true" backTransparency="0.0"></TwoSidedMaterial>
+            </appearance>
+            <sphere radius = "2"></sphere>
+        </shape>
+        </transform>
+		<!--Земля-->
+		</Anchor>
+		<!--Конец ссылки-->
+		
+      <!--Свет-->
+      <PointLight location="10 10 10" color="1 1 1" intensity="0.1" shadowIntensity="0.8" shadowMapSize="512"></PointLight>
+      <SpotLight location="0 0 20" direction="0 0 0" color="0 0 1" intensity="1" beamWidth="0.3" cutOffAngle="0.7"></SpotLight>
+	  <DirectionalLight id="directional" direction='0 0 1' on ="TRUE" intensity='1.0' shadowIntensity='0.5'> </DirectionalLight> 
+      <!--Конец света-->
+	  
+      
+	  
+      
+      
+      <!--Штора позади + колизеи-->
+      <Collision enabled="true" bboxCenter="0 9 -5" bboxSize="18 18 10">
+        <Transform translation="-18 19 -15" rotation="1 0 0 1.57">
+          <Shape >
+            <Appearance>
+              <ImageTexture url="cosmos.jpg"></ImageTexture>
+              <Material></Material>
+            </Appearance>
+            <ElevationGrid xDimension="10" zDimension="10" xSpacing="4.0" zSpacing="2.2" solid="false"
+            height=
+            "0, 1, 0.5, -0.5, 1, 0, 0.5, -0.5, 1, 0,
+            -0.5, 1, 0, 0.5, -0.5, 1, 0, 1, 0.5, -0.5,
+            -0.5, 1, 0, 1, 0.5, -0.5, 1, 0, 0.5, -0.5,
+            0, 0.5, -0.5, 1, 0, 1, 0.5, -0.5, 1, 0,
+            0, 1, 0.5, -0.5, 1, 0, 0.5, -0.5, 1, 0,
+            0.5, -0.5, 1, -0.5, 1, 0, 1, 0.5, -0.5, 1,
+            0, 0.5, -0.5, 1, 0, -0.5, 1, 0, 0.5, -0.5,
+            1, 0, 0.5, 1, 0, 0.5, -0.5, 1, -0.5, 1,
+            1, 0, 0.5, -0.5, 1, 0, 1, 0.5, 0, 1,
+            1, 0.5, -0.5, 1, 0, -0.5, 1, 0, 0.5, -0.5">
+            </ElevationGrid>
+          </Shape>
+        </Transform>
+      </Collision>
+      <!--Конец шторы-->
+    </Scene>
+  </X3D>
+</body>
 </html>
