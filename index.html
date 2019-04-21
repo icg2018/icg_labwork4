@@ -12,9 +12,18 @@
   <h1>Я тут!(лаба)</h1>
   <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom">
     <Scene>
+      <Background skyAngle='0.9 1.57 2.3'
+                        skyColor='0.21 0.18 0.66 0.2
+                        0.44 0.85 0.75 0.6 0.4 0.77 0.8 0.82'></Background>
+      <DirectionalLight ambientIntensity="0.5" direction="0 -1 0" on="true" shadowIntensity='0.5'
+                              shadowCascades="0.5"
+                              intensity="0.8" global="true"></DirectionalLight>
+      <NavigationInfo Headlight="false" avatarSize[0]="0.3" avatarSize[1]="1"
+                              avatarSize[3]="0" type='WALK'
+                              speed="1"></NavigationInfo>
       <Viewpoint fieldOfView="0.8" position="-10 -1.5 5"
                        orientation="0 -1 0 0.8"></Viewpoint>
-            <Viewpoint fieldOfView="0.8" position="4 -1 -15" 
+            <Viewpoint fieldOfView="0.8" position="4 -1 -15"
                        orientation="-0.1 1 0.1 2.2"></Viewpoint>
       <Transform rotation="0 1 0 -1.57" translation="0 -3.3 -12">
                 <SpotLight on="true" radius="10" intency="1" global="false"
