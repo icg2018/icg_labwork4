@@ -177,6 +177,8 @@
                       </Shape>
                   </Transform>
                   <Transform translation='1 1.55 0'>
+                    <PointLight radius="1" color="1 1 0" on="true"
+                                    location="0 -0.5 0"></PointLight>
                       <Shape DEF='SVET'>
                           <Appearance>
                               <Material diffuseColor='#382419'
@@ -187,6 +189,8 @@
                       </Shape>
                   </Transform>
                   <Transform translation='-1 1.55 0'>
+                    <PointLight radius="0.7" color="0 1 1" on="true"
+                                    location="0 -0.5 0"></PointLight>
                       <Shape USE='SVET'>
                       </Shape>
                   </Transform>
@@ -195,6 +199,14 @@
           <!--</ФОНАРЬ>-->
           <!--<ФОНАРЬ1>-->
           <Transform translation='6 -1.5 -4.5'>
+            <Transform translation='-1 1.55 0'>
+                  <PointLight radius="0.7" color="1 1 0" on="true"
+                              location="0 -0.5 0"></PointLight>
+              </Transform>
+              <Transform translation='1 1.55 0'>
+                    <PointLight radius="0.7" color="1 0 1" on="true"
+                                location="0 -0.5 0"></PointLight>
+                </Transform>
               <Group USE="FONAR"></Group>
           </Transform>
           <!--</ФОНАРЬ1>-->
