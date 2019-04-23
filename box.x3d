@@ -1,0 +1,8 @@
+<Scene> 
+<shape> 
+<appearance> 
+<ImageTexture url="bon.jpg"></ImageTexture> 
+</appearance> 
+<box size = "70 60 0.1"></box> 
+</shape> 
+</Scene>
