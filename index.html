@@ -8,12 +8,14 @@
   <script src="https://www.x3dom.org/download/x3dom.js"></script>
 </head>
 <body>
-  <h1>Здесь только я. А должна быть твоя лаба!</h1>
   <X3D width='900px' height='600px'>
     <Scene>
 
      <!--Камера-->
      <Viewpoint description="Начальный вид" position="0 5 27"></Viewpoint>
+
+    <!--Навигация-->
+      <NavigationInfo avatarSize="15 20 0" type="WALK" speed="7"></NavigationInfo>
 
      <!--низ-->
   <Transform translation="0 2 0">
