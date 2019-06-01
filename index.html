@@ -8,6 +8,159 @@
     <script src="https://www.x3dom.org/download/x3dom.js"></script>
   </head>
   <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+    <h1>Степанов С.С. ИКГ Лаб.3</h1>
+    <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom" width='1600px' height='800px'>
+      <Scene>
+      <Background backUrl='qwert.jpg'></Background>
+>
+   
+<Fog color="#785e8a" visibilityRange='25' fogType='EXPONENTIAL'></Fog>
+
+
+
+         <!---
+          <DirectionalLight location='0 50 10' direction='0 0 0' on ="TRUE" intensity='5' shadowIntensity='3' color="1 1 1" > </DirectionalLight>
+          <SpotLight on ="false" beamWidth='0.9' color='1, 0, 0' cutOffAngle='0.78' location='0 0 8' radius='22' ></SpotLight>
+         -->
+ <PointLight location=" -10 10 -2" color="1 1 1" intensity="1" shadowMapSize="1024" shadowIntensity="1"></PointLight>
+                     <!--начальное положение-->
+        <Viewpoint  position="10 2 13" orientation="0 1 0 0.5" ></Viewpoint> 
+
+                     <!--навигация-->
+        <NavigationInfo type="walk"  speed='2.0' headlight='false' avatarSize="2 1 0.1">
+        </NavigationInfo>
+
+        <colision enabled="true">
+          
+        </colision>
+
+
+     
+<transform translation='8 1 0' scale="3 3 3"> 
+        <Shape def="conus">
+          <Appearance>
+            <ImageTexture url="https://pp.userapi.com/c846220/v846220379/1d1a45/2DH4kSCOd_A.jpg">
+            </ImageTexture>
+            <Material diffuseColor='red' 
+            ></Material>
+          </Appearance>
+          <cone></cone>
+        </Shape>
+        </transform>
+                                <!--ЗАБОР-->
+        <transform translation='-13 0 -12.4'> 
+           <group DEF="gr4">
+            <group DEF="gr3">
+           <group DEF="gr2">
+          <group DEF="gr1">
+         <Transform translation="0 0 0" scale='0.1 0.3 0.3'>
+          <Shape DEF="stake">
+         <Appearance> <ImageTexture url="https://pp.userapi.com/c854124/v854124403/1681f/fw8_i3P84G0.jpg">
+            </ImageTexture>
+          </Appearance>
+            <IndexedFaceSet ccw="true" colorPerVertex="false" convex="true" creaseAngle="0" normalPerVertex="false" solid="false" 
+                            coordIndex=" 0 1 3 4 2 0 -1 5 6 8 9 7 5 -1 0 5 7 2 -1 0 5 6 1 -1 1 6 8 3 -1 3 8 9 4 -1 7 2 4 9 "
+                           >
+              <Coordinate point="0 0 0,   2 0 0,   0 4 0,   2 4 0,   1 5 0
+                                 0 0 -0.5,   2 0 -0.5,   0 4 -0.5,   2 4 -0.5,   1 5 -0.5,
+                                 ">
+              </Coordinate>
+            </IndexedFaceSet>
+         
+          </Shape>
+        </Transform>
+
+         <Transform translation="0.25 0 0" scale='0.1 0.3 0.3'>
+          <Shape USE="stake">
+          </Transform>
+
+         <Transform translation="0.5 0 0" scale='0.1 0.3 0.3'>
+          <Shape USE="stake">
+          </Transform>
+
+         <Transform translation="0.75 0 0" scale='0.1 0.3 0.3'>
+          <Shape USE="stake">
+          </Transform>
+  
+          </group>
+
+<Transform translation="1 0 0">
+ <group USE="gr1">
+ </Transform>
+<Transform translation="1.25 0 0">
+ <group USE="gr1">
+ </Transform>
+<Transform translation="1.5 0 0">
+ <group USE="gr1">
+ </Transform>
+<Transform translation="1.75 0 0">
+ <group USE="gr1">
+ </Transform>
+ </group>
+
+ <Transform translation="2 0 0">
+ <group USE="gr2">
+ </Transform>
+  <Transform translation="4 0 0">
+ <group USE="gr2">
+ </Transform>
+ <Transform translation="6 0 0">
+ <group USE="gr2">
+ </Transform>
+  <Transform translation="8 0 0">
+ <group USE="gr2">
+ </Transform>
+</group>
+<Transform translation="10 0 0">
+ <group USE="gr3">
+ </Transform>
+ <Transform translation="18 0 0">
+ <group USE="gr3">
+ </Transform>
+</group>
+  </transform>
+
+
+ <Transform translation="-13 0 16">
+ <group USE="gr4">
+ </Transform>
+</group>
+  </transform>
+
+ <Transform translation="-13 0 16" rotation="0 1 0 1.57 ">
+ <group USE="gr4">
+ </Transform>
+</group>
+  </transform>
+
+ <Transform translation="15.8 0 16" rotation="0 1 0 1.57 ">
+ <group USE="gr4">
+ </Transform>
+</group>
+  </transform>
+
+
+ <Transform translation="3.8 0 5" rotation="0 1 0 1.57 ">
+<inline url="deer.x3d"></inline>
+ </transform>
+ <Transform translation="1.8 0 8" rotation="0 1 0 1.57 ">
+<inline url="deer.x3d"></inline>
+ </transform>
+ <Anchor url="https://www.youtube.com/watch?v=y2vPiGMlQl0" parameter="target='_self'">
+<inline url="deer.x3d"></inline>
+</Anchor>
+        <Shape >
+          <Appearance>
+            <ImageTexture url="https://pp.userapi.com/c845121/v845121717/1d92ae/oGOvSVrYFZs.jpg">
+            </ImageTexture>
+
+          </Appearance>
+          <box size="36 0.1 36"></box>
+        </Shape>
+        </transform>
+
+
+      </Scene>
+    </X3D>
+  </body>
 </html>
