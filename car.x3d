@@ -1,30 +1,7 @@
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Simberg 3rd Lab</title>
-    <script type='text/javascript' src="https://www.x3dom.org/download/dev/x3dom-full.js"> </script>
-    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
-</head>
-<body>
-<p>
-   Simberg Dmitry. Group 4643
-</p>
-<x3d width='1280px' height='720px'>
+
+  <x3d >
     <scene >
-      <navigationInfo type='"walk" "any"' id="navType" speed='3.5'></navigationInfo>
-
-        <PointLight location="5 5 -2" color="1 1 1" intensity="0.5" shadowIntensity="0.5" shadowMapSize="512"></PointLight>
-        
-
-      <Background backUrl="https://pp.userapi.com/c852136/v852136764/c776d/2wgJ_XSx5RM.jpg" 
-                  bottomUrl="https://pp.userapi.com/c852136/v852136764/c7782/mmuvLMgu0kY.jpg" 
-                  frontUrl="https://pp.userapi.com/c852136/v852136764/c7789/Ml4pktBzVTo.jpg" 
-                  leftUrl="https://pp.userapi.com/c852136/v852136764/c7774/nRRuuWwgri0.jpg" 
-                  rightUrl="https://pp.userapi.com/c852136/v852136764/c7766/fQhYTFYmYFA.jpg" 
-                  topUrl="https://pp.userapi.com/c852136/v852136764/c777b/BGF02N0jJDQ.jpg">
-      </Background>
-
-        <transform >                                                               <!---car body--->
+      <transform >                                                               <!---car body--->
         <shape>
             <appearance>
                 <material diffuseColor='#600000'></material>
@@ -32,50 +9,7 @@
             <box size = '3 1.1 7'></box>
         </shape>
 
-         <transform translation='0 -0.88 0 '>
-          <shape>
-            <appearance>
-              <Imagetexture url="https://pp.userapi.com/c852136/v852136764/c7782/mmuvLMgu0kY.jpg"></Imagetexture>
-            </appearance>
-            <box size='14 0.2 14'></box>
-          </shape>
-         </transform>
-
-           <group DEF='wheel'>
-            <transform translation='1.4 -0.2 2.4' rotation='0 0 1 1.57'>        <!---front left wheel--->
-                <shape >
-                    <appearance>
-                        <material diffuseColor='#000000'></material>
-                    </appearance>
-                    <cylinder height='0.4' radius='0.6'></cylinder>
-                </shape>
-                <transform>
-                    <shape >
-                    <appearance>
-                        <material diffuseColor='#707070'></material>
-                    </appearance>
-                    <cylinder height='0.41' radius='0.45'></cylinder>
-                </shape>
-                </transform>            
-              </transform>
-             </group>
-
-             <transform translation='-2.8 0 0'>                               <!---front right wheel--->
-              <shape USE='wheel'></shape>
-            </transform>
-
-            <transform translation='0 0 -4.9'>                                <!---rear left wheel--->
-              <shape USE='wheel'></shape>
-            </transform>
-
-            <transform translation='-2.8 0 -4.9'>                             <!---rear right wheel--->
-              <shape USE='wheel'></shape>
-            </transform>
-
-
-           
-
-             <transform translation='0 0.95 -0.7'>                             <!---roof--->
+         <transform translation='0 0.95 -0.7'>                             <!---roof--->
                 <shape>
                     <appearance>
                         <material diffuseColor='#600000'></material>
@@ -91,29 +25,6 @@
                     <box size='2.86 0.9 1.8'></box>
                 </shape> 
                 </transform>
-
-                <!---thing on a hood--->
-
-                <transform translation='0 -0.37 4.1'>
-                    <shape>
-                        <appearance>
-                            <material diffuseColor='#600000'></material>
-                        </appearance>
-                        <cone bottomRadius='0.05' height='0.07' topRadius='0.01' ></cone>
-                    </shape>
-
-                    <transform translation='0 0.03 0'>
-                      <anchor url='https://www.youtube.com/watch?v=dQw4w9WgXcQ' parameter="target='_self'">
-                        <shape>
-                            <appearance>
-                                <material diffuseColor='#000060'></material>
-                            </appearance>
-                            <sphere radius='0.03'></sphere>
-                        </shape>
-                      </anchor>
-                    </transform>
-                </transform>
-
                 <!---windshield--->
 
                 <transform translation='0 -0.41 1.45' rotation='1 0 0 0.61'>    
@@ -141,6 +52,28 @@
                     </appearance>
                     <box size='2.86 0.9 1.5'></box>
                 </shape>
+                </transform>
+
+                <!---thing on a hood--->
+
+                <transform translation='0 -0.37 4.1'>
+                    <shape>
+                        <appearance>
+                            <material diffuseColor='#600000'></material>
+                        </appearance>
+                        <cone bottomRadius='0.05' height='0.07' topRadius='0.01' ></cone>
+                    </shape>
+
+                    <transform translation='0 0.03 0'>
+                      <anchor url='https://www.youtube.com/watch?v=dQw4w9WgXcQ' parameter="target='_self'">
+                        <shape>
+                            <appearance>
+                                <material diffuseColor='#000060'></material>
+                            </appearance>
+                            <sphere radius='0.03'></sphere>
+                        </shape>
+                      </anchor>
+                    </transform>
                 </transform>
 
                 <!---rear window--->
@@ -255,13 +188,5 @@
                 </shape>
             </transform>
         </transform>
-
-        <!---
-        <transform>
-          <Inline url='file:///C:/Users/dasgo/Desktop/%D0%98%D0%9A%D0%93/credits.x3d'></Inline>
-        </transform>
-credits--->
-    </scene>
-</x3d>
-</body>
-</html>
+      </scene>
+    </x3d>
