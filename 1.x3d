@@ -1,0 +1,13 @@
+<X3D>
+    <scene >
+        <transform>                                             
+        <shape>
+            <appearance>
+                <material diffuseColor='#600000'></material>
+            </appearance>
+            <box size = '2.5 2.5 3.5'></box>
+        </shape>
+        </transform>
+    </scene>
+</X3D>
+
