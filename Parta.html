@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>  
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+    <title>Camera</title>
+    <link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css" />
+    <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+  </head>
+  <body>
+    <h1>Risunok iz 3d</h1>
+    <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom" width = "1000" height = "700" style="width:100%; height:100%"> 
+
+    <Scene> 
+      
+       <TimeSensor DEF='Time' cycleInterval='5' loop='true'></TimeSensor>
+       <ColorInterpolator DEF='ColInt' key='0 0.33 0.66 1' keyValue='1 0 0, 0 1 0, 0 0 1, 1 0 0'></ColorInterpolator>
+
+       
+        <Shape>
+          <Appearance>
+            <Material DEF='Mat'></Material>
+          </Appearance>
+          <Cylinder></Cylinder>
+        </Shape>
+        
+
+       <ROUTE fromNode='Time' fromField='fraction_changed' toNode='ColInt' toField='set_fraction'></ROUTE>
+       <ROUTE fromNode='ColInt' fromField='value_changed' toNode='Mat' toField='set_diffuseColor'></ROUTE>
+
+    </Scene> 
+  </X3D> 
