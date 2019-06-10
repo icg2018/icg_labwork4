@@ -8,6 +8,71 @@
     <script src="https://www.x3dom.org/download/x3dom.js"></script>
   </head>
   <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
+  <X3D width='1200px' height='600px'>
+    <Scene>
+
+     <!--Камера-->
+     <Viewpoint description="Начальный вид" position="8 5 30" ></Viewpoint>
+
+     <!--Навигация-->
+      <NavigationInfo avatarSize="15 20 0" type="WALK" speed="7"></NavigationInfo>
+
+      <!--Помещение-->
+  <Transform translation="0 17 0">
+    <Shape>
+      <Appearance>
+        <Material diffuseColor='indianred'></Material>
+      </Appearance>
+        <Box size="100 50 100" solid="false"></Box>
+    </Shape>
+  </Transform>
+
+   <!--Камера из 2 лабы , при нажатии переходит на мою страницу вк-->
+  <Transform translation="0 14 -20" rotation="0 1 0 -0.74">
+    <Anchor url=" https://vk.com/nataliimrr" parameter="target='_self'">
+     <Inline url="https://natalimrr.github.io/icg_labwork2/"></Inline>
+    </Anchor> 
+  </Transform>
+
+    <!--Общий свет-->
+  <PointLight location="7 30 0" color="1 1 1" intensity="0.1" shadowIntensity="2" shadowMapSize="2000"></PointLight>
+
+  <!--Свет для камеры-->
+  <SpotLight location="0 30 -30" direction="-0.5 -1 0" color="aqua" intensity="3" beamWidth="0.2" cutOffAngle="0.7"></SpotLight>
+  <SpotLight location="0 30 -30" direction="0.5 -1 0" color="orange" intensity="3" beamWidth="0.2" cutOffAngle="0.7"></SpotLight>
+  <DirectionalLight location="0 30 -40" direction="0 0 1" color="1 1 1" intensity="0.1" shadowIntensity="0.8" shadowMapSize="512"></DirectionalLight>
+
+     <!--коврик-->
+  <Transform translation="2.5 -7 -23.5">
+    <Shape DEF="Bottom">
+       <Appearance>
+         <ImageTexture url="https://pp.userapi.com/c845418/v845418142/715eb/mWgsD8e1wkQ.jpg"></ImageTexture>
+       </Appearance>
+      <Box size="20 0.1 20"></Box>
+    </Shape>        
+  </Transform>
+  <Transform translation="2.5 -7 -23.5">
+    <Shape USE="Bottom">            
+    </Shape>
+  </Transform>
+
+<!--экран-->
+  <Transform translation='-8 8 10' rotation='0 1 0 -0.74'>
+        <Shape>
+          <Appearance>
+            <ImageTexture url="https://pp.userapi.com/c850332/v850332488/168236/Wgv6NjC_nDg.jpg"></ImageTexture>
+          </Appearance>
+          <Box size="30 20 0.2"></Box>
+        </Shape>
+      </Transform>
+
+      <Transform translation='-8 8 10.05' rotation='0 1 0 -0.74'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='white'></Material>
+          </Appearance>
+          <Box size="30 20 0.2"></Box>
+        </Shape>
+      </Transform>
   </body> 
 </html>
