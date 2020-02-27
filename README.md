@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/icg-course/icg_labwork3.svg?branch=gh-pages)](https://travis-ci.org/icg-course/icg_labwork3)
+[![Build Status](https://travis-ci.com/icg-course/icg_labwork3.svg?branch=gh-pages)](https://travis-ci.com/icg-course/icg_labwork3)
 # Репозиторий лабораторной работы №3 (Тиражирование, встраивание, освещение, навигация)
 
 Данный репозиторий предназначен для выполнения и сдачи лабораторной работы №3.
