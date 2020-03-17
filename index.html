@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-
-
-
 <html lang="ru">
 
 	<head>
 
 		<meta charset="utf-8"></meta>
 
-		<title>lab2</title>
+		<title>Solar system</title>
 
 		<link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
 
@@ -17,304 +13,179 @@
 	</head>
 
 	<body>
-
 		<x3d>
-
 			<scene>
-
-                <background  frontUrl = "https://drive.google.com/open?id=12f3Qz9pM24A9itN1b3ZB0VNOaFofAkWT" backUrl = "https://i0.wp.com/dailybuff.ru/wp-content/uploads/2019/10/1186586.jpg?fit=2000%2C1165&amp;ssl=1"></background>
-
-
-
-                <Group DEF="Sputnic">
-
-                        <Anchor url = "https://ru.wikipedia.org/wiki/Марс-2">
-
-                        <transform translation="3 3 -2">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <material diffusecolor="gray">
-
-                                    </material>
-
-                                </appearance>
-
-                            </shape>
-
-                        </transform>
-
-
-
-
-
-                        <transform translation="0 -2 0">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <ImageTexture  url="cosmo1.jpg"></ImageTexture>
-
-                                </appearance>
-
-                                <cylinder radius = '1.2'>
-
-                                </cylinder>
-
-                            </shape>
-
-                        </transform>
-
-
-
-                        <transform translation="1 0 0" rotation="0 0 1 1.57">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <material diffusecolor="gray">
-
-                                    </material>
-
-                                </appearance>
-
-                                <cylinder radius = '0.1' height = '0.5'>
-
-                                </cylinder>
-
-                            </shape>
-
-                        </transform>
-
-
-
-                        <transform translation="-1 0 0" rotation="0 0 1 -1.57">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <material diffusecolor="gray">
-
-                                    </material>
-
-                                </appearance>
-
-                                <cylinder radius = '0.1' height = '0.5'>
-
-                                </cylinder>
-
-                            </shape>
-
-                        </transform>
-
-
-
-                        <transform translation="0 0 0">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <ImageTexture  url="cosmo1.jpg"></ImageTexture>
-
-                                </appearance>
-
-                                <cone bottomRadius = '1.2' height = '2'>
-
-                                </cone>
-
-                            </shape>
-
-                        </transform>
-
-
-
-                        <transform translation="-3.6 0 0" rotation="1 0 0 -0.5">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <ImageTexture  url="solar_panel.jpg"></ImageTexture>
-
-                                </appearance>
-
-                                <box size = "5 1.7 0.1">
-
-                                </box>
-
-                            </shape>
-
-                        </transform>
-
-
-
-                        <transform translation="3.6 0 0" rotation="1 0 0 -0.5">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <ImageTexture  url="solar_panel.jpg"></ImageTexture>
-
-                                </appearance>
-
-                                <box size = "5 1.7 0.1">
-
-                                </box>
-
-                            </shape>
-
-                        </transform>
-
-
-
-                        <transform translation="0 0 0">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <ImageTexture  url="cosmo1.jpg"></ImageTexture>
-
-                                </appearance>
-
-                                <sphere radius = '1.1'>
-
-                                </sphere>
-
-                            </shape>
-
-                        </transform>
-
-
-
-                        <transform translation="0 0.5 0">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <ImageTexture  url="cosmo1.jpg"></ImageTexture>
-
-                                </appearance>
-
-                                <sphere radius = '1.1'>
-
-                                </sphere>
-
-                            </shape>
-
-                        </transform>
-
-                    
-
-                        <transform translation="0.05 -2.7 1.2" rotation="0 0 1 1.57">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <material diffusecolor="red"></material>
-
-                                </appearance>
-
-                                <text string = "Mars-2">
-
-                                    <fontstyle size = '0.3' family = "SERIF"></fontstyle>
-
-                                </text>
-
-                            </shape>                       
-
-                        </transform>
-
-                    
-
-                        <transform translation="0 0 0">
-
-                            <shape>
-
-                                <appearance>
-
-                                    <ImageTexture  url="cosmo1.jpg"></ImageTexture>
-
-                                </appearance>
-
-                                <cylinder>
-
-                                </cylinder>
-
-                            </shape>                       
-
-                        </transform>
-                            
-                        <Group DEF = "Star">
-                           <transform scale = "0.03 0.03 0.03" translation = '0 -1.4 1.2'>
-                                <shape>
-                                    <appearance>
-                                    </appearance>
-                                    
-                                    <IndexedTriangleSet Index = '1 2 10  2 3 4  4 5 6  6 7 8  8 9 10  10 2 8  2 4 8  4 6 8  0 1 2  0 1 10  0 2 3  0 3 4  0 4 5  0 5 6  0 6 7  0 7 8  0 8 9  0 9 10 '
-                                                        solid = "false" colorpervertex = "true" normalpervertex = "true">
-                                        
-                                        <coordinate point = '0 0 2,0 8 0, 2.5 3.5 0, 7.5 2.5 0, 4 -1 0, 5 -6 0, 0 -4 0, -5 -6 0, -4 -1 0, -7.5 2.5 0, -2.5 3.5 0'></coordinate>
-                                        
-                                        <ColorRGBA color="1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1, 1 0 0 1,"></ColorRGBA> 
-                                        
-                                    </IndexedTriangleSet>
-                                </shape>
-                            </transform>
-
-                             <transform scale = "0.03 0.03 0.03" translation = '0 -1.4 1.2'>
-                                <shape>
-                                    
-                                    <appearance> 
-                                        <material emissivecolor = "0 0 0"></material>
-                                    </appearance>
-                                    
-                                    <IndexedLineset coordIndex = "0 1 2 0 -1  0 1 10 0 -1  0 2 3 0 -1 0 3 4 0 -1  0 4 5 0 -1  0 5 6 0 -1  0 6 7 0 -1  0 7 8 0 -1  0 8 9 0 -1  0 9 10 0 -1">
-                                        <coordinate point = '0 0 2,0 8 0, 2.5 3.5 0, 7.5 2.5 0, 4 -1 0, 5 -6 0, 0 -4 0, -5 -6 0, -4 -1 0, -7.5 2.5 0, -2.5 3.5 0'></coordinate>
-                                    </IndexedLineset>
-                                    
-                                </shape>
-                            </transform>
-                        </Group>  
-                    </Anchor>
-
-            </Group>
-
-                <Group DEF = "Mars">
-
-                    <transform translation="0 0 -200">
-
-                        <shape>
-
-                            <appearance>
-
-                                <ImageTexture  url="mars.jpg"></ImageTexture>
-
-                            </appearance>
-
-                            <sphere radius = '100'>
-
-                            </sphere>
-
-                        </shape>
-
-                    </transform>
-
+                <pointlight location = '0 0 0' radius = 500></pointlight>
+                <background  backUrl = "sky.png" ></background>
+                <viewpoint position = '0 0 20000'></viewpoint>
+
+                <Group DEF = "Sun">
+                <transform translation="0 0 0">
+                    <shape>
+                        <appearance>
+                            <ImageTexture  url="sun.jpg"></ImageTexture>
+                        </appearance>
+                        <sphere radius = '500'></sphere>
+                    </shape>
+                </transform>
                 </Group>
-
+                <Group DEF = "Mercury">
+                <transform translation="1000 0 0">
+                    <shape>
+                        <appearance>
+                            <ImageTexture  url="merc.jpg"></ImageTexture>
+                        </appearance>
+                        <sphere radius = '17.5'></sphere>
+                    </shape>
+                </transform>
+                <viewpoint position = '1000 0 317'></viewpoint> 
+                <transform translation="0 0 0">
+                    <shape>
+                        <appearance>
+                            <Material emissiveColor = '1 0 0'></Material> 
+                        </appearance>
+                        <torus outerRadius = 1000 innerRadius = 1></torus>
+                    </shape>
+                </transform>                
+                </Group>
+                <Group DEF = 'Venus'>
+                <transform translation="1282 0 0">
+                    <shape>
+                        <appearance>
+                            <ImageTexture  url="venus.jpg"></ImageTexture>
+                        </appearance>
+                        <sphere radius = '43.5'></sphere>
+                    </shape>
+                </transform>
+                <viewpoint position = '1282 0 343'></viewpoint>
+                <transform translation="0 0 0">
+                    <shape>
+                        <appearance>
+                            <Material emissiveColor = '0 0 1'></Material> 
+                        </appearance>
+                        <torus outerRadius = 1282 innerRadius = 1></torus>
+                    </shape>
+                </transform>
+                </Group>
+                <Group DEF = "Earth">    
+                <transform translation="1592 0 0">
+                    <shape>
+                        <appearance>
+                            <ImageTexture  url="earth.jpg"></ImageTexture>
+                        </appearance>
+                        <sphere radius = '45.8'></sphere>
+                    </shape>
+                </transform>
+                <viewpoint position = '1592 0 345'></viewpoint>
+                <transform translation="0 0 0">
+                    <shape>
+                        <appearance>
+                            <Material emissiveColor = '0 1 0'></Material> 
+                        </appearance>
+                        <torus outerRadius = 1592 innerRadius = 1></torus>
+                    </shape>
+                </transform>
+                </Group> 
+                <Group DEF = "Mars">
+                <transform translation="2290 0 0">
+                    <shape>
+                        <appearance>
+                            <ImageTexture  url="mars.jpg"></ImageTexture>
+                        </appearance>
+                        <sphere radius = '24.4'></sphere>
+                    </shape>
+                </transform>
+                <viewpoint position = '2290 0 324'></viewpoint>
+                <transform translation="0 0 0">
+                    <shape>
+                        <appearance>
+                            <Material emissiveColor = '1 0 0'></Material> 
+                        </appearance>
+                        <torus outerRadius = 2290 innerRadius = 1></torus>
+                    </shape>
+                </transform>                
+                </Group>
+                <Group DEF = "Jupiter">
+                <transform translation="3432 0 0">
+                    <shape>
+                        <appearance>
+                            <ImageTexture  url="Jup.jpg"></ImageTexture>
+                        </appearance>
+                        <sphere radius = '150'></sphere>
+                    </shape>
+                </transform>
+                <viewpoint position = '3432 0 450'></viewpoint>
+                <transform translation="0 0 0">
+                    <shape>
+                        <appearance>
+                            <Material emissiveColor = '0 0 1'></Material> 
+                        </appearance>
+                        <torus outerRadius = 3432 innerRadius = 1></torus>
+                    </shape>
+                </transform>                
+                </Group>
+                <Group DEF = "Saturn">
+                <transform translation="5935 0 0">
+                    <shape>
+                        <appearance>
+                            <ImageTexture  url="Sat.png"></ImageTexture>
+                        </appearance>
+                        <sphere radius = '100'></sphere>
+                    </shape>
+                </transform>
+                <viewpoint position = '5935 0 400'></viewpoint>
+                <transform translation="0 0 0">
+                    <shape>
+                        <appearance>
+                            <Material emissiveColor = '1 0 0'></Material> 
+                        </appearance>
+                        <torus outerRadius = 5935 innerRadius = 1></torus>
+                    </shape>
+                </transform>
+                </Group>
+                <Group DEF = "Uranus">
+                <transform translation="8291 0 0">
+                    <shape>
+                        <appearance>
+                            <ImageTexture  url="Ur.jpg"></ImageTexture>
+                        </appearance>
+                        <sphere radius = '70'></sphere>
+                    </shape>
+                </transform>
+                <viewpoint position = '8291 0 370'></viewpoint>
+                <transform translation="0 0 0">
+                    <shape>
+                        <appearance>
+                            <Material emissiveColor = '0 0 1'></Material> 
+                        </appearance>
+                        <torus outerRadius = 8291 innerRadius = 1></torus>
+                    </shape>
+                </transform>
+                </Group>
+                <Group DEF = "Neptune">
+                <transform translation="10291 0 0">
+                    <shape>
+                        <appearance>
+                            <ImageTexture  url="nep.jpg"></ImageTexture>
+                        </appearance>
+                        <sphere radius = '60'></sphere>
+                    </shape>
+                </transform>
+                <viewpoint position = '10291 0 360'></viewpoint>
+                <transform translation="0 0 0">
+                    <shape>
+                        <appearance>
+                            <Material emissiveColor = '0 1 0'></Material> 
+                        </appearance>
+                        <torus outerRadius = 10291 innerRadius = 1></torus>
+                    </shape>
+                </transform>
+                </Group>
+                
 			</scene>
 
 		</x3d>
 
 	</body>
 
-</html>
+</html>                
