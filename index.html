@@ -142,21 +142,24 @@
         <Inline url = 'vedro.x3d', load = 'true'></Inline>
       </Transform>
 
-      <Transform translation = "0 0 -5" rotation = "1 0 0 0.57"> <!--самолетик бумажный-->
-        <Shape>
-          <IndexedTriangleSet index=" 0 1 2  0 1 3  0 2 5  0 3 4 " solid = "false">
-            <Coordinate point =" 0 0 0, 3 0 0, 3 1 -.5, 3 1 .5, 3 1 2.5, 3 1 -2.5 ">
-
-            </Coordinate>
-            <ColorRGBA 
-            color = "1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8">
-            </ColorRGBA>
-          </IndexedTriangleSet>
-          <Appearance>
-            
-          </Appearance>
-        </Shape>
-      </Transform>
+      <!--самолетик бумажный с гиперссылкой-->
+      <Anchor url = "https://github.com/johuex">
+        <Transform translation = "0 0 -5" rotation = "1 0 0 0.57"> 
+          <Shape>
+            <IndexedTriangleSet index=" 0 1 2  0 1 3  0 2 5  0 3 4 " solid = "false">
+              <Coordinate point =" 0 0 0, 3 0 0, 3 1 -.5, 3 1 .5, 3 1 2.5, 3 1 -2.5 ">
+  
+              </Coordinate>
+              <ColorRGBA 
+              color = "1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8, 1 1 1 0.8">
+              </ColorRGBA>
+            </IndexedTriangleSet>
+            <Appearance>
+              
+            </Appearance>
+          </Shape>
+        </Transform>
+      </Anchor>
 
     
       </Scene>
