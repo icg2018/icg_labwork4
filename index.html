@@ -109,42 +109,44 @@
               </Shape>
             </Transform>
           </Transform>
-        </Transform>
-        <!--таблика с текстом-->
-        <Group DEF = "Tabl">
+          <!--таблика с текстом-->
           <Transform translation = "4 1.5 10" rotation = "0 1 0 -0.57">
-            <Transform>
-              <!--нога-->
-              <Shape>
-                <Appearance>
-                  <ImageTexture url="tree_texture.jpg"></ImageTexture>
-                  <Texturetransform scale="1 1"></Texturetransform>
-                </Appearance>
-                <Cylinder radius = ".5" height = "3" side = "true" top = "true" bottom = "false"></Cylinder>
-              </Shape>
-            </Transform>
-            <Transform translation = "0 1 0.5">
-              <!--сама таблица-->
-              <Shape>
-                <Appearance>
-                  <ImageTexture url="tree_texture.jpg"></ImageTexture>
-                  <Texturetransform scale="1 1"></Texturetransform>
-                </Appearance>
-                <Box size = "3 2 .3"></Box>
-              </Shape>
-            </Transform>
-            <Transform translation = "0 1 0.8">
-              <!--текст-->
-              <Shape>
-                <Text string = "КАРАНТИН!" maxExtent = "3"></Text>
-              </Shape>
-            </Transform>
+            <Group DEF = "Tabl">
+              <Transform>
+                <Transform>
+                  <!--нога-->
+                  <Shape>
+                    <Appearance>
+                      <ImageTexture url="tree_texture.jpg"></ImageTexture>
+                      <Texturetransform scale="1 1"></Texturetransform>
+                    </Appearance>
+                    <Cylinder radius = ".5" height = "3" side = "true" top = "true" bottom = "false"></Cylinder>
+                  </Shape>
+                </Transform>
+                <Transform translation = "0 1 0.5">
+                  <!--сама таблица-->
+                  <Shape>
+                    <Appearance>
+                      <ImageTexture url="tree_texture.jpg"></ImageTexture>
+                      <Texturetransform scale="1 1"></Texturetransform>
+                    </Appearance>
+                    <Box size = "3 2 .3"></Box>
+                  </Shape>
+                </Transform>
+                <Transform translation = "0 1 0.8">
+                  <!--текст-->
+                  <Shape>
+                    <Text string = "КАРАНТИН!" maxExtent = "3"></Text>
+                  </Shape>
+                </Transform>
+              </Transform>
+            </Group>
           </Transform>
-        </Group>
-        <Transform translation = "4 1.5 10" rotation = "0 1 0 1.57">
-          <Group USE = "Tabl"></Group>
+          <Transform translation = "-4 1.5 10" rotation = "0 1 0 0.57">
+            <Group USE = "Tabl"></Group>
+          </Transform>
         </Transform>
-        
+
         <!--далее будут созданы сложные объекты-->
         <!--встроенное ведро с водой-->
         <Transform translation = "0 -4.9 0">
