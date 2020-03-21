@@ -1,0 +1,8 @@
+<Scene>
+	<Shape>
+		<Appearance>
+			<Material diffuseColor="blue"></Material>
+		</Appearance>
+		<Sphere radius='20' > </Sphere>  
+	</Shape>
+</Scene>
