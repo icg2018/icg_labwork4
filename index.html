@@ -13,6 +13,7 @@
 				<Viewpoint position="10.42087 19.19802 7.00361" orientation="-0.48574 0.87368 0.02715 0.79526" centerOfRotation="0.00000 0.00000 0.00000" fieldOfView="0.78540" description="defaultX3DViewpointNode"></Viewpoint>
 				<Viewpoint position="-21.27027 2.27914 -5.39412" orientation="0.17767 -0.95637 0.23192 2.07960" centerOfRotation="0.00000 0.00000 0.00000" fieldOfView="0.78540" description="defaultX3DViewpointNode"></Viewpoint>
 					<transform center="0 -14.20 0" translation="3 14.20 3" rotation="0 1 0 1.570796326794897">
+					
 						<transform translation="0 2.97 0">
 							<shape>
 								<appearance><material diffusecolor="white"></material></appearance>
@@ -33,6 +34,7 @@
 								<text string="Russia"></text> 
 							</shape>
 						</transform> <!-- Russia -->
+						
 						<transform>
 							<transform>
 								<shape>
@@ -40,12 +42,14 @@
 									<box size="3.78 .62 0.02"></box>
 								</shape>
 							</transform>
+							
 							<transform translation="0 0 -0.01">
 								<shape>
 									<appearance><ImageTexture url="rashkaon.png"></ImageTexture></appearance>
 									<box size="3.78 .62 0.02"></box>
 								</shape> 
 							</transform>
+							
 							<transform translation="0 -1.337 0">
 								<shape>
 									<appearance><ImageTexture url="wood.png"></ImageTexture></appearance>
@@ -54,33 +58,34 @@
 							</transform>	
 						</transform>	
 					</transform>
+					
 				<transform DEF="popup" center="0 -14.20 0" translation="0 14.20 0"> 
 					<transform rotation="0 1 0 3.14159265358979">
 						<transform translation="1.5 -0.37 0.5" rotation="0 1 0 3.14159265358979">
 							<Shape>
-									<IndexedFaceSet coordIndex= "0 1 2 -1
-																0 2 3 -1
+								<IndexedFaceSet coordIndex= "0 1 2 -1
+															0 2 3 -1
 
-																3 4 5 -1 
-																5 3 0 -1
+															3 4 5 -1 
+															5 3 0 -1
 
-																0 1 5 -1 
-																1 5 8 -1
+															0 1 5 -1 
+															1 5 8 -1
 
-																4 3 2 -1 
-																2 7 4 -1
+															4 3 2 -1 
+															2 7 4 -1
 
-																7 8 1 -1
-																1 2 7 -1 
+															7 8 1 -1
+															1 2 7 -1 
 
-																4 5 12 -1 
-																5 12 11 -1
+															4 5 12 -1 
+															5 12 11 -1
 
-																10 12 13 -1 
-																10 11 12 -1
+															10 12 13 -1 
+															10 11 12 -1
 
-																10 13 6 -1 
-																6 9 10 -1"
+															10 13 6 -1 
+															6 9 10 -1"
 													solid="false">
 										<Coordinate point="0 0 0, 3 0 0, 3 0 1, 0 0 1, 0 1.2 1, 0 1.2 0, 3 0.6 1, 3 1.2 1, 
 										3 1.2 0, 3 0.6 0, 1.5 0.6 0, 1.5 1.2 0, 1.5 1.2 1, 1.5 0.6 1"></Coordinate>						
@@ -88,6 +93,7 @@
 								<Appearance><Material diffuseColor="red"></Material></Appearance>
 							</Shape>
 						</transform>
+						
 						<transform translation="-1 -.25 0">
 							<group DEF="rear_wheel">
 								<transform translation="0 0 0.85">
@@ -331,8 +337,10 @@
 								</box>
 							</shape>
 						</transform> <!-- Сидалище -->
+						
 						<transform rotation="0 1 0 1.570796326794897" translation="-.72 1.18 0" scale =".444 .444 .444">
 							<transform rotation="1 0 0 1.570796326794897">
+							
 								<transform translation="0 0 0">
 									<shape>
 										<appearance>
@@ -341,6 +349,7 @@
 										<cone height="0.68" bottomRadius=".73" topRadius=".2"></cone>
 									</shape>
 								</transform>
+								
 								<transform translation="0 -.74 0">
 									<shape>
 										<appearance>
@@ -349,6 +358,7 @@
 										<sphere radius="1"></sphere>
 									</shape>
 								</transform>
+								
 								<transform translation="0 .377 0"> 
 									<transform translation="0 .05 0" rotation="0 0 0 1.570796326794897"> 			
 										<shape>
@@ -360,6 +370,7 @@
 											</cylinder>
 										</shape>
 									</transform>
+									
 									<transform translation="0 0 0" rotation="1 0 0 1.570796326794897">
 										<shape>
 											<appearance>
@@ -370,7 +381,9 @@
 											</torus>
 										</shape>
 									</transform>
+									
 								</transform>
+								
 								<transform translation="-.8 -.7 0" rotation="1 0 0 -1.570796326794897" scale =".5 .5 .5">
 									<transform rotation="0 0 1 .3">
 										<shape DEF="uho">
@@ -379,8 +392,9 @@
 												<coordinate point = "0 0 0, -.5 .75 0, -.25 1.5 0, .25 2 0, .25 2.5 0, .75 2 0, 1.5 1.75 0, 1.75 1 0, 1.5 .25 0, 1.25 0 0"></coordinate> 
 											</IndexedTriangleSet>
 										</shape>	
-									</transform>	
+									</transform>
 								</transform>
+								
 								<transform translation="-.8 -.6999 0" rotation="1 0 0 -1.570796326794897" scale =".5 .5 .5">
 									<transform rotation="0 0 1 .3">
 										<shape DEF="pereponka">
@@ -391,6 +405,7 @@
 										</shape>
 									</transform>
 								</transform>
+								
 								<transform rotation="0 0 0 -3.14">
 									<transform rotation="0 1 0 -1.570796326794897">
 										<transform>
@@ -399,6 +414,7 @@
 													<shape USE="uho"></shape>
 												</transform>							
 											</transform>
+											
 											<transform translation="-.8 -.69999 0" rotation="1 0 0 -1.570796326794897" scale =".5 .5 .5">
 												<transform rotation="0 0 1 .3">
 													<shape USE="pereponka"></shape>
@@ -407,6 +423,7 @@
 										</transform>	
 									</transform>
 								</transform>
+								
 								<transform translation="-.4 0 -.5" rotation="1 0 0 1.570796326794897">
 									<shape>
 										<appearance>
@@ -415,6 +432,7 @@
 										<sphere radius=".222"></sphere>
 									</shape>
 								</transform>
+								
 								<transform translation="-.4 .134 -.5" rotation="1 0 0 1.570796326794897">
 									<shape>
 										<appearance>
@@ -423,6 +441,7 @@
 										<sphere radius=".1"></sphere>
 									</shape>
 								</transform>
+								
 								<transform translation=".4 0 -.5" rotation="1 0 0 1.570796326794897">
 									<shape>
 										<appearance>
@@ -431,6 +450,7 @@
 										<sphere radius=".222"></sphere>
 									</shape>
 								</transform>
+								
 								<transform translation=".4 .134 -.5" rotation="1 0 0 1.570796326794897">
 									<shape>
 										<appearance>
@@ -443,6 +463,7 @@
 						</transform>
 					</transform>	
 				</transform>
+				
 				<transform translation="0 0 0">
 					<shape>
 						<appearance>
@@ -451,8 +472,9 @@
 						<sphere radius="13.37"></sphere>
 					</shape>
 				</transform>
+				
 				<background  backUrl = "back.jpg" ></background>
-				<DirectionalLight direction="0 14.20 0" intensity="0.3"></DirectionalLight>
+				<DirectionalLight direction="0 14 0" intensity="0.3"></DirectionalLight>
 				<TimeSensor DEF="TS_m1" cycleInterval="27" loop="true"></TimeSensor>
                 <OrientationInterpolator DEF="OI_m1" key="0, 0.5, 1" keyValue="0 0 1 0, 0 0 1 3.14, 0 0 1 6.28"></OrientationInterpolator>
                 <ROUTE fromNode="TS_m1" fromField="fraction_changed" toNode="OI_m1" toField="set_fraction"></ROUTE>
