@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>  
     <meta charset="utf-8" />
-    <title>Лабораторная работа 2</title>
+    <title>Лабораторная работа 3</title>
     <link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css" />
     <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
     <link rel="stylesheet" href="../css/custom.css" />
@@ -11,10 +11,17 @@
   <!-- Масштаб = 1/2 --> 
   <body>
     <h1>
-    Лабораторная 2. Ермолин Павел гр. 4741.
+    Лабораторная 3. Ермолин Павел гр. 4741.
     </h1>
     <X3D>
       <Scene>
+        <!-- Освещение -->
+        <PointLight location="-2 2 3" color="#FFFACD" intensity="0.3" shadowIntensity="0.6" shadowMapSize="1024"></PointLight>
+        <!-- Конец освещения -->
+        <!-- Фон -->
+        <Background groundAngle='1 1 1.57' groundColor='.2 .2 .2 .4 .4 .4 .6 .6 .6 .6 .6 .6 .6 .6 .6' skyAngle='1 1 1.57' skyColor='.2 .2 .2'>
+        </Background>
+        <!-- Конец фона-->
         <!-- Ствол -->      
         <Transform  translation="0 2 0">
           <Shape>
@@ -124,6 +131,7 @@
             </Shape>
           </Transform>
           <Transform rotation="0 1 0 3.14159" translation="0 0 -0.751">
+            <Anchor url="https://en.wikipedia.org/wiki/M1911_pistol" parameter="target='_self'">
               <Shape>
                 <Text string='"COLT AUTOMATIC" "CALIBRE 45"' solid='false' maxExtent="5">
                   <FontStyle family="TYPEWRITER" size='.2' spacing='1' language='en'></FontStyle>
@@ -132,11 +140,56 @@
                  <Material diffuseColor='black'></Material>
                 </Appearance>
               </Shape>
+            </Anchor>
           </Transform>
           <!-- Конец надписи -->
         </Transform>
         <!-- Конец ствола -->
         <!-- Прибамбасы -->
+        <!-- Болты -->
+        <Transform translation="3.85 0 .95">
+          <Group DEF="GripBolts">
+            <Transform rotation="0 0 1 0.2">
+             <Group DEF="Bolt">
+                <Transform scale="1 1 0.5">
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='#222222'></Material>
+                    </Appearance>
+                    <Sphere radius="0.15"></Sphere>
+                   </Shape>
+                 </Transform>
+              </Group>
+              <Transform translation="0 -2.5 0">
+                <Group  USE="Bolt">
+                </Group>
+              </Transform>
+            </Transform>
+          </Group>
+         </Transform>
+         <Transform translation="3.85 0 -.95">
+          <Group USE="GripBolts">
+          </Group>
+         </Transform>
+         <Transform translation="2.3 -1.05 0.4">
+          <Group USE="Bolt">
+          </Group>
+         </Transform>
+         <Transform translation="0 1.3 -0.7" scale=".7 .7 .7">
+            <Transform translation="1.5 0 0">
+              <Group USE="Bolt">
+              </Group>
+            </Transform>
+            <Transform translation="8.5 -.3 .25">
+              <Group USE="Bolt">
+              </Group>
+            </Transform>
+            <Transform translation="7.5 0 0">
+              <Group USE="Bolt">
+              </Group>
+            </Transform>
+         </Transform>
+        <!-- Конец болтов -->
         <!-- Предохранитель -->
         <Transform scale="4 1 1" translation="2.2 1.2 0.75" rotation="1 0 0 1.5708">
           <Shape>
