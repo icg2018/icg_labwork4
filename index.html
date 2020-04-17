@@ -388,6 +388,293 @@
             </transform>
           <!--...-->  
         <!--...-->  
+        <!-- Ладья A1 -->
+          <!-- Тело Ладьи 1 -->
+            <Transform translation="-7.87 -0.1 7.9">
+              <Shape DEF="BlueRookBody1">
+                <IndexedLineSet coordIndex="0 1 2 3 0 -1 0 4 5 1 -1 1 5 6 2 -1 2 6 7 3 -1 3 7 4 0 -1"
+                                colorIndex="0 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1"
+                                colorPerVertex="true">
+                  <Coordinate point="-0.8 0 0.8, 0.8 0 0.8, 0.8 0 -0.8, -0.8 0 -0.8,
+                                      -0.2 1 0.2, 0.2 1 0.2, 0.2 1 -0.2, -0.2 1 -0.2">           
+                  </Coordinate>
+                  <Color color="0 0 1"></Color>
+                </IndexedLineSet>
+              </Shape>
+            </Transform>
+          <!--...-->  
+          <!-- Тело Ладьи 2 --> 
+            <Transform translation="-7.87 -0.1 7.9">
+              <Shape DEF="BlueRookBody2">
+                <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true"
+                  creaseAngle="0" solid="false"
+                  coordIndex="0 1 2 3 0 -1 0 4 5 1 -1 1 5 6 2 -1 2 6 7 3 -1 3 7 4 0 -1" 
+                  colorIndex="0 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1">               
+                  <Coordinate point="-0.2 1 0.2, 0.2 1 0.2, 0.2 1 -0.2, -0.2 1 -0.2 ,
+                                     -0.8 2 0.8, 0.8 2 0.8, 0.8 2 -0.8, -0.8 2 -0.8">
+                  </Coordinate>
+                  <Color color="0 0 1"></Color>
+                </IndexedFaceSet>
+              </Shape>
+            </Transform> 
+          <!--...-->
+        <!--...-->        
+        <!-- Ладья H1 -->
+          <!-- Тело Ладьи 1 -->
+            <Transform translation="7.87 -0.1 7.9">
+              <Shape USE="BlueRookBody1"></Shape>
+            </Transform>
+          <!--...-->  
+          <!-- Тело Ладьи 2 --> 
+            <Transform translation="7.87 -0.1 7.9">
+              <Shape USE="BlueRookBody2">
+              </Shape>
+            </Transform> 
+          <!--...-->
+        <!--...-->
+        <!-- Ладья A8 -->
+          <!-- Тело Ладьи 1 -->
+            <Transform translation="-7.87 -0.1 -7.9">
+              <Shape DEF="RedRookBody1">
+                <IndexedLineSet coordIndex="0 1 2 3 0 -1 0 4 5 1 -1 1 5 6 2 -1 2 6 7 3 -1 3 7 4 0 -1"
+                                colorIndex="0 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1"
+                                colorPerVertex="true">
+                  <Coordinate point="-0.2 1 0.2, 0.2 1 0.2, 0.2 1 -0.2, -0.2 1 -0.2 ,
+                                     -0.8 2 0.8, 0.8 2 0.8, 0.8 2 -0.8, -0.8 2 -0.8">
+                  </Coordinate>
+                 <Color color="1 0 0"></Color>
+                </IndexedLineSet>
+              </Shape>
+            </Transform>
+          <!--...-->  
+          <!-- Тело Ладьи 2 --> 
+          <Transform translation="-7.87 -0.1 -7.9">
+            <Shape DEF="RedRookBody2">
+              <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true"
+                creaseAngle="0" solid="false"
+                  coordIndex="0 1 2 3 0 -1 0 4 5 1 -1 1 5 6 2 -1 2 6 7 3 -1 3 7 4 0 -1" 
+                  colorIndex="0 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1">               
+                  <Coordinate point="-0.8 0 0.8, 0.8 0 0.8, 0.8 0 -0.8, -0.8 0 -0.8,
+                                     -0.2 1 0.2, 0.2 1 0.2, 0.2 1 -0.2, -0.2 1 -0.2">                         
+                  </Coordinate>
+                  <Color color="1 0 0"></Color>
+                </IndexedFaceSet>
+              </Shape>
+            </Transform> 
+          <!--...-->
+        <!--...-->
+        <!-- Ладья H8 -->
+          <!-- Тело Ладьи 1 -->
+            <Transform translation="7.87 -0.1 -7.9">
+              <Shape USE="RedRookBody1"></Shape>
+            </Transform>
+          <!--...-->  
+          <!-- Тело Ладьи 2 --> 
+            <Transform translation="7.87 -0.1 -7.9">
+              <Shape USE="RedRookBody2"></Shape>
+            </Transform> 
+          <!--...-->
+        <!--...-->
+        <!-- Слон С1 -->
+          <!-- Основание Слона -->
+            <transform translation="-3.4 -0.05 7.9" rotation="1 0 0 -1.57">
+              <shape USE="FigureBase"></shape>                                                              
+            </transform>                                                                
+          <!--...-->  
+          <!-- Тело Слона 1 -->
+            <transform translation="-3.4 0.25 7.9">
+              <shape DEF="BlueBishopBody1"> 
+                <appearance> 
+                  <Material diffuseColor="0 0 1" transparency="0.05"></Material>
+                </appearance> 
+                <cone  BottomRadius="0.8" Height="0.5" > </cone> 
+              </shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 2 -->
+            <transform translation="-3.4 0.7 7.9" rotation="1 0 0 -3.14">
+              <shape DEF="BlueBishopBody2"> 
+                <appearance> 
+                  <Material diffuseColor="0 0 1" transparency="0.05"></Material>
+                </appearance> 
+                <cone  BottomRadius="0.6" Height="0.5" > </cone> 
+              </shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 3 -->
+            <transform translation="-3.4 1.2 7.9">
+              <shape DEF="BlueBishopBody3"> 
+                <appearance> 
+                  <Material diffuseColor="0 0 1" transparency="0.05"></Material>
+                </appearance> 
+                <cone  BottomRadius="0.6" Height="0.5" > </cone> 
+              </shape>
+            </transform>
+          <!--...-->  
+          <!-- Ободок Слона -->
+            <transform translation="-3.4 0.95 7.9" rotation="1 0 0 -1.57">
+              <shape DEF="BishopTorus"> 
+                <appearance> 
+                  <Material diffuseColor="1 1 0" transparency="0.2"></Material>
+                </appearance> 
+                <torus innerRadius="0.05" outerRadius="0.6" > </torus> 
+              </shape>                                                              
+            </transform>
+          <!--...-->  
+          <!-- Тело слона 4 -->
+            <transform translation="-3.4 1.57 7.9" rotation="1 0 0 -3.14">
+              <shape DEF="BlueBishopBody4"> 
+                <appearance> 
+                  <Material diffuseColor="0 0 1" transparency="0.05"></Material>
+                </appearance> 
+                <cone  BottomRadius="0.4" Height="0.34" > </cone> 
+              </shape>
+            </transform>                                                    
+          <!--...-->  
+          <!-- Верх Слона -->
+            <transform translation="-3.4 1.75 7.9" rotation="1 0 0 -1.57">
+              <shape DEF="BishopTop"> 
+                <appearance> 
+                  <Material diffuseColor="1 1 0" transparency="0.2"></Material>
+                </appearance> 
+                <torus innerRadius="0.05" outerRadius="0.4" > </torus> 
+              </shape>                                                              
+            </transform>
+          <!--...-->  
+        <!--...-->
+        <!-- Слон G1 -->
+          <!-- Основание Слона -->
+            <transform translation="3.4 -0.05 7.9" rotation="1 0 0 -1.57">
+              <shape USE="FigureBase"></shape>                                                              
+            </transform>                                                                
+            <!--...-->
+          <!-- Тело Слона 1 -->
+            <transform translation="3.4 0.25 7.9">
+              <shape USE="BlueBishopBody1"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 2 -->
+            <transform translation="3.4 0.7 7.9" rotation="1 0 0 -3.14">
+              <shape USE="BlueBishopBody2"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 3 -->
+            <transform translation="3.4 1.2 7.9">
+              <shape USE="BlueBishopBody3"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Ободок Слона -->
+            <transform translation="3.4 0.95 7.9" rotation="1 0 0 -1.57">
+              <shape USE="BishopTorus"></shape>                                                              
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 4 -->
+            <transform translation="3.4 1.57 7.9" rotation="1 0 0 -3.14">
+              <shape USE="BlueBishopBody4"></shape>
+            </transform>                                                              
+          <!--...-->  
+          <!-- Верх Слона -->
+            <transform translation="3.4 1.75 7.9" rotation="1 0 0 -1.57">
+              <shape USE="BishopTop"></shape>                                                              
+            </transform>
+          <!--...-->            
+        <!--...-->
+        <!-- Слон С8 -->
+          <!-- Основание Слона -->
+            <transform translation="-3.4 -0.05 -7.9" rotation="1 0 0 -1.57">
+              <shape USE="FigureBase"></shape>                                                              
+            </transform>                                                                
+          <!--...-->  
+          <!-- Тело Слона 1 -->
+            <transform translation="-3.4 0.25 -7.9">
+              <shape DEF="RedBishopBody1"> 
+                <appearance> 
+                  <Material diffuseColor="1 0 0" transparency="0.05"></Material>
+                </appearance> 
+                <cone  BottomRadius="0.8" Height="0.5" > </cone> 
+              </shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 2 -->
+            <transform translation="-3.4 0.7 -7.9" rotation="1 0 0 -3.14">
+              <shape DEF="RedBishopBody2"> 
+                <appearance> 
+                  <Material diffuseColor="1 0 0" transparency="0.05"></Material>
+                </appearance> 
+                <cone  BottomRadius="0.6" Height="0.5" > </cone> 
+              </shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 3 -->
+            <transform translation="-3.4 1.2 -7.9">
+              <shape DEF="RedBishopBody3"> 
+                <appearance> 
+                  <Material diffuseColor="1 0 0" transparency="0.05"></Material>
+                </appearance> 
+                <cone  BottomRadius="0.6" Height="0.5" > </cone> 
+              </shape>
+            </transform>
+          <!--...-->  
+          <!-- Ободок Слона -->
+            <transform translation="-3.4 0.95 -7.9" rotation="1 0 0 -1.57">
+              <shape USE="BishopTorus"></shape>                                                              
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 4 -->
+            <transform translation="-3.4 1.57 -7.9" rotation="1 0 0 -3.14">
+              <shape DEF="RedBishopBody4"> 
+                <appearance> 
+                  <Material diffuseColor="1 0 0" transparency="0.05"></Material>
+                </appearance> 
+                <cone  BottomRadius="0.4" Height="0.34" > </cone> 
+              </shape>
+            </transform>                                                              
+          <!--...-->  
+          <!-- Верх Слона -->
+            <transform translation="-3.4 1.75 -7.9" rotation="1 0 0 -1.57">
+              <shape USE="BishopTop"></shape>                                                              
+            </transform>
+          <!--...-->  
+        <!--...-->
+        <!-- Слон G8 -->
+          <!-- Основание Слона -->
+            <transform translation="3.4 -0.05 -7.9" rotation="1 0 0 -1.57">
+              <shape USE="FigureBase"></shape>                                                              
+            </transform>                                                                
+          <!--...-->  
+          <!-- Тело Слона 1 -->
+            <transform translation="3.4 0.25 -7.9">
+              <shape USE="RedBishopBody1"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 2 -->
+            <transform translation="3.4 0.7 -7.9" rotation="1 0 0 -3.14">
+              <shape USE="RedBishopBody2"> 
+              </shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 3 -->
+            <transform translation="3.4 1.2 -7.9">
+              <shape USE="RedBishopBody3"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Ободок Слона -->
+            <transform translation="3.4 0.95 -7.9" rotation="1 0 0 -1.57">
+              <shape USE="BishopTorus"></shape>                                                              
+            </transform>
+          <!--...-->  
+          <!-- Тело Слона 4 -->
+            <transform translation="3.4 1.57 -7.9" rotation="1 0 0 -3.14">
+              <shape  USE="RedBishopBody4"></shape>
+            </transform>                                                              
+          <!--...-->  
+          <!-- Верх Слона -->
+            <transform translation="3.4 1.75 -7.9" rotation="1 0 0 -1.57">
+              <shape USE="BishopTop"></shape>                                                              
+            </transform>
+          <!--...-->  
+        <!--...-->  
+        
       </scene> 
     </X3D>
   </body>
