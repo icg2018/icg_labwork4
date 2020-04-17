@@ -674,6 +674,94 @@
             </transform>
           <!--...-->  
         <!--...-->  
+        <!-- Конь B1 -->
+          <!-- Основание Коня -->
+            <transform translation="-5.63 -0.05 7.9" rotation="1 0 0 -1.57">
+              <shape USE="FigureBase"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Коня -->
+            <transform translation="-5.63 0.8 7.9">
+              <shape DEF=BlueKnightBody> 
+                <appearance> 
+                  <Material diffuseColor="0 0 1" transparency="0.05"></Material>
+                </appearance> 
+                <cone bottomRadius="0.8" height="1.8" > </cone> 
+              </shape>
+            </transform>
+          <!--...-->  
+          <!-- Голова Коня -->
+            <transform translation="-5.63 1.35 7.5">
+              <shape DEF=BlueKnightHead> 
+                <appearance> 
+                  <Material diffuseColor="0 0 1" transparency="0.05"></Material>
+                </appearance> 
+                <Box size="0.62 0.7 0.8"> </Box> 
+              </shape>
+            </transform>
+          <!--...-->  
+        <!--...-->
+        <!-- Конь G1 -->
+          <!-- Основание Коня -->
+            <transform translation="5.63 -0.05 7.9" rotation="1 0 0 -1.57">
+              <shape USE="FigureBase"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Коня -->
+            <transform translation="5.63 0.8 7.9">
+              <shape USE="BlueKnightBody"></shape>
+            </transform>
+          <!--...-->
+          <!-- Голова Коня -->
+            <transform translation="5.63 1.35 7.5">
+              <shape USE="BlueKnightHead"></shape>
+            </transform>
+          <!--...-->  
+        <!--...-->
+        <!-- Конь B8 -->
+          <!-- Основание Коня -->
+            <transform translation="-5.63 -0.05 -7.9" rotation="1 0 0 -1.57">
+              <shape USE="FigureBase"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Коня -->
+            <transform translation="-5.63 0.8 -7.9">
+              <shape DEF="RedKnightBody"> 
+                <appearance> 
+                  <Material diffuseColor="1 0 0" transparency="0.05"></Material>
+                </appearance> 
+                <cone bottomRadius="0.8" height="1.8" > </cone> 
+              </shape>
+            </transform>
+          <!--...-->  
+          <!-- Голова Коня -->
+            <transform translation="-5.63 1.35 -7.5" rotation=" 0 1 0 -3.21">
+              <shape DEF="RedKnightHead"> 
+                <appearance> 
+                  <Material diffuseColor="1 0 0" transparency="0.05"></Material>
+                </appearance> 
+                <Box size="0.62 0.7 0.8"> </Box> 
+              </shape>
+            </transform>
+          <!--...-->  
+        <!--...-->
+        <!-- Конь G8 -->
+          <!-- Основание Коня -->
+            <transform translation="5.63 -0.05 -7.9" rotation="1 0 0 -1.57">
+              <shape USE="FigureBase"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Тело Коня -->
+            <transform translation="5.63 0.8 -7.9">
+              <shape USE="RedKnightBody"></shape>
+            </transform>
+          <!--...-->  
+          <!-- Голова Коня -->
+            <transform translation="5.63 1.35 -7.5" rotation=" 0 1 0 -3.21">
+              <shape USE="RedKnightHead"></shape>
+            </transform>
+          <!--...-->  
+        <!--...-->
         
       </scene> 
     </X3D>
