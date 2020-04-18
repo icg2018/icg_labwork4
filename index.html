@@ -8,6 +8,173 @@
     <script src="https://www.x3dom.org/download/x3dom.js"></script>
   </head>
   <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
+    
+    <X3D>
+      <Scene>
+          <NavigationInfo speed="20"></NavigationInfo>
+          <Viewpoint position='30 0 -5' orientation="0 0.3 0 1.8"></Viewpoint>
+          <Background groundAngle='0.9 1.5 1.57' groundColor='0.6 0.7 0.1 0.4 0.7 0.2 0.1 0.6 0.1 0 0.3 0.1' skyAngle='0.9 1.5 1.57' skyColor='0.21 0.18 0.66 0.2 0.44 0.85 0.51 0.81 0.95 0.77 0.8 0.82'>
+          </Background>
+          <Shape>
+              <Appearance>
+                  <ImageTexture url='body.png'> </ImageTexture>
+                      <TextureProperties></TextureProperties>
+              </Appearance>
+              <Box size="1 3 2"></Box>
+          </Shape>
+          <transform translation="0, 2.4,">
+
+              <transform translation="0.92, 0,0" scale='0.2 0.1 0.4'>
+                  <Shape>
+                      <! -- Глаза-->
+                      <Appearance>
+                          <ImageTexture url='eyes.png'></ImageTexture>
+                              <TextureProperties></TextureProperties>
+                      </Appearance>
+                      <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true" creaseAngle="0" normalPerVertex="true" solid="false"
+                                      coordIndex="3 2 1 0 -1  "
+                                      colorIndex="0 1 2 3 -1">
+                          <Coordinate point="0 2 2, 0 0 2, 0 0 -2, 0 2 -2"></Coordinate>
+                  </IndexedFaceSet>
+				 </Shape>
+              </transform>
+
+              <shape>
+                  <! -- голова-->
+                  <Appearance>
+                      <ImageTexture url='head1.png'></ImageTexture>
+                          <TextureProperties></TextureProperties>
+                  </Appearance>
+                  <Box size="1.8 1.8 1.8"></Box>
+              </shape>
+          </transform>
+          <transform translation="0, -3,-0.5">
+              <shape DEF="leg">
+                  <! -- нога 1-->
+                  <Appearance>
+                      <ImageTexture url='leg.png'></ImageTexture>
+                          <TextureProperties></TextureProperties>
+                  </Appearance>
+                  <Box size="0.4 6 0.4"></Box>
+              </shape>
+          </transform>
+          <transform translation="0, -3,0.5">
+              <shape USE="leg">
+                  <! -- нога 2-->
+              </shape>
+          </transform>
+
+          <transform translation="1.5, -1,-1.2">
+              <transform rotation='0 0 1 0.707'>
+                  <shape DEF="hand">
+                      <! --рука 1 -->
+                      <Appearance>
+                          <ImageTexture url='leg.png'></ImageTexture>
+                              <TextureProperties></TextureProperties>
+                      </Appearance>
+                      <Box size="0.4 6 0.4"></Box>
+                  </shape>
+              </transform>
+          </transform>
+
+          <transform translation="1.5, -1,1.2">
+              <transform rotation='0 0 1 0.707'>
+                  <shape USE="hand">
+                      <! --рука 2 -->
+                      
+                  </shape>
+              </transform>
+          </transform>
+
+          <transform translation="2.5, -3,0" scale='0.5 0.5 0.5' rotation='0 0 1 1.7'>
+              <! -- Блок-->
+              <transform rotation="0 1 0 1.5708">
+                  <Shape DEF="side">
+                      <Appearance>
+                          <ImageTexture url='gnd_side.png'></ImageTexture>
+                              <TextureProperties></TextureProperties>
+                      </Appearance>
+                      <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true" creaseAngle="0" normalPerVertex="true" solid="false"
+                                      coordIndex="3 2 1 0 -1  "
+                                      colorIndex="0 1 2 3 -1">
+                          <Coordinate point="-2 0 2, 2 0 2, 2 0 -2, -2 0 -2"></Coordinate>
+                  </IndexedFaceSet>
+				 </Shape>
+              </transform>
+              <transform rotation="1 0 0 1.5708">
+                  <transform translation="0,-2,2" rotation="0 1 0 1.5708">
+                      <Shape USE="side">
+                      </Shape>
+                  </transform>
+              </transform>
+              <transform rotation="0 1 0 1.5708">
+                  <transform translation="-2,-2,-0" rotation="0 0 1 -1.5708">
+                      <Shape USE="side">
+                      </Shape>
+                  </transform>
+              </transform>
+              <transform translation="0,-4,0" rotation="0 1 0 1.5708">
+                  <Shape USE="side">
+                  </Shape>
+              </transform>
+              <transform translation="-2,-2,0" rotation="0 0 1 1.5708">
+                  <Shape>
+                      <Appearance>
+                          <ImageTexture url='soil.png'></ImageTexture>
+                              <TextureProperties></TextureProperties>
+                      </Appearance>
+                      <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true" creaseAngle="0" normalPerVertex="true" solid="false"
+                                      coordIndex="3 2 1 0 -1  "
+                                      colorIndex="0 1 2 3 -1">
+                          <Coordinate point="-2 0 2, 2 0 2, 2 0 -2, -2 0 -2"></Coordinate>
+                  </IndexedFaceSet>
+				 </Shape>
+              </transform>
+              <transform translation="2,-2,0" rotation="0 0 1 1.5708">
+                  <Shape>
+                      <Appearance>
+                          <ImageTexture url='gnd_top.png'></ImageTexture>
+                              <TextureProperties></TextureProperties>
+                      </Appearance>
+                      <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true" creaseAngle="0" normalPerVertex="true" solid="false"
+                                      coordIndex="3 2 1 0 -1  "
+                                      colorIndex="0 1 2 3 -1">
+                          <Coordinate point="-2 0 2, 2 0 2, 2 0 -2, -2 0 -2"></Coordinate>
+                  </IndexedFaceSet>
+				 </Shape>
+              </transform>
+              <Anchor url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                  <transform translation="0,-4,0" rotation="0 1 0 1.5708">
+                      <Shape>
+                          <Appearance>
+                              <ImageTexture url='naw.png'></ImageTexture>
+                                  <TextureProperties></TextureProperties>
+                          </Appearance>
+                          <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true" creaseAngle="0" normalPerVertex="true" solid="false"
+                                          coordIndex="3 2 1 0 -1  "
+                                          colorIndex="0 1 2 3 -1">
+                              <Coordinate point="-2 0 2, 2 0 2, 2 0 -2, -2 0 -2"></Coordinate>
+                      </IndexedFaceSet>
+					 </Shape>
+                  </transform>
+              </Anchor>
+          </transform>
+
+          <transform translation="0,-6,0" rotation="0 1 0 1.5708">
+              <Shape>
+                  <Appearance>
+                      <ImageTexture url='plane.png'></ImageTexture>
+                          <TextureProperties></TextureProperties>
+                  </Appearance>
+                  <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true" creaseAngle="0" normalPerVertex="true" solid="false"
+                                  coordIndex="3 2 1 0 -1  "
+                                  colorIndex="0 1 2 3 -1">
+                      <Coordinate point="-40 0 40, 40 0 40, 40 0 -40, -40 0 -40"></Coordinate>
+              </IndexedFaceSet>
+			  </Shape>
+          </transform>
+
+      </Scene>
+  </X3D>
   </body> 
 </html>
