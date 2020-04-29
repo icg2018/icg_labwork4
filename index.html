@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>  
+  <head>
     <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 3</title>
+    <title>3 lab</title>
     <link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css" />
     <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
     <link rel="stylesheet" href="../css/custom.css" />
     <script src="../js/custom.js"></script>
-  </head>
-  <body>
-   <p align="center">Лабораторная работа №3 Брылев Евгений </p> 
+ </head>
 
+<body>
+
+<p align="center">Лабораторная работа №3 Брылев Евгений </p> 
+<p> <h4 align="center"> Левитирующие часы</h4></p>
 
 <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom">
 
@@ -19,6 +20,141 @@
 
 <Background groundAngle='0.9 1.5 1.57' groundColor='0.21 0.18 0.66 0.2 0.44 0.85 0.51 0.81 0.95 0.77 0.8 0.82' skyAngle='0.9 1.5 1.57' skyColor='0.21 0.18 0.66 0.2 0.44 0.85 0.51 0.81 0.95 0.77 0.8 0.82'>
         </Background>
+
+<Viewpoint 
+position="0 80 0" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="0 0 70" 
+orientation="0 0 1 0">
+</Viewpoint>
+
+<Viewpoint 
+position="10 0 100" 
+orientation="0 0 1 0">
+</Viewpoint>
+
+<Viewpoint 
+position="0 0 -35" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="18 0 -30" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="30 0 -18" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="35 0 0" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="30 0 18" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="18 0 30" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="0 0 35" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="-18 0 30" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="-30 0 18" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="-35 0 0" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="-30 0 -18" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<Viewpoint 
+position="-18 -5 -30" 
+orientation="-1 0 0 1.57">
+</Viewpoint>
+
+<!---- label----->
+<transform translation="-30 -10 1" rotation=" 1 0 0 -1.57">
+	<Shape>
+        <Text string='space mood watch' solid='false'>
+          <FontStyle family="SERIF" size='2'  language='en'></FontStyle>
+        </Text>
+        <Appearance>
+          <Material diffuseColor='white'></Material>
+        </Appearance>
+      </Shape>
+  </transform>
+
+  <Transform translation="0 -13 0" >
+		<Shape DEF="pyramid">
+			<IndexedFaceSet ccw="true" colorPerVertex="true" convex="true" creaseAngle="0" normalPerVertex="true" solid="false"
+			coordIndex="
+			0 4 7 3 -1 
+			5 6 2 1 -1 
+			4 5 6 7 -1 
+			6 7 3 2 -1 
+			3 2 1 0 -1 
+			0 1 5 4"
+			colorIndex="0 1 2 3 -1 4 5 6 0 -1 1 2 3 4 -1 5 6 0 1 -1 5 6 0 1 -1 5 6 0 1">
+				<Coordinate point="-1.5 0 1.5, 1.5 0 1.5, 1.5 0 -1.5, -1.5 0 -1.5, -1 1.5 1, 1 1.5 1, 1 1.5 -1, -1 1.5 -1"></Coordinate>
+				<Color color="1 0 1,1 1 0, 0 1 1, 1 1 0, 1 1 1, 1 1 0, 1 0 1, 1 1 0, 1 1 1"></Color>
+			</IndexedFaceSet>
+		</Shape>
+	</Transform>
+
+<Transform translation="-35 -16.5 0"  rotation="0 0 1 1.57">
+<Shape USE="pyramid">
+</Shape>
+</Transform>
+
+<Transform translation="35 -16.5 0"  rotation="0 0 1 -1.57">
+<Shape USE="pyramid">
+</Shape>
+</Transform>
+
+<Transform translation="0 -16.5 -35"  rotation="1 0 0 -1.57">
+<Shape USE="pyramid">
+</Shape>
+</Transform>
+
+<Transform translation="0 -16.5 35"  rotation="1 0 0 1.57">
+<Shape USE="pyramid">
+</Shape>
+</Transform>
+
+<transform translation="0 -18 0" rotation="0 0 1 1.57" >
+ <Shape>
+ 	<!--pedestal/cup-->
+          <Appearance>
+            <Material diffuseColor='#483D8B'></Material>
+          </Appearance>
+          <SolidOfRevolution angle='6.283185' crossSection='[-10 3 -20 10 -5 5 0 35 3 35 0.1 34.9 0.5 10 5 5]' solid='false'></SolidOfRevolution> 
+        </Shape>
+   
+</transform>
 
 <transform translation="0,0"> 
 	<Shape> 
@@ -44,6 +180,7 @@
 	</shape>
 </transform> 
 
+<!--------------------------------------------------------------------------->
  <Group DEF='rocket'>
 <transform translation="5,13.75"> 
 	<shape> 
@@ -88,34 +225,8 @@
 	</shape>
 </transform> 
 </Group>
-
-<!-- ---подставка для земли --->
-<Anchor url="https://www.povarenok.ru/recipes/show/132331/" parameter="target='_self'">
-<transform rotation="1 0 0 3.14"translation="0, -19,0">
- 		<Shape>
-          <Appearance>
-            <ImageTexture url='https://st2.depositphotos.com/1000938/5384/i/950/depositphotos_53840339-stock-photo-waffle-texture.jpg'> </ImageTexture>
-				<TextureProperties></TextureProperties> 
-          </Appearance>
-          <Cone height="20" bottomRadius="4"></Cone>
-        </Shape>
-</transform>
-</Anchor>
-
-<!-- torus-->
-<transform rotation="1 0 0 -1.57" translation="0,-11,0">
-		<Shape>
-          <Torus innerRadius="2" outerRadius="4"></Torus>
-          <Appearance>
-           <ImageTexture url='https://st2.depositphotos.com/1000938/5384/i/950/depositphotos_53840339-stock-photo-waffle-texture.jpg'> </ImageTexture>
-				<TextureProperties></TextureProperties> 
-          </Appearance>
-        </Shape>
-</transform>   
-
 <!-- -----------navigation---->
 <NavigationInfo type='ANIMATE' speed="5"></NavigationInfo>
-
 <!-- -----------light---->
 <Spotlight color='yellow' location='20 15 0' direction='1 0 0' ></Spotlight>
 
@@ -137,22 +248,148 @@
 </transform>
 </Anchor>
 
-<!-- Pedestal top-->
-<transform DEF="topPedestalMoon" rotation="0 0 1 3.14" translation="25,35,-2">
-	<shape USE="PedestalMoon">
-	</shape>
+<!-- fog-->
+<Fog fogType="EXPONENTIAL" color="#B0E0E6" visibilityRange='300'></Fog>
+
+<transform DEF="sadness"   translation="0 -5 -20"  center="20 0 0"> 
+   <transform rotation="1 0 0 1.4">
+	<Shape> 
+		<Appearance> 
+ <!--smile sadness -->
+  			<material DEF="Mat" transparency="0"> 
+  				<ImageTexture  url='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27acd884418177.5d5c4ad8d0177.jpg'> </ImageTexture>
+  			</material>
+			
+		</Appearance> 
+					<Cylinder radius="0.25" height="16"></Cylinder>
+	</Shape> 
+</transform>
 </transform>
 
-<!-- fog-->
-<Fog fogType="LINEAR" color="#B0E0E6" visibilityRange='300'></Fog>
+<!-- ball watch---------------------------------------------->
+<transform DEF="12"  translation="0, -10, -35" rotation="1 0 0 -1.7"  > 
+	<Shape DEF="smile_big_ball"> 
+		<Appearance> 
+  			<ImageTexture url='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/64d37654642197.596400e9a6f0b.jpg'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="2"></Sphere> 
+	</Shape> 
+</transform>
 
- 
-        <!--встраивание-------------->
-        <Transform translation="-35 20 -35">
-          <Inline url="sun.x3d"></Inline>
-        </Transform>
+<transform DEF="11"  translation="-18, -10, -30"  rotation="1 0 0 -1.7"> 
+	<Shape> 
+		<Appearance> 
+  			<ImageTexture url='https://mir-s3-cdn-cf.behance.net/project_modules/disp/fba36722433459.56312b2d6a55a.png'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="1"></Sphere> 
+	</Shape> 
+</transform>
 
+<transform DEF="10"  translation="-30, -10, -18" rotation="1 0 0 -1.7" > 
+	<Shape> 
+		<Appearance> 
+  			<ImageTexture url='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6709e54642197.596400e9a6c8a.jpg'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="1"></Sphere> 
+	</Shape> 
+</transform>
+
+<transform DEF="9"  translation="-35, -10, 0"  rotation="1 0 0 -1.7"> 
+	<Shape USE="smile_big_ball"> 
+	</Shape> 
+</transform>
+
+
+<transform DEF="8"  translation="-30, -10, 18" rotation="1 0 0 -1.7" > 
+	<Shape> 
+		<Appearance> 
+  			<ImageTexture url='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/67fc6154642197.596400e9a75a7.jpg'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="1"></Sphere> 
+	</Shape> 
+</transform>
+
+<transform DEF="7"  translation="-18, -10, 30" rotation="1 0 0 -1.7" > 
+	<Shape> 
+		<Appearance> 
+  			<ImageTexture url='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3e27d454642197.596400e9a7812.jpg'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="1"></Sphere> 
+	</Shape> 
+</transform>
+
+
+<transform DEF="6"  translation="0, -10, 35" rotation="1 0 0 -1.7" > 
+	<Shape USE="smile_big_ball"> 
+	</Shape> 
+</transform>
+
+<transform DEF="5"  translation="18, -10, 30"  rotation="1 0 0 -1.7"> 
+	<Shape> 
+		<Appearance> 
+  			<ImageTexture url='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/460c8454642197.596400e9a67b7.jpg'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="1"></Sphere> 
+	</Shape> 
+</transform>
+
+<transform DEF="4"  translation="30, -10, 18"  rotation="1 0 0 -1.7"> 
+	<Shape> 
+		<Appearance> 
+  			<ImageTexture url='https://sun9-30.userapi.com/c858528/v858528486/169633/ItO0R4OxFCc.jpg'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="1"></Sphere> 
+	</Shape> 
+</transform>
+
+<Anchor url="https://youtu.be/gZ93V_igqPQ" parameter="target='_self'">
+<transform DEF="3"  translation="35, -10, 0" rotation="1 0 0 -1.7" > 
+	<Shape> 
+		<Appearance> 
+  			<ImageTexture url='https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/f0441289591359.5df99823f2555.png'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="2"></Sphere> 
+	</Shape> 
+</transform>
+</Anchor>
+<transform DEF="2"  translation="30, -10, -18" rotation="1 0 0 -1.7" > 
+	<Shape> 
+		<Appearance> 
+  			<ImageTexture url='https://sun9-55.userapi.com/c858528/v858528486/169673/rOyO7Rukq5M.jpg'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="1"></Sphere> 
+	</Shape> 
+</transform>
+
+<transform DEF="1"  translation="18, -10, -30" rotation="1 0 0 -1.7" > 
+	<Shape> 
+		<Appearance> 
+  			<ImageTexture url='https://sun9-65.userapi.com/c858528/v858528486/1695f0/w4f7_b4GjwM.jpg'> </ImageTexture>
+				<TextureProperties>
+				</TextureProperties> 
+		</Appearance> 
+					<Sphere radius="1"></Sphere> 
+	</Shape> 
+</transform>
 </scene>
 </X3D>  
-</body> 
+</body>
 </html>
