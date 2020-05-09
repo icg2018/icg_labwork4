@@ -11,10 +11,15 @@
 		<Scene>
 			<!--Background-->
 			<Background groundAngle='1 1.5 1.57' groundColor='.8 .8 .8 .7 .7 .7 .6 .6 .6 .6 .6 .6 .6 .5 .5' skyAngle='1 1.5 1.57' skyColor='.7 .7 .7 .85 .84 .85 .81 .81 .95 .77 .8 .82'></Background>
-        	<!--Viewpoint-->
+        	        <!--Viewpoint-->
 			<Viewpoint 	position="7 1 19" orientation="0 .2 0 .4"></Viewpoint>
-			<!--Light-->
-			<Spotlight color='white' location='-3 15 -2' direction='2 0 0'></Spotlight>
+			<Viewpoint 	position="0 1 25"></Viewpoint>
+			<Viewpoint 	position="-9 1 19" orientation="0 .2 0 -.4"></Viewpoint>
+			<!--Navigation-->
+			<NavigationInfo type='ANIMATE' speed="3" headlight = "false"></NavigationInfo>
+			<!--Lights-->
+			<Spotlight color='white' location='5 3 4' direction='-2 -1 -2'></Spotlight>
+			<PointLight color='violet' location='0 5.5 2' ></PointLight>
 			<!--Fog-->
 			<Fog fogType="EXPONENTIAL" color="#FFFFFF" visibilityRange='125'></Fog>
 			<!--Body-->
