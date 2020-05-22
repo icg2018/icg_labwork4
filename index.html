@@ -17,6 +17,8 @@
             <viewpoint id="two" position=" 15 0 0" orientation="0 1 0 0.9" fieldofview="1.1" description="camera"></viewpoint>
             <viewpoint id="three" position="-1 5 8 " orientation="1 0 0 -1" fieldofview="0.9" description="camera"></viewpoint>
 
+<NavigationInfo headlight='false'></NavigationInfo>
+
  <Background groundAngle='0.9 1.5 1.57' groundColor='0.7 0.7 0.1 0.4 0.9 0.2 0.1 0.6 0.1 0 0.1 0.9' skyAngle='0.9 1.5 1.57' skyColor='0.21 0.18 0.66 0.2 0.44 0.85 0.51 0.81 0.95 0.77 0.8 0.82'>
         </Background>
 
@@ -472,7 +474,9 @@
 
 
 <!--Освещение сцены-->
-                    <pointlight def='Lamp1' color='1 1 0' location='9 10 -1' radius='40' global='true' />
+                    <pointlight def='Lamp1' color='1 1 0' location='0 10 0' radius='20' global='true' />
+                     <DirectionalLight def='Lamp2' direction='0 0 -1' color='white' intensity='.5'></DirectionalLight>
+         <PointLight def='Lamp3'location="11 0 -12" color="white" intensity=".6" radius='40'></PointLight>
                    
           </Scene>
 
