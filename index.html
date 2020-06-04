@@ -15,12 +15,14 @@
     <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom">
       <Scene> 
         
+         <DirectionalLight id="directional" direction='1 0 -1' on ="TRUE" intensity='0.8' shadowIntensity='0.6'> </DirectionalLight> 
+
         <Viewpoint id="front" position="0 0 12" orientation="0 0 0 0" description="camera"></Viewpoint>
         <Viewpoint id="bottom" position="0 -15 0" orientation="1 0 0 1.57" description="camera"></Viewpoint>
-        <Viewpoint id="overview" position="2 5 12" orientation="-.5 0.5 0 .35" description="camera"></Viewpoint>
+        <Viewpoint id="overview" position="6 5 12" orientation="-1.2 1 0 .5" description="camera"></Viewpoint>
         <Viewpoint id="plane" position="-14 8 3" orientation=".5 1 0 -1.57" description="camera"></Viewpoint>
 
-      <Transform translation = "0 -.3">
+      <Transform>
 <!--Platform-->
           <Transform translation = "0 -1"> 
             <Shape>
