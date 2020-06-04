@@ -14,6 +14,12 @@
     <h1 style = "color: white" >Даже если здесь что-то есть, моей лабы тут нет!</h1>
     <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom">
       <Scene> 
+        
+        <Viewpoint id="front" position="0 0 12" orientation="0 0 0 0" description="camera"></Viewpoint>
+        <Viewpoint id="bottom" position="0 -15 0" orientation="1 0 0 1.57" description="camera"></Viewpoint>
+        <Viewpoint id="overview" position="2 5 12" orientation="-.5 0.5 0 .35" description="camera"></Viewpoint>
+        <Viewpoint id="plane" position="-14 8 3" orientation=".5 1 0 -1.57" description="camera"></Viewpoint>
+
       <Transform translation = "0 -.3">
 <!--Platform-->
           <Transform translation = "0 -1"> 
@@ -37,10 +43,10 @@
             </Transform> 
 
 <!--Clickbait-->
-            <Transform translation = "-1.78 -1.252 1.82" rotation = "1 0 0 1.57">
+            <Transform translation = "-1.86 -1.252 1.85" rotation = "1 0 0 1.57">
               <Shape>
                 <Text string = "ШОК!!!" solid = "true" >
-                  <FontStyle size = ".35" style="bold"></FontStyle>
+                  <FontStyle size = ".3" style="bold"></FontStyle>
                 </Text>
                 <Appearance>
                   <Material diffusecolor = "red"></Material>
@@ -48,7 +54,7 @@
               </Shape>
             </Transform>
 
-            <Transform translation = "-1.7 -1.252 .6" rotation = "1 0 0 1.57">
+            <Transform translation = "-1.7 -1.252 .55" rotation = "1 0 0 1.57">
               <Shape>
                 <Text string = "ЖМИ!!!" solid = "true" >
                   <FontStyle size = ".35" style="bold"></FontStyle>
@@ -59,10 +65,10 @@
               </Shape>
             </Transform>
 
-            <Transform translation = "-.7 -1.252 1.6" rotation = "1 0 0 1.57">
+            <Transform translation = "-.78 -1.252 1.63" rotation = "1 0 0 1.57">
               <Shape>
                 <Text string = "Британский ученый нашел" solid = "true" >
-                  <FontStyle size = ".25"></FontStyle>
+                  <FontStyle family="TYPEWRITER" size = ".25"></FontStyle>
                 </Text>
                 <Appearance>
                   <Material diffusecolor = "black"></Material>
@@ -73,7 +79,7 @@
             <Transform translation = "-1 -1.252 1.4" rotation = "1 0 0 1.57">
               <Shape>
                 <Text string = "ответ на легендарный" solid = "true" >
-                  <FontStyle size = ".25"></FontStyle>
+                  <FontStyle family="TYPEWRITER" size = ".25"></FontStyle>
                 </Text>
                 <Appearance>
                   <Material diffusecolor = "black"></Material>
@@ -81,10 +87,10 @@
               </Shape>
             </Transform>
 
-            <Transform translation = "-1.95 -1.252 1.2" rotation = "1 0 0 1.57">
+            <Transform translation = "-1.975 -1.252 1.2" rotation = "1 0 0 1.57">
               <Shape>
                 <Text string = "вопрос!" solid = "true" >
-                  <FontStyle size = ".25"></FontStyle>
+                  <FontStyle family="TYPEWRITER" size = ".25"></FontStyle>
                 </Text>
                 <Appearance>
                   <Material diffusecolor = "black"></Material>
@@ -92,10 +98,23 @@
               </Shape>
             </Transform>
 
-            <Transform translation = "-1.5 -1.252 1" rotation = "1 0 0 1.57">
+            <Transform translation = "-1.53 -1.252 .95" rotation = "1 0 0 1.57">
               <Shape>
                 <Text string = "Это скрывали!" solid = "true" >
-                  <FontStyle size = ".25"></FontStyle>
+                  <FontStyle family="TYPEWRITER" size = ".25"></FontStyle>
+                </Text>
+                <Appearance>
+                  <Material diffusecolor = "black"></Material>
+                </Appearance>
+              </Shape>
+            </Transform>
+          </Anchor>
+<!--Explanation-->
+          <Anchor url = "https://vk.cc/av4TzP">
+            <Transform translation = "0 -1.05 2.01">
+              <Shape>
+                <Text string = "Если непонятно, что это и при чем тут сила, жми">
+                  <FontStyle size = ".2" style = "bold"></FontStyle>
                 </Text>
                 <Appearance>
                   <Material diffusecolor = "black"></Material>
@@ -156,9 +175,8 @@
 
 <!--Balls+Rope-->
         <!--Ball_1-->
-          <Group DEF = "BALL">
             <Transform>
-              <Shape USE = "ball">
+              <Shape DEF = "ball">
                 <Appearance>
                   <ImageTexture url="textures/black.jpg"></ImageTexture>
                 </Appearance>
@@ -166,6 +184,7 @@
               </Shape>
             </Transform>
 
+           <Group DEF = "ROPES">
             <Transform translation = "0 1.16 -.8" rotation =  "1 0 0 -0.79">
               <Shape DEF = "Rope">
                 <Appearance>
@@ -182,19 +201,23 @@
 
         <!--Ball_2-->
           <Transform translation = ".8">
-            <Group USE = "BALL"></Group>
+            <Shape USE = "ball">
+            <Group USE = "ROPES"></Group>
           </Transform>
         <!--Ball_3-->
           <Transform translation = "1.6">
-            <Group USE = "BALL"></Group>
+            <Shape USE = "ball"></Shape>
+            <Group USE = "ROPES"></Group>
           </Transform>
         <!--Ball_4-->
           <Transform translation = "-.8">
-            <Group USE = "BALL"></Group>
+            <Shape USE = "ball"></Shape>
+            <Group USE = "ROPES"></Group>
           </Transform>
         <!--Ball_5-->
           <Transform translation = "-1.6">
-            <Group USE = "BALL"></Group>
+            <Shape USE = "ball"></Shape>
+            <Group USE = "ROPES"></Group>
           </Transform>
 <!--Cube-->
           <Transform translation="0 1 -0.25" scale = "0.125 0.125 0.125" rotation = "1 0 1 0.79">
@@ -222,8 +245,8 @@
               </Shape>
             </Transform>
 <!--Text-->
-            <Transform translation = "-7 2.76 -.5" rotation = "1 0 0 -1.57" scale = "0.25 0.25 0.25">
-              <Transform rotation = "0 1 0 0.24">  
+            <Transform translation = "-7 2.76 -.5" rotation = "1 0 0 -1.57" scale = ".25 .25 .25">
+              <Transform rotation = "0 1 0 .24">  
                 <Shape>
                   <Text string = "Сила в правде!" solid = "true" >
                     <FontStyle size = "1"></FontStyle>
@@ -235,16 +258,16 @@
               </Transform>
             </Transform>
 
-           <Transform translation = "-6.8 2.76 .5" rotation = "1 0 0 -1.57" scale = "0.25 0.25 0.25">
-            <Transform rotation = "0 1 0 0.24">  
-              <Shape>
-                <Text string = "Ну и в ньютонах" solid = "true" >
-                  <FontStyle size = "1"></FontStyle>
-                </Text>
-                <Appearance>
-                  <Material diffusecolor = "black"></Material>
-                </Appearance>
-              </Shape>
+           <Transform translation = "-6.8 2.76 .5" rotation = "1 0 0 -1.57" scale = ".25 .25 .25">
+            <Transform rotation = "0 1 0 .29">
+                <Shape>
+                    <Text string = "Ну и в ньютонах" solid = "true" >
+                      <FontStyle size = "1"></FontStyle>
+                    </Text>
+                    <Appearance>
+                      <Material diffusecolor = "black"></Material>
+                    </Appearance>
+                </Shape>
             </Transform>
           </Transform>
          </Group>
