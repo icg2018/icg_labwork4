@@ -177,6 +177,7 @@
 
 <!--Balls+Rope-->
         <!--Ball_1-->
+          <Group DEF = "Ball+Ropes">
             <Transform>
               <Shape DEF = "ball">
                 <Appearance>
@@ -185,10 +186,9 @@
                 <Sphere radius = ".4"></Sphere>
               </Shape>
             </Transform>
-
-           <Group DEF = "ROPES">
+         
             <Transform translation = "0 1.16 -.8" rotation =  "1 0 0 -0.79">
-              <Shape DEF = "Rope">
+              <Shape DEF = "rope">
                 <Appearance>
                   <ImageTexture url="textures/metallic.jpg"></ImageTexture>
                 </Appearance>
@@ -197,29 +197,25 @@
             </Transform>
 
             <Transform translation = "0 1.16 .8" rotation =  "1 0 0 0.79">
-              <Shape USE = "Rope"></Shape>
+              <Shape USE = "rope"></Shape>
             </Transform>
           </Group>
 
         <!--Ball_2-->
           <Transform translation = ".8">
-            <Shape USE = "ball">
-            <Group USE = "ROPES"></Group>
+            <Group USE = "Ball+Ropes"></Group>
           </Transform>
         <!--Ball_3-->
           <Transform translation = "1.6">
-            <Shape USE = "ball"></Shape>
-            <Group USE = "ROPES"></Group>
+            <Group USE = "Ball+Ropes"></Group>
           </Transform>
         <!--Ball_4-->
           <Transform translation = "-.8">
-            <Shape USE = "ball"></Shape>
-            <Group USE = "ROPES"></Group>
+            <Group USE = "Ball+Ropes"></Group>
           </Transform>
         <!--Ball_5-->
           <Transform translation = "-1.6">
-            <Shape USE = "ball"></Shape>
-            <Group USE = "ROPES"></Group>
+            <Group USE = "Ball+Ropes"></Group>
           </Transform>
 <!--Cube-->
           <Transform translation="0 1 -0.25" scale = "0.125 0.125 0.125" rotation = "1 0 1 0.79">
