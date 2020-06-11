@@ -1,18 +1,17 @@
+<!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <title> Laba3 </title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css" />
-    <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
-    <link rel="stylesheet" href="../css/custom.css" />
-    <script src="../js/custom.js"></script>
-  </head>
-  <body>
-    <h1>Чики Бамбони в заборе</h1>
-    <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom">      
-      <Scene>         
-
-        <NavigationInfo type='NONE' speed="5"></NavigationInfo>
+<head>  
+  <meta charset="utf-8" />
+  <title>Lab1</title>
+  <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
+  <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+  <link rel="stylesheet" href="../css/custom.css" />
+  <script src="../js/custom.js"></script>
+</head>
+<body>
+  <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom">
+    <scene >
+      <NavigationInfo type='NONE' speed="5"></NavigationInfo>
             <viewpoint id="one" position=" 0 3 40" fieldofview="0.8" description="camera"></viewpoint>
             <viewpoint id="two" position="0 0 10" fieldofview="1" description="camera"></viewpoint>
             <viewpoint id="three" position="0 60 6 " orientation="0 1 1 -3.14" fieldofview="0.5" description="camera"></viewpoint>
@@ -461,13 +460,13 @@
           <Box size="1 0.3 1"></Box>
         </Shape>
         </Transform>
-        </Scene>
-    </X3D>
-    <div id="camera_buttons" style="display: block;">
+    </scene>
+  </X3D>
+  <div id="camera_buttons" style="display: block;">
         <button onclick="document.getElementById('one').setAttribute('set_bind','true');" style="border: none; background: transparent; display: block">Camera №1 <br><img src='camera-lens-icon.jpg'></button>
         <button onclick="document.getElementById('two').setAttribute('set_bind','true');" style="border: none; background: transparent; display: block">Camera №2<br><img src='camera-lens-icon.jpg'></button>
         <button onclick="document.getElementById('three').setAttribute('set_bind','true');" style="border: none; background: transparent; display: block">Camera №3<br><img src='camera-lens-icon.jpg'></button>
 
     </div>
-  </body>
-  </html>
+</body>
+</html>
