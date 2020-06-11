@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <title>Такса</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css" />
-    <script src="https://www.x3dom.org/download/dev/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Lab3</h1>
-    <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom">      
-      <Scene>
+<head>
+  <meta charset="utf-8" />
+  <meta name='title' content='TextureTransformFull.x3d'/> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name='reference' content='LineSet.x3d'/> 
+  <meta name='title' content='IndexedLineSet.x3d'/> 
+  <title>Lab3</title>
+  <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+  <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+  <script src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+  <link rel="stylesheet" href="../css/custom.css" />
+  <script src="../js/custom.js"></script>
+</head>
+<body>
+  <h1>Lab3</h1>
+  <x3d width='1280px' height='780px'>
+    <scene>
  <NavigationInfo type='NONE' speed="5"></NavigationInfo>
             <viewpoint id="one" position=" 0 3 40" fieldofview="0.8" description="camera"></viewpoint>
             <viewpoint id="two" position="0 0 10" fieldofview="1" description="camera"></viewpoint>
@@ -459,14 +466,21 @@
           <Box size="1 0.3 1"></Box>
         </Shape>
         </Transform>
-      </Scene>
-    </X3D>
-      <div id="camera_buttons" style="display: block;">
+        <Transform translation="5.1 -4.2 0" scale="0.5 0.5 0.5" rotation="0 0 1 1.6">  <!--Тарелка -->
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='#008080'></Material>
+          </Appearance>
+          <SolidOfRevolution angle='6.29' crossSection='[0 1 2 3 1 1 ]' solid='false'></SolidOfRevolution> 
+        </Shape>
+        </Transform>
+</scene>
+</x3d>
+ <div id="camera_buttons" style="display: block;">
         <button onclick="document.getElementById('one').setAttribute('set_bind','true');" style="border: none; background: transparent; display: block">Camera №1 <br><img alt="1" src='camera-lens-icon.jpg'></button>
         <button onclick="document.getElementById('two').setAttribute('set_bind','true');" style="border: none; background: transparent; display: block">Camera №2<br><img alt="1" src='camera-lens-icon.jpg'></button>
         <button onclick="document.getElementById('three').setAttribute('set_bind','true');" style="border: none; background: transparent; display: block">Camera №3<br><img alt="1" src='camera-lens-icon.jpg'></button>
 
     </div>
-  </body>
-</html> 
-
+</body>
+</html>
