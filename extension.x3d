@@ -1,0 +1,43 @@
+<Scene>
+	<Transform translation= "2 -1.5 2.7">
+	<Transform translation= "-0.5 0.3 0.26">
+	<Shape>
+	  <Text string='Buttons' solid='false'>
+	    <FontStyle family="TYPEWRITER" size='0.25' spacing='0.1' language='en'></FontStyle>
+	  </Text>
+	  <Appearance>
+	    <Material diffuseColor='red'></Material>
+	  </Appearance>
+	</Shape>
+	</Transform>  
+	<Shape>
+	<Appearance>
+	  <Material diffuseColor=".3 .3 .3" emissiveColor=".1 .1 .1"></Material>
+	</Appearance>
+	<Box size="1 1 0.5"></Box>
+	</Shape>
+	</Transform>
+	<Transform translation= "1.8 -0.95 2.75">
+	<Group DEF="Button">
+	<Shape>
+	  <Appearance>
+	    <Material diffuseColor='black'></Material>
+	  </Appearance>
+	  <Nozzle outerRadius="0.05" innerRadius="0.02" nozzleRadius="0.08" nozzleHeight="0.05" height="0.15"></Nozzle> 
+	</Shape>
+	<Transform translation= "0 0.075  0">
+	    <Shape> 
+	      <Appearance>
+	        <Material diffuseColor='red'></Material>
+	      </Appearance>
+	      <Dish radius="18" height="0.06"></Dish> 
+	    </Shape>
+	</Transform>
+	</Group>
+	</Transform>
+	<Anchor url="https://en.wikipedia.org/wiki/Dragon_2" parameter="target='_self'">
+	<Transform translation= "2.2 -0.95 2.75">
+	<Group  USE="Button"></Group>
+	</Transform>
+	</Anchor>
+</Scene>
