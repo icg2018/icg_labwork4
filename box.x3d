@@ -1,0 +1,9 @@
+
+ <Scene>
+   <Shape
+     <box size="1.35 1.40 1.35"></box>
+     <Appearance>
+       <Material diffuseColor="1 0 0"></Material>
+      </Appearance>
+    </Shape>
+ </Scene>
