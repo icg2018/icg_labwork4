@@ -10,13 +10,14 @@
   <body>
     <x3d width="100vw" height="100vh">   
 		<Scene>
+<!--Навигация кто-как-->
 			<NavigationInfo type="FLY" speed="5" transitionType="ANIMATE" transitionTime="5" avatarSize="0.1 0.1 0.1"></NavigationInfo>
-
-
+<!--Туман-->
 			<Fog color="0.8 0.8 0.8" isActive="true" visibilityRange="100"></Fog>
 <!--<DirectionalLight direction='-1 -1 -1' on ="TRUE" intensity='0.2' shadowIntensity='0.5'> </DirectionalLight>-->
 <!--Начало сцены-->
 <transform translation='-3 0 0'>
+<!--Точки обзора-->
 	<Group DEF="Viewpoint">
 	<Transform rotation='0 1 0 1.25'>
 		<Viewpoint id='view2' position="3 -3 8.5" orientation='1,0,0,0.1' > </Viewpoint>
@@ -26,15 +27,9 @@
 		<Viewpoint id='view1' position="3 -4 4" orientation='1,0,0,-0.15' > </Viewpoint>
 	</Transform>
 </Group>
-	
-<Shape>
-		<PointSet>
-		  <Color color="1 0 0"></Color>
-		  <Coordinate point="0.4 0 -0.4"></Coordinate>
-		  </PointSet>
-		</Shape>
-		<PointLight location="0.4 0 -0.4" on='TRUE' intensity="1" shadowIntensity="0.5" radius='4.2'>
-		</PointLight>
+<!--Точечный свет главная колонна-->	
+		<PointLight location="0.4 0 -0.4" on='TRUE' intensity="1" shadowIntensity="0.5" radius='4.2'></PointLight>
+<!--Точка направленного спота на главную-->
 		<Shape>
 			<PointSet>
 			  <Color color="1 0 0"></Color>
@@ -43,6 +38,8 @@
 			</Shape>
 		<SpotLight location="0.4 0 -5.6" intensity="1" direction="0 0.5 1" beamWidth="0.9" cutOffAngle="0.90" radius="7" >
 		</SpotLight>
+
+<!--Основное начало сцены, объекты-->
 		<!--Водичка-->
 		<transform translation='0 -5.3 -6'>
       <Inline url='w.x3d'>
