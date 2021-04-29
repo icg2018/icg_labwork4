@@ -1,0 +1,20 @@
+       <scene>
+<!-- сердце левая часть-->
+     <Transform translation="5.7 2 -4" scale="1.2 2.3 1.2" rotation="0 0 1 0.4">
+       <Shape>
+           <Appearance>
+               <Material diffuseColor='#d40d34'></Material>
+           </Appearance>
+           <Sphere radius="0.5"></Sphere>
+       </Shape>
+   </Transform>
+   <!-- сердце правая часть-->
+   <Transform translation="6.4 2 -4" scale="1.2 2.3 1.2" rotation="0 0 1 -0.4">
+       <Shape>
+           <Appearance>
+               <Material diffuseColor='#d40d34'></Material>
+           </Appearance>
+           <Sphere radius="0.5"></Sphere>
+       </Shape>
+   </Transform>
+</scene>
