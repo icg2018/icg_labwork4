@@ -139,6 +139,7 @@
 			</shape>
 		</transform>
 	</transform>
+</Group>
 	<!--троса-->
 	<transform translation='2.2 -2.2 -0.8' rotation='0 1 1 0.95'>
 		<shape>
@@ -164,7 +165,7 @@
 			<cylinder height="3.5" radius='0.02'></cylinder>
 		</shape>
 	</transform>
-</Group>
+
 	<!--дорога 1-->
 	<group DEF="Дорога">
 		<transform translation='3.9 -3.5 -3' rotation='0 0 -1 0.10'>
@@ -230,95 +231,7 @@
 
 	<transform translation='-3 0 -5.2'>
 		<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!клонирование начинается здесь!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-		<shape USE="колонки">
-	</shape>
-		<transform translation='0.8 0 0'>
-			<shape USE="колонки">
-			</shape>
-		<transform translation='0 0 -0.8'>
-			<shape USE="колонки">
-			</shape>
-		<transform translation='-0.8 0 0'>
-			<shape USE="колонки">
-			</shape>
-		</transform>
-	</transform>
-</transform>
-<!--верхушка колонок-->
-		<transform translation='0.4 0.55 -0.4'>
-		<shape>
-			<appearance>
-				<imagetexture url="up.png"></imagetexture>
-			</appearance>
-			<box size="1.1 0.1 1.1"></box>
-		</shape>
-		<transform translation='0 0.125 0'>
-		<shape>
-			<appearance>
-				<imagetexture url="up.png"></imagetexture>
-			</appearance>
-			<cylinder height="0.15" radius='0.55'></cylinder>
-		</shape>
-		<transform translation='0 0.15 0'>
-		<shape>
-			<appearance>
-				<imagetexture url="u.png"></imagetexture>
-			</appearance>
-			<cone bottomRadius='0.55' height="0.15" ></cone>
-		</shape>
-		</transform>
-	</transform>
-</transform>
-<!--колонна с установкой верхушки и лампы-->
-		<transform translation='0.4 -2.5 -0.4'>
-			<shape>
-				<appearance>
-					<imagetexture url="r1.png"></imagetexture>
-				</appearance>
-				<box size="1.2 4 1.2"></box>
-			</shape>
-			<transform translation='0 2.1 0'>
-			<shape>
-				<appearance>
-					<imagetexture url="m.png"></imagetexture>
-				</appearance>
-				<box size="0.4 0.2 0.4"></box>
-			</shape>
-			<transform translation='0 0.3 0'>
-				<shape>
-					<appearance>
-						<material diffuseColor="#fbff00" transparency='0.5'></material>
-					</appearance>
-					<box size="0.2 0.4 0.2"></box>
-				</shape>
-	</transform>
-</transform>
-</transform>
-<!--дно колонны, боксы для тросов-->
-<transform translation='0.4 -4.8 -0.4' scale='7 1 2'>
-<shape>
-	<appearance>
-		<material diffuseColor="#de5918"></material>
-	</appearance>
-	<cone bottomRadius="1" height='2'></cone>
-</shape>
-</transform>
-<transform translation='1.1 -0.8 -0.4'>
-<shape>
-	<appearance>
-		<imagetexture url="m.png"></imagetexture>
-	</appearance>
-	<box size="0.2 0.5 0.2"></box>
-</shape>
-<transform translation='-1.4 0 0'>
-	<shape>
-		<appearance>
-			<imagetexture url="m.png"></imagetexture>
-		</appearance>
-		<box size="0.2 0.5 0.2"></box>
-	</shape>
-</transform>
-</transform>
+		<Group USE="Левая колонна"></Group>
 <!--троса-->
 <transform translation='2.2 -2.2 0' rotation='0 -1 1 0.95'>
 <shape>
