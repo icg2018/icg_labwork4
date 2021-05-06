@@ -1,0 +1,8 @@
+<Scene>
+	<Shape>
+      <Appearance>
+        <ImageTexture url="stol.jpg"></ImageTexture>
+      </Appearance>
+      <Box size="3 0.1 3"></Box>
+    </Shape>
+</Scene>

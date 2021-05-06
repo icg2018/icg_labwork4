@@ -8,6 +8,172 @@
     <script src="https://www.x3dom.org/download/x3dom.js"></script>
   </head>
   <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
+    <X3D> 
+    <Scene>
+
+      <!--Фон-->
+      <Background Skycolor='.16 .82 1'></Background>
+
+      <!--Настройки навигации-->  
+      <NavigationInfo type="FLY" speed="7" transitionType="ANIMATE" transitionTime="3" avatarSize="0.5 2 0.1"></NavigationInfo>
+      
+      <!--Туман-->
+      <Fog color='.3 .8 1' visibilityRange='150'></Fog>
+
+      <!--Источники света-->
+      <Group DEF='Lights'>
+        <DirectionalLight direction='-3 -2.5 -7' intensity='1' shadowIntensity='0.4'> </DirectionalLight>
+        <PointLight intensity='1' color='1 0 0' location='0 10 0' radius='17'></PointLight>
+        <SpotLight location='0 10 -3' intensity='1' direction='4 -5 -1' beamWidth='0.88' cutOffAngle='1.5' radius='15'></SpotLight>
+      </Group>
+
+      <!--Точки наблюдения-->
+      <Group DEF='viewpont'>
+        <Viewpoint position='10 8.5 20' fieldOfView='0.7' orientation='-0.8, 1, 0.4, 0.5'></Viewpoint>
+        <Viewpoint position='0 1 5' fieldOfView='0.7'></Viewpoint>
+      </Group>
+
+      <!--Трава-->
+      <Group DEF='Ground'>
+        <Transform translation="0 -1.6 0">
+        <Shape>          
+          <Appearance>
+            <ImageTexture url="grass.jpg"></ImageTexture>
+            <Material></Material>
+          </Appearance>
+          <Box size="30 0.05 30"></Box>
+        </Shape>
+        </Transform>
+      </Group>
+
+      <!--Пол-->
+      <Collision enabled='true'>
+      <Group DEF='Dom_Steny'>
+        <Transform translation="0 -1.56 0">
+        <Shape>
+          <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true"
+                                     creaseAngle="0" solid="false"
+                                     coordIndex="0 1 2 3 -1">
+          <Coordinate point="5 0 5, -5 0 5, -5 0 -5, 5 0 -5"></Coordinate>
+          <Color color="0 0 1, 0 1 0, 0 1 1, 1 0 0"></Color>
+          </IndexedFaceSet>
+        </Shape>
+        
+      <!--Стены-->  
+        <Shape>
+          <IndexedFaceSet ccw="true" colorPerVertex="false" convex="true"
+                                   creaseAngle="0" solid="false"
+                                   coordIndex="0 1 2 3 -1   4 5 6 7 -1   8 9 10 11 -1">
+          <Coordinate point="5 0 -5, -5 0 -5, -5 6 -5, 5 6 -5,     5 0 5, 5 6 5, 5 6 -5, 5 0 -5,     -5 0 5, -5 6 5, -5 6 -5, -5 0 -5"></Coordinate>
+          <Color color="0.2 0.1 0.1, 1 1 0, 0 0 1"></Color>
+          </IndexedFaceSet>
+        </Shape>
+        
+      <!--Крыша-->
+        <Shape>
+            <IndexedTriangleStripSet index='0 1 2 3 4 5 6' colorPerVertex="false" solid='false'>
+            <Coordinate point=' 5 6 5, -5 6 5, 0 10 0, -5 6 -5, 5 6 -5, 0 10 0, 5 6 5' ></Coordinate>
+            <Color color='0.2 0.5 0'></Color>
+          </IndexedTriangleStripSet>
+        </Shape>
+        </Transform>
+      </Group>
+      </Collision>    
+    
+      <Group DEF='Dom_IN'>
+      <!--Стол-->
+      <Group DEF='Stol'>
+
+      <!--Крышка стола-->
+      <Inline url='stol.x3d'></Inline>
+    
+        <!--Ножки стола-->
+        <Group DEF='Nogi stola'>
+        <Transform translation="1 -0.8 1">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"></Material>
+            </Appearance>
+            <Cylinder radius="0.1" height="1.5"></Cylinder>
+          </Shape>
+        </Transform>
+    
+        <Transform translation="-1 -0.8 1">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"></Material>
+            </Appearance>
+            <Cylinder radius="0.1" height="1.5"></Cylinder>
+          </Shape>
+        </Transform>
+    
+        <Transform translation="1 -0.8 -1">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"></Material>
+            </Appearance>
+            <Cylinder radius="0.1" height="1.5"></Cylinder>
+          </Shape>
+        </Transform>
+    
+        <Transform translation="-1 -0.8 -1">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"></Material>
+            </Appearance>
+            <Cylinder radius="0.1" height="1.5"></Cylinder>
+          </Shape>
+        </Transform>
+        </Group>
+      </Group>
+
+       <!--Звезда на стене-->
+       <Transform translation="1.5 3 -4.9" scale=" 3 3 3">
+        <Shape>
+          <IndexedLineSet coordIndex="0 1 2 3 4 5 -1" 
+                          colorIndex="0 1 2 3 4 5 -1" 
+                          colorPerVertex='true'>
+            <Coordinate point="0 0 0, 0.3 -0.8 0, -0.5 -0.3 0, 0.5 -0.3 0, -0.3 -0.8 0, 0 0 0"></Coordinate>
+            <Color color="1 0 0, 0 0 1, 0 1 1, 0 1 0, 1 1 0, 0.7 0 1"></Color>
+          </IndexedLineSet>
+        </Shape>
+        </Transform> 
+    
+        <!--Пончик-->
+        <Transform translation="0 0.1 0" rotation="1 0 0 1.57">
+          <Shape>
+            <Appearance> 
+              <ImageTexture url="donut.jpg"></ImageTexture>
+              <TextureTransform scale="2 1"></TextureTransform>
+            </Appearance>
+            <Torus innerRadius ="0.1" outerRadius="0.2"></Torus>
+          </Shape>
+        </Transform>
+
+        <!--Пирамида-->
+        <Transform translation="1 0 1">
+          <Shape>
+            <IndexedTriangleSet index="0 1 2 3 4 5 6 7 8 9 10 11" solid="false">
+              <Coordinate point="0 0.5 0, 0.2 0 0.2, -0.2 0 0.2, 0 0.5 0, 0.2 0 0.2, 0.2 0 -0.2, 0 0.5 0, 0.2 0 -0.2, -0.2 0 -0.2, 0 0.5 0, -0.2 0 -0.2, -0.2 0 0.2"></Coordinate>
+              <Color color="0.13 .25 0.87, 0.93 0.55 0.18, 1 0.2 0.2, 0.11 .67 0.77, 0.93 0.3 0.18, 1 0.2 0.2, 0.24 .85 0.38, 0.93 0.55 0.18, 1 0.2 0.2, 0.87 .84 0.17, 0.93 0.55 0.18, 1 0.2 0.2">
+              </Color>
+            </IndexedTriangleSet>
+          </Shape>
+        </Transform>
+        
+        <!--Thinking Face-->
+        <Anchor url="https://knowyourmeme.com/memes/thinking-face-emoji-🤔" parameter="target='_self'">
+        <Transform translation="-1 0.3 -1">
+          <Shape>
+            <Appearance>
+              <ImageTexture url="think.png"></ImageTexture>
+            </Appearance>
+            <Sphere radius="0.3"></Sphere>
+          </Shape>
+        </Transform>
+      </Group>
+    
+    </Scene>
+    </X3D>
   </body> 
 </html>
