@@ -11,11 +11,74 @@
     <X3D> 
     <Scene>
 
+
+      <!--Забор-->
+      <Group DEF="zabor_2">
+      <Transform translation="10 0 0">
+      <Shape DEF='zabor_1'>    
+        <Appearance>
+          <Material></Material>
+        </Appearance>
+        <Box size="0 4 1"></Box>     
+      </Shape>
+      </Transform>
+
+      <Transform translation="10 0 1.5">
+        <Shape USE='zabor_1'></Shape>     
+      </Transform>
+
+      <Transform translation="10 0 3">
+        <Shape USE='zabor_1'></Shape>     
+      </Transform>
+
+      <Transform translation="10 0.5 1.5" rotation="1 0 0 1.57">
+        <Shape USE='zabor_1'></Shape>     
+      </Transform>
+      </Group>
+
+      <Group DEF="zabor_3">
+      <Transform translation="0 0 -9">
+        <Shape USE='zabor_2'></Shape>     
+      </Transform>
+
+      <Transform translation="0 0 -6">
+        <Shape USE='zabor_2'></Shape>     
+      </Transform>
+
+      <Transform translation="0 0 -3">
+        <Shape USE='zabor_2'></Shape>     
+      </Transform>
+
+      <Transform translation="0 0 0">
+        <Shape USE='zabor_2'></Shape>     
+      </Transform>
+
+      <Transform translation="0 0 3">
+        <Shape USE='zabor_2'></Shape>     
+      </Transform>
+
+      <Transform translation="0 0 6">
+        <Shape USE='zabor_2'></Shape>     
+      </Transform>
+      </Group>
+
+      <Transform translation="0 0 0"  rotation="0 1 0 1.57">
+        <Shape USE='zabor_3'></Shape>     
+      </Transform>
+
+      <Transform translation="0 0 0"  rotation="0 1 0 -1.57">
+        <Shape USE='zabor_3'></Shape>     
+      </Transform>
+
+      <Transform translation="0 0 0"  rotation="0 1 0 3.14">
+        <Shape USE='zabor_3'></Shape>     
+      </Transform>
+
       <!--Фон-->
       <Background Skycolor='.16 .82 1'></Background>
 
       <!--Настройки навигации-->  
-      <NavigationInfo type="FLY" speed="7" transitionType="ANIMATE" transitionTime="3" avatarSize="0.5 2 0.1"></NavigationInfo>
+      <NavigationInfo type="ANY" speed="7" transitionType="ANIMATE" transitionTime="3" avatarSize="0.5 2 0.1"></NavigationInfo>
       
       <!--Туман-->
       <Fog color='.3 .8 1' visibilityRange='150'></Fog>
