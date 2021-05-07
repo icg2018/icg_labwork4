@@ -62,8 +62,8 @@
       <!--Стены-->  
         <Shape>
           <IndexedFaceSet ccw="true" colorPerVertex="false" convex="true"
-                                   creaseAngle="0" solid="false"
-                                   coordIndex="0 1 2 3 -1   4 5 6 7 -1   8 9 10 11 -1">
+                                     creaseAngle="0" solid="false"
+                                     coordIndex="0 1 2 3 -1   4 5 6 7 -1   8 9 10 11 -1">
           <Coordinate point="5 0 -5, -5 0 -5, -5 6 -5, 5 6 -5,     5 0 5, 5 6 5, 5 6 -5, 5 0 -5,     -5 0 5, -5 6 5, -5 6 -5, -5 0 -5"></Coordinate>
           <Color color="0.2 0.1 0.1, 1 1 0, 0 0 1"></Color>
           </IndexedFaceSet>
@@ -90,41 +90,28 @@
         <!--Ножки стола-->
         <Group DEF='Nogi stola'>
         <Transform translation="1 -0.8 1">
-          <Shape>
+          <Shape DEF='Noga stola'>
             <Appearance>
               <Material diffuseColor="1 1 1"></Material>
             </Appearance>
             <Cylinder radius="0.1" height="1.5"></Cylinder>
           </Shape>
         </Transform>
-    
+       
         <Transform translation="-1 -0.8 1">
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"></Material>
-            </Appearance>
-            <Cylinder radius="0.1" height="1.5"></Cylinder>
-          </Shape>
+          <Shape USE='Noga stola'></Shape>     
+        </Transform>
+
+        <Transform translation="-1 -0.8 -1">
+          <Shape USE='Noga stola'></Shape>
         </Transform>
     
         <Transform translation="1 -0.8 -1">
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"></Material>
-            </Appearance>
-            <Cylinder radius="0.1" height="1.5"></Cylinder>
-          </Shape>
-        </Transform>
-    
-        <Transform translation="-1 -0.8 -1">
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"></Material>
-            </Appearance>
-            <Cylinder radius="0.1" height="1.5"></Cylinder>
-          </Shape>
+          <Shape USE='Noga stola'></Shape>
         </Transform>
         </Group>
+
+      </Group>
       </Group>
 
        <!--Звезда на стене-->
@@ -135,7 +122,7 @@
                           colorPerVertex='true'>
             <Coordinate point="0 0 0, 0.3 -0.8 0, -0.5 -0.3 0, 0.5 -0.3 0, -0.3 -0.8 0, 0 0 0"></Coordinate>
             <Color color="1 0 0, 0 0 1, 0 1 1, 0 1 0, 1 1 0, 0.7 0 1"></Color>
-          </IndexedLineSet>
+          </IndexedLineSet>                           
         </Shape>
         </Transform> 
     
