@@ -280,7 +280,7 @@
 
 <!-- сладость данго-->
 <!-- двигать сладость данго-->
-<Transform translation = "6.6 -2.3 0.1"  rotation="0 0 1 -0.5"> 
+<Transform DEF = "dango" translation = "6.6 -2.3 0.1"  rotation="0 0 1 -0.5"> 
 
   <!-- 1 шарик-->
    <Transform translation = "0 0 0">
@@ -330,6 +330,13 @@
               </Shape>
             </Transform>
            </Transform>
+
+
+           <Transform translation ='2.4 -6.7 -0.2' rotation="0 0 1 1">
+            <Shape USE ='dango'>
+            </Shape>
+          </Transform>
+
 
  <!-- бантик-->               
 <!-- двигать бантик-->             
@@ -618,7 +625,7 @@
 
 <!-- мороженое-->
 <!-- двигать мороженое-->
-<Transform translation = "6.6 -2.4 0"  rotation="0 0 1 -0.5">> 
+<Transform DEF = "morozhenoe" translation = "6.6 -2.4 0"  rotation="0 0 1 -0.5">
 <!-- само мороженое-->
 <Transform translation = "0 0 0">
 <Shape>
@@ -644,6 +651,14 @@
      </Shape>
    </Transform>
   </Transform>
+
+<!-- новое мороженое-->
+  <Transform translation ='-9.6 -6.5 0' rotation="0 0 1 1">
+    <Shape USE ='morozhenoe'>
+    </Shape>
+  </Transform>
+
+
 
 <!-- колпак-->
 <Transform translation = "4.2 1.8 -0.1">
@@ -832,15 +847,14 @@
                          </transform>
                        </Transform>
                        </Group>
-
+                       
+<!-- новое мороженое-->
                        <Transform translation ='3.3 2.2 -2.3' scale="0.4 0.4 0.4" >
                         <Shape USE ='heart'>
                         </Shape>
                       </Transform>
 
-                      <!--камера-->
-                      <Viewpoint DEF='camera' description="Начальный вид" position="-20 1 30" orientation="0 .2 0 -.5"></Viewpoint>
-
+             
  <!--освещение-->
  <!--свет на сердечко-->
                       <Pointlight DEF='svet1' color='white' location='3.5 3 1' radius='5' global='true' intensity="0.5" />
@@ -856,8 +870,6 @@
    <!--туман-->
  <Fog DEF='tuman' fogType="EXPONENTIAL" color="#ffadd1" visibilityRange='60'></Fog>
 
-        <!--навигация-->
-        <NavigationInfo DEF='navigation' avatarSize="15 20 2" type="WALK" speed="7"></NavigationInfo>
 
                     </Scene>
   </X3D>
