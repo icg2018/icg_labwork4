@@ -172,7 +172,7 @@
           </transform>
           <!-- комната -->
           <group DEF='room'>
-            <transform DEF='my_wall' translation='0 3 -1' rotation=''>
+            <transform translation='0 3 -1'>
               <shape DEF='wall'>
                 <appearance>
                   <imagetexture url='wallpapers.jpg'></imagetexture>
@@ -181,16 +181,16 @@
               </shape>
             </transform>
 
-            <transform DEF='my_wall2' rotation='0 1 0 1.57' translation='-6 0 6'>
-              <transform USE='my_wall'></transform>
+            <transform rotation='0 1 0 -1.57' translation='-7 3 6'>
+              <shape USE='wall'></shape>
             </transform>
-
-            <transform translation='14 0 0'>
-              <transform USE='my_wall2'></transform>
+          
+            <transform rotation='0 1 0 -1.57' translation='7 3 6'>
+              <shape USE='wall'></shape>
             </transform>
-
-            <transform translation='0 0 14'>
-              <transform USE='my_wall'></transform>
+            
+            <transform translation='0 3 14'>
+              <shape USE='wall'></shape>
             </transform>
 
             <transform translation='0 -1 7' rotation='1 0 0 1.5708'>
