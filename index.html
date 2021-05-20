@@ -1,13 +1,109 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 3</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3 лабораторная</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script type='text/javascript' 
+    src='https://www.x3dom.org/download/dev/x3dom-full.js'> </script> 
+    <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
+</head>
+
+<body>
+    <x3d width="100vw" height="100vh">
+        <Scene>
+            <!--Collision-->
+            <Collision DEF="Main_collision" enabled="true">
+                <!--Anchor-->
+                <Anchor url="https://www.youtube.com/watch?v=UOlBJpMQBvg" parameter="target='_self'">
+                    <Transform translation="0 0 0"  rotation="0 1 0 2.8">
+                        <!--Inline-->
+                        <Inline url="untitled.x3d"></Inline>
+                    </Transform>
+                </Anchor>
+                <!--END Anchor-->
+                <!--Group-->
+                <Group DEF="Part_scene">
+                    <Transform DEF="Floor" translation="0 0 0">
+                        <Shape DEF="G">
+                            <Appearance>
+                                <Material color="#ffffff"></Material>
+                                <ImageTexture url="1.jpg"></ImageTexture>
+                            </Appearance>
+                             <Box Size="10 0.1 10"></Box>
+                         </Shape>   
+                    </Transform>
+                
+                    <Transform DEF="Wall" translation="0 2.5 -5" rotation="0 0 0 0">
+                        <Shape DEF="G">
+                            <Appearance>
+                                <Material color="#ffffff"></Material>
+                                <ImageTexture url="2.jpg"></ImageTexture>
+                            </Appearance>
+                            <Box Size="10 5 0.1"></Box>
+                        </Shape>
+                    </Transform>
+                </Group>
+                <!--END Group-->
+            </Collision>
+            <!--END Collision-->
+            <!--Group-->
+            <Group DEF="Light">
+                <!--PointLight-->
+                <PointLight ambientIntensity='0' attenuation='1,0,0' color='0,0,1' 
+                                global='false' intensity='1' location='0,3,3'
+                                on='true' radius='100' shadowFilterSize='0' 
+                                shadowIntensity='1' shadowMapSize='2000' 
+                                shadowOffset='0' zFar='-1' zNear='-1' >
+                    </PointLight>
+                    <!--END PointLight-->
+                    <!--DirectionalLight-->
+                <DirectionalLight ambientIntensity='0' color='1,1,0' direction='0,-3,0' 
+                                global='false' intensity='.5'  on='true' shadowCascades='1' shadowFilterSize='10' 
+                                shadowIntensity='1' shadowMapSize='2024'
+                                shadowOffset='0' shadowSplitFactor='1' 
+                                shadowSplitOffset='0.1'>
+                    </DirectionalLight>
+                    <!--END DirectionalLight-->
+                    <!--SpotLight-->
+                <SpotLight ambientIntensity='0' attenuation='1,0,0' 
+                                beamWidth='1.5' color='0.5,0,0.4' cutOffAngle='1' 
+                                direction='0,2,2' global='false' intensity='1'
+                                location='0,7,0' radius='5' shadowCascades='1' 
+                                shadowFilterSize='2' shadowIntensity='1' 
+                                shadowMapSize='1024'>
+                    </SpotLight> 
+                    <!--END SpotLight-->  
+                <Transform>
+                    <!--Fog-->  
+                        <Fog bind='true' color='(1,0,1)'
+                        fogType='EXPONENTIAL' isActive='true' visibilityRange='45' ></Fog>
+                    </Transform>  
+                                
+            </Group>
+             <!--END Group-->
+            <!--NavigationInfo--> 
+            <NavigationInfo avatarSize= '[ 3, 5, 2 ]'
+                                explorationMode='all'
+                                speed='5.0' 
+                                transitionTime='1.0'
+                                transitionType='["ANIMATE"]' 
+                                headlight='false' 
+                                type="FLY" >
+             </NavigationInfo>
+             <!--END NavigationInfo--> 
+             <!--Viewpoint--> 
+            <Viewpoint position="0 4 15" 
+                       orientation="0 0 0 0" 
+                       zNear="1" zFar="1000" 
+                       centerOfRotation="0.00000 0.00000 0.00000" 
+                       fieldOfView="0.9" 
+                       description="defaultX3DViewpointNode">
+             </Viewpoint>
+             <!--END Viewpoint--> 
+    
+        </Scene>
+    </x3d>
+</body>
 </html>
