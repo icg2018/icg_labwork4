@@ -1312,11 +1312,31 @@
         <!-- Лабораторная 3. Анимация, свет и тдп -->
         <Transform translation="0 0 0">
 
-          <Transform translation="0 0 0">
-            <Transform translation="0 2 -25" rotation="0 1 0 3.141593">
-              <Inline url="tekst.x3d">
-            </Transform>
+          <!-- 1. Ссылка -->
+          <Transform translation="0 2 -25" rotation="0 1 0 3.141593">
+            <Inline url="tekst.x3d">
           </Transform>
+
+          <!-- 2. Свет -->
+          <!-- 2.1 Сверху от салютов -->
+          <SpotLight direction="0 -1 0" color="white" location="-2 20 10" radius='30' intensity="1" beamWidth="0.2"
+            cutOffAngle="0.8">
+          </SpotLight>
+
+          <!-- 2.2 Розовые тени -->
+          <DirectionalLight direction='1 -1 -1' color='1 0 0.5' intensity='0.3'>
+          </DirectionalLight>
+
+          <!-- 3. Туман -->
+          <Fog DEF='tuman' fogType="EXPONENTIAL" color="#293133" visibilityRange='300'></Fog>
+
+          <!-- 4. Камера -->
+          <Viewpoint DEF='camera' description="Начальный вид" position="-25 10 -50" orientation="0 1 0 -2.8">
+          </Viewpoint>
+          
+          <!-- 5. Навигация -->
+          <NavigationInfo DEF='navigation' avatarSize="15 20 2" type="LOOKAT" speed="7">
+          </NavigationInfo>
 
           <!-- трансформ на всю лабу 3 -->
         </Transform>
