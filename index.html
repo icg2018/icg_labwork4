@@ -43,6 +43,8 @@
                             <Box Size="10 5 0.1"></Box>
                         </Shape>
                     </Transform>
+
+                    
                 </Group>
                 <!--END Group-->
             </Collision>
@@ -50,7 +52,7 @@
             <!--Group-->
             <Group DEF="Light">
                 <!--PointLight-->
-                <PointLight ambientIntensity='0' attenuation='1,0,0' color='0,0,1' 
+                <PointLight  DEF="Point" ambientIntensity='0' attenuation='1,0,0' color='0,0,1' 
                                 global='false' intensity='1' location='0,3,3'
                                 on='true' radius='100' shadowFilterSize='0' 
                                 shadowIntensity='1' shadowMapSize='2000' 
@@ -79,6 +81,11 @@
                         <Fog bind='true' color='(1,0,1)'
                         fogType='EXPONENTIAL' isActive='true' visibilityRange='45' ></Fog>
                     </Transform>  
+
+                    <Transform translation='1 1 1'>     
+                        <Shape USE ='Point'>     
+                        </Shape> 
+                    </Transform>
                                 
             </Group>
              <!--END Group-->
