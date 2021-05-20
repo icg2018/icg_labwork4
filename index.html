@@ -9,11 +9,12 @@
         <script src="https://www.x3dom.org/download/x3dom.js"></script>
     </head>
 
-<body>
+<body
+    style='width:100%; height:100%; border:0; margin:0; padding:0; background: url("3.jpg") no-repeat fixed; background-size: cover; background-position: center;'>
 
-    <x3d width="100vw" height="100vh">
+    <x3d width="100vw" height="100vh" >
         <Scene>
-            <Transform translation="0 20 -1">
+            <Transform translation="0 20 -1" Rotation="0 1 0 0.57">
                 <!--Основание(Поперек)-->
                 <Transform translation="0 0 0 " Rotation="0 0 1 1.57">
 
@@ -162,6 +163,8 @@
                     </Transform>
                 </Transform>
 
+
+                
                 <!--Функция для лазера-->
                 <Transform DEF="Paneli" Rotation="1 0 0 1.57">
                     <Shape>
@@ -601,7 +604,7 @@
 
 
                 <!--Подсветка-->
-                <DirectionalLight ambientIntensity='0' color='1,1,0' direction='5,5,5' global='false' intensity='.40'
+                <DirectionalLight ambientIntensity='0' color='1,1,0' direction='5,5,5' global='false' intensity='.1000'
                     on='true' shadowCascades='1' shadowFilterSize='10' shadowIntensity='1' shadowMapSize='2024'
                     shadowOffset='0' shadowSplitFactor='1' shadowSplitOffset='0.1'>
                 </DirectionalLight>
