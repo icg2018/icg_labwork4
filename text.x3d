@@ -1,0 +1,15 @@
+<Scene>
+<!-- текст-->
+          <Transform translation="-15 6 0 " rotation="0 1 0 0.79">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="ffffff" specularColor="0.2 0 0.2"></Material>
+              </Appearance>
+              <Text string="Амиша из гр. №4841" solid="false">
+                <FontStyle size="1" style="BOLDITALIC" family="SANS"> </FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- конец текста-->
+</Scene>
+          
