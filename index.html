@@ -15,10 +15,12 @@
   <X3D width="100vw" height="100vh">
     <Scene>
 
+
       <Transform rotation="1 0 0 -1.57">
-        <!-- цветок -->
+        <!-- цветок 2-->
         <Transform translation="6 0 0.15">
           <Group DEF="flower">
+            <!-- цветок 1-->
             <!-- лепесток 1-->
             <Transform DEF="lepestok" translation="0 0 0">
               <Anchor url="http://botsad-spb.com/" parameter="target='_self'">
@@ -119,59 +121,60 @@
             <!-- конец тычинок -->
           </Group>
         </Transform>
-      </Transform>
 
 
-      <Transform translation="-6 0 0.15" rotation="0 0 0 0.7">
-        <Shape USE="flower">
-        </Shape>
-      </Transform>
 
-      <!-- почва в горшке -->
-      <Transform translation="0 0 -0.2">
-        <Transform translation="0 -1 -2">
-          <Shape>
-            <Appearance>
-              <TextureTransform scale="1 2"></TextureTransform>
-              <ImageTexture url="gr1.jpg"></ImageTexture>
-            </Appearance>
-            <IndexedFaceSet ccw="true" solid="false"
-              coordIndex="0 4 7 3 -1 5 6 2 1 -1 4 5 6 7 -1 6 7 3 2 -1 2 3 0 1 -1 0 1 5 4 -1">
-              <Coordinate point="-7.8 -2.3 2, 7.8 -2.3 2, 6 -1 -4, -6 -1 -4, -7.8 4.3 2, 7.8 4.3 2, 6 3 -4, -6 3 -4">
-              </Coordinate>
-            </IndexedFaceSet>
+        <Transform translation="-6 0 0.15" rotation="0 0 0 0.7">
+          <Shape USE="flower">
           </Shape>
         </Transform>
 
-        <!-- горшок -->
-        <Transform translation="0 -1 -2">
-          <Shape>
-            <Appearance>
-              <TextureTransform scale="2 4"></TextureTransform>
-              <ImageTexture url="g2.jpg"></ImageTexture>
-            </Appearance>
-            <IndexedFaceSet ccw="true" solid="false"
-              coordIndex="0 4 7 3 -1 5 6 2 1 -1 4 5 6 7 -1 6 7 3 2 -1 2 3 0 1 -1">
-              <Coordinate point="-8 -2.5 2.5, 8 -2.5 2.5, 6 -1 -4, -6 -1 -4, -8 4.5 2.5, 8 4.5 2.5, 6 3 -4, -6 3 -4">
-              </Coordinate>
 
-            </IndexedFaceSet>
-          </Shape>
+        <!-- почва в горшке -->
+        <Transform translation="0 0 -0.2">
+          <Transform translation="0 -1 -2">
+            <Shape>
+              <Appearance>
+                <TextureTransform scale="1 2"></TextureTransform>
+                <ImageTexture url="gr1.jpg"></ImageTexture>
+              </Appearance>
+              <IndexedFaceSet ccw="true" solid="false"
+                coordIndex="0 4 7 3 -1 5 6 2 1 -1 4 5 6 7 -1 6 7 3 2 -1 2 3 0 1 -1 0 1 5 4 -1">
+                <Coordinate point="-7.8 -2.3 2, 7.8 -2.3 2, 6 -1 -4, -6 -1 -4, -7.8 4.3 2, 7.8 4.3 2, 6 3 -4, -6 3 -4">
+                </Coordinate>
+              </IndexedFaceSet>
+            </Shape>
+          </Transform>
+
+          <!-- горшок -->
+          <Transform translation="0 -1 -2">
+            <Shape>
+              <Appearance>
+                <TextureTransform scale="2 4"></TextureTransform>
+                <ImageTexture url="g2.jpg"></ImageTexture>
+              </Appearance>
+              <IndexedFaceSet ccw="true" solid="false"
+                coordIndex="0 4 7 3 -1 5 6 2 1 -1 4 5 6 7 -1 6 7 3 2 -1 2 3 0 1 -1">
+                <Coordinate point="-8 -2.5 2.5, 8 -2.5 2.5, 6 -1 -4, -6 -1 -4, -8 4.5 2.5, 8 4.5 2.5, 6 3 -4, -6 3 -4">
+                </Coordinate>
+
+              </IndexedFaceSet>
+            </Shape>
+          </Transform>
         </Transform>
-      </Transform>
 
-      <!-- текст-->
-      <Transform translation="0 4 0" rotation="1 0 0 1.57">
-        <Inline url="text.x3d"></Inline>
+        <!-- текст-->
+        <Transform translation="0 4 0" rotation="1 0 0 1.57">
+          <Inline url="text.x3d"></Inline>
+        </Transform>
+        <!-- конец текста-->
       </Transform>
-      <!-- конец текста-->
-
 
       <!-- освещение -->
-      <PointLight location="10 30 10" color="1 1 1" intensity="0.5"></PointLight>
-      <SpotLight direction="-0.5 -1 0" color="yellow" location="6 7 -3" radius='10' intensity="2" beamWidth="0.2"
+      <PointLight location="10 10 10" color="1 1 1" intensity="0.5"></PointLight>
+      <SpotLight direction="-1 0 0" color="yellow" location="-10 10 0" radius='10' intensity="2" beamWidth="0.2"
         cutOffAngle="0.7"></SpotLight>
-      <DirectionalLight direction='0 0 0' color='1 0 0.5' intensity='1' shadowIntensity='0.2'></DirectionalLight>
+      <DirectionalLight direction='0 1 0' color='1 0 0.5' intensity='1' shadowIntensity='0.3'></DirectionalLight>
 
       <!-- туман -->
       <Fog DEF='tuman' fogType="EXPONENTIAL" color="#ecd8e9" visibilityRange='150'></Fog>
