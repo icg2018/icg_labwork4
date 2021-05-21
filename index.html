@@ -118,51 +118,53 @@
             </Shape>
             <!-- конец тычинок -->
         </Transform>
-        </Group>
+      </Transform>
+      </Group>
 
-        <Transform translation="-6 0 0.15" rotation="0 0 0 0.7">
-          <Shape USE="flower">
+      <Transform translation="-6 0 0.15" rotation="0 0 0 0.7">
+        <Shape USE="flower">
+        </Shape>
+      </Transform>
+
+      <!-- почва в горшке -->
+      <Tran
+      sform translation="0 0 -0.2">
+        <Transform translation="0 -1 -2">
+          <Shape>
+            <Appearance>
+              <TextureTransform scale="1 2"></TextureTransform>
+              <ImageTexture url="gr1.jpg"></ImageTexture>
+            </Appearance>
+            <IndexedFaceSet ccw="true" solid="false"
+              coordIndex="0 4 7 3 -1 5 6 2 1 -1 4 5 6 7 -1 6 7 3 2 -1 2 3 0 1 -1 0 1 5 4 -1">
+              <Coordinate point="-7.8 -2.3 2, 7.8 -2.3 2, 6 -1 -4, -6 -1 -4, -7.8 4.3 2, 7.8 4.3 2, 6 3 -4, -6 3 -4">
+              </Coordinate>
+            </IndexedFaceSet>
           </Shape>
         </Transform>
 
-        <!-- почва в горшке -->
-        <Transform translation="0 0 -0.2">
-          <Transform translation="0 -1 -2">
-            <Shape>
-              <Appearance>
-                <TextureTransform scale="1 2"></TextureTransform>
-                <ImageTexture url="gr1.jpg"></ImageTexture>
-              </Appearance>
-              <IndexedFaceSet ccw="true" solid="false"
-                coordIndex="0 4 7 3 -1 5 6 2 1 -1 4 5 6 7 -1 6 7 3 2 -1 2 3 0 1 -1 0 1 5 4 -1">
-                <Coordinate point="-7.8 -2.3 2, 7.8 -2.3 2, 6 -1 -4, -6 -1 -4, -7.8 4.3 2, 7.8 4.3 2, 6 3 -4, -6 3 -4">
-                </Coordinate>
-              </IndexedFaceSet>
-            </Shape>
-          </Transform>
+        <!-- горшок -->
+        <Transform translation="0 -1 -2">
+          <Shape>
+            <Appearance>
+              <TextureTransform scale="2 4"></TextureTransform>
+              <ImageTexture url="g2.jpg"></ImageTexture>
+            </Appearance>
+            <IndexedFaceSet ccw="true" solid="false"
+              coordIndex="0 4 7 3 -1 5 6 2 1 -1 4 5 6 7 -1 6 7 3 2 -1 2 3 0 1 -1">
+              <Coordinate point="-8 -2.5 2.5, 8 -2.5 2.5, 6 -1 -4, -6 -1 -4, -8 4.5 2.5, 8 4.5 2.5, 6 3 -4, -6 3 -4">
+              </Coordinate>
 
-          <!-- горшок -->
-          <Transform translation="0 -1 -2">
-            <Shape>
-              <Appearance>
-                <TextureTransform scale="2 4"></TextureTransform>
-                <ImageTexture url="g2.jpg"></ImageTexture>
-              </Appearance>
-              <IndexedFaceSet ccw="true" solid="false"
-                coordIndex="0 4 7 3 -1 5 6 2 1 -1 4 5 6 7 -1 6 7 3 2 -1 2 3 0 1 -1">
-                <Coordinate point="-8 -2.5 2.5, 8 -2.5 2.5, 6 -1 -4, -6 -1 -4, -8 4.5 2.5, 8 4.5 2.5, 6 3 -4, -6 3 -4">
-                </Coordinate>
-
-              </IndexedFaceSet>
-            </Shape>
-          </Transform>
+            </IndexedFaceSet>
+          </Shape>
         </Transform>
+      </Transform>
 
-        <!-- текст-->
-        <Transform translation="0 4 0" rotation="1 0 0 1.57">
-          <Inline url="text.x3d"></Inline>
-        </Transform>
-        <!-- конец текста-->
+      <!-- текст-->
+      <Transform translation="0 4 0" rotation="1 0 0 1.57">
+        <Inline url="text.x3d"></Inline>
+      </Transform>
+      <!-- конец текста-->
       </Transform>
 
       <!-- освещение -->
