@@ -1,22 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8" />
-        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-        <title>Лабораторная работа 3</title>
-        <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-        <script src="https://www.x3dom.org/download/x3dom.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+    <title>Лабораторная работа 3</title>
+    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
+    <script src="https://www.x3dom.org/download/x3dom.js"></script>
+</head>
 
 <body
     style='width:100%; height:100%; border:0; margin:0; padding:0; background: url("3.jpg") no-repeat fixed; background-size: cover; background-position: center;'>
 
-    <x3d width="100vw" height="100vh" >
+    <x3d width="100vw" height="100vh">
         <Scene>
-            <Transform translation="0 20 -1" Rotation="0 1 0 0.57">
-                <!--Основание(Поперек)-->
+            <!--Функция для лазера-->
+            <Transform DEF="Lazer">
+                <Shape>
+                    <Appearance>
+                        <TextureTransform scale="1 1"></TextureTransform>
+                        <ImageTexture url="orange.jpg"></ImageTexture>
+                    </Appearance>
+                    <Cylinder solid="false" height="1" radius="0.010"></Cylinder>
+                </Shape>
+            </Transform>
+
+            <!--Позиция камеры-->
+            <NavigationInfo avatarSize='[ 3, 5, 2 ]' speed='5.0' transitionTime='1.0' transitionType='["ANIMATE"]'
+                headlight='false' type="FLY">
+            </NavigationInfo>
+
+            <!--Ход камеры-->
+            <Viewpoint position="4 -8 1" orientation="1 0 0 1.57" fieldOfView="0.9"
+                description="defaultX3DViewpointNode">
+            </Viewpoint>
+
+            <!--avatarSize – определяет размеры аватара
+transitionTime – время в секундах, за которое совершается анимация переключения камеры
+transitionType – тип пути, по которому следует камера при переключении между точками наблюдения
+Headlight не является узлом X3D, а представляет собой встроенный в браузер источник освещения типа DirectionalLight
+fieldOfView - угол обзора
+description – описание точки наблюдения выводится в браузере
+-->
+
+            <!--Подсветка-->
+            <SpotLight ambientIntensity='5' beamWidth='1.5' cutOffAngle='1' direction='0,2,2' global='false'
+                intensity='1' location='0,7,0' radius='5' shadowIntensity='1'>
+            </SpotLight>
+
+            <!--Подсветка космического корабля-->
+            <DirectionalLight DEF='svet3' direction='1 1 1' color="blue" radius='20' intensity='5'>
+            </DirectionalLight>
+
+            <!--Подсветка космического корабля-->
+            <DirectionalLight DEF='svet3' direction='1 1 3' color="red" radius='20' intensity='5'>
+            </DirectionalLight>
+
+            <!--
+direction -  Вектор направления освещения
+beamWdth - угол раствора внутреннего конуса, в пределах которого интенсивность равна intensity
+cutOffAngle – угол раствора внешнего конуса
+global - является ли источник глобальным
+ambientIntensity – доля источника в рассеянном освещении сцены за счет отражения от объектов
+-->
+            <!--Трансформ сцены-->
+            <Transform translation="0 20 0" Rotation="0 1 0 0.50">
+                <!--Трансформ всей МКС--------------------------------------------------------------------------->
+
                 <Transform translation="0 0 0 " Rotation="0 0 1 1.57">
+                    <!--Основание МКС (Поперек)-->
 
                     <Shape>
                         <Appearance>
@@ -27,8 +79,8 @@
                     </Shape>
                 </Transform>
 
-                <!--Основание 2(Вдоль)-->
                 <Transform translation="0 2 0 ">
+                    <!--Основание МКС 2(Вдоль)-->
 
                     <Shape>
                         <Appearance>
@@ -39,11 +91,11 @@
                     </Shape>
                 </Transform>
 
-                <!--Американский модуль-->
                 <Transform translation="0 0 0">
-                    <!--Двигать Американский модуль-->
-                    <Transform translation="1.5 -0.8 0 " Rotation="0 0 1 1.57">
+                    <!--Американский модуль-->
 
+                    <Transform translation="1.5 -0.8 0 " Rotation="0 0 1 1.57">
+                        <!--Двигать Американский модуль-->
                         <Shape>
                             <Appearance>
                                 <TextureTransform scale="1 3"></TextureTransform>
@@ -64,8 +116,8 @@
                         </Shape>
                     </Transform>
 
-                    <!--Вход в Американский модуль-->
                     <Transform translation="1 -0.8 0 " Rotation="0 0 1 1.57">
+                        <!--Вход в Американский модуль-->
 
                         <Shape>
                             <Appearance>
@@ -77,11 +129,11 @@
                     </Transform>
                 </Transform>
 
-                <!--Европейский модуль-->
                 <Transform translation="0 0 0">
-                    <!--Двигать Европейский модуль-->
-                    <Transform translation="0 2 0 ">
+                    <!--Европейский модуль-->
 
+                    <Transform translation="0 2 0 ">
+                        <!--Двигать Европейский модуль-->
                         <Shape>
                             <Appearance>
                                 <TextureTransform scale="1 4"></TextureTransform>
@@ -103,32 +155,10 @@
                     </Transform>
                 </Transform>
 
-                <Transform translation="0 5.1 0" Rotation="0 0 1 1.57">
-                    <!--Панель #7(2)-->
-                    <Shape>
-                        <Appearance>
-                            <TextureTransform scale="1 50"></TextureTransform>
-                            <ImageTexture url="sone.jpg"></ImageTexture>
-                        </Appearance>
-                        <box size="0.3 5 0"></box>
-                    </Shape>
-                </Transform>
-
-                <Transform translation="0 4.7 0" Rotation="0 0 1 1.57">
-                    <!--Панель  #7-->
-                    <Shape>
-                        <Appearance>
-                            <TextureTransform scale="1 50"></TextureTransform>
-                            <ImageTexture url="sone.jpg"></ImageTexture>
-                        </Appearance>
-                        <box size="0.3 5 0"></box>
-                    </Shape>
-                </Transform>
-
-                <!--Русский модуль 2-->
                 <Transform translation="0 0 0">
-                    <!--Русский модуль-->
+                    <!-- Трансформ Русского модуля-->
                     <Transform translation="0 6 0 ">
+                        <!--Русский модуль-->
 
                         <Shape>
                             <Appearance>
@@ -150,8 +180,8 @@
                         </Shape>
                     </Transform>
 
-                    <!--Иллюминатор-->
                     <Transform translation="0.26 6 0 " Rotation="0 0 1 1.57">
+                        <!--Иллюминатор-->
 
                         <Shape>
                             <Appearance>
@@ -163,9 +193,8 @@
                     </Transform>
                 </Transform>
 
-
-                
-                <!--Функция для лазера-->
+                <!--Солнечные панели--------------------------------------------------------------------------------------------------->
+                <!--Функция для длинных панелей-->
                 <Transform DEF="Paneli" Rotation="1 0 0 1.57">
                     <Shape>
                         <Appearance>
@@ -176,49 +205,71 @@
                     </Shape>
                 </Transform>
 
-                <!--Панель №1-->
-                <Transform translation='-5.5 0 0'>
-                    <Shape USE='Paneli'>
+                <Group DEF="Pan">
+                    <!--Панель №1-->
+                    <Transform translation='-5.5 0 0'>
+                        <Shape USE='Paneli'>
+                        </Shape>
+                    </Transform>
+
+                    <!--Панель №2-->
+                    <Transform translation='-4.9 0 0'>
+                        <Shape USE='Paneli'>
+                        </Shape>
+                    </Transform>
+
+                    <!--Панель №3-->
+                    <Transform translation='-4.3 0 0'>
+                        <Shape USE='Paneli'>
+                        </Shape>
+                    </Transform>
+
+                    <!--Панель №4-->
+                    <Transform translation='5.5 0 0'>
+                        <Shape USE='Paneli'>
+                        </Shape>
+                    </Transform>
+
+                    <!--Панель №11-->
+                    <Transform translation='4.9 0 0'>
+                        <Shape USE='Paneli'>
+                        </Shape>
+                    </Transform>
+
+                    <!--Панель №10-->
+                    <Transform translation='4.3 0 0'>
+                        <Shape USE='Paneli'>
+                        </Shape>
+                    </Transform>
+
+                    <!--Панель №9-->
+                    <Transform translation='3.7 0 0'>
+                        <Shape USE='Paneli'>
+                        </Shape>
+                    </Transform>
+                </Group>
+
+                <Transform translation="0 5.1 0" Rotation="0 0 1 1.57">
+                    <!--Дальняя солнечная панель на основании №2-->
+                    <Shape>
+                        <Appearance>
+                            <TextureTransform scale="1 50"></TextureTransform>
+                            <ImageTexture url="sone.jpg"></ImageTexture>
+                        </Appearance>
+                        <box size="0.3 5 0"></box>
                     </Shape>
                 </Transform>
 
-                <!--Панель №2-->
-                <Transform translation='-4.9 0 0'>
-                    <Shape USE='Paneli'>
+                <Transform translation="0 4.7 0" Rotation="0 0 1 1.57">
+                    <!--Дальняя солнечная панель на основании №2-->
+                    <Shape>
+                        <Appearance>
+                            <TextureTransform scale="1 50"></TextureTransform>
+                            <ImageTexture url="sone.jpg"></ImageTexture>
+                        </Appearance>
+                        <box size="0.3 5 0"></box>
                     </Shape>
                 </Transform>
-
-                <!--Панель №3-->
-                <Transform translation='-4.3 0 0'>
-                    <Shape USE='Paneli'>
-                    </Shape>
-                </Transform>
-
-                <!--Панель №4-->
-                <Transform translation='5.5 0 0'>
-                    <Shape USE='Paneli'>
-                    </Shape>
-                </Transform>
-
-                <!--Панель №11-->
-                <Transform translation='4.9 0 0'>
-                    <Shape USE='Paneli'>
-                    </Shape>
-                </Transform>
-
-                <!--Панель №10-->
-                <Transform translation='4.3 0 0'>
-                    <Shape USE='Paneli'>
-                    </Shape>
-                </Transform>
-
-                <!--Панель №9-->
-                <Transform translation='3.7 0 0'>
-                    <Shape USE='Paneli'>
-                    </Shape>
-                </Transform>
-
-
 
                 <Transform translation="-3.7 0 0">
                     <!--Панель #4-->
@@ -241,7 +292,6 @@
                         <box size="0.5 3 0"></box>
                     </Shape>
                 </Transform>
-
 
                 <Transform translation="-1.6 0 -1.4" Rotation="1 0 0 1.57">
                     <!--Панель #5-->
@@ -275,10 +325,10 @@
                         <box size="0.5 3 0"></box>
                     </Shape>
                 </Transform>
+                <!--Солнечные панели--------------------------------------------------------------------------------------------------->
 
-
-                <!--Панель двигателей #7-->
                 <Transform translation=" 0 -1.4 0" Rotation="0 0 1 1.57">
+                    <!--Панель двигателей #7-->
                     <Shape>
                         <Appearance>
                             <TextureTransform scale="1 2"></TextureTransform>
@@ -288,8 +338,8 @@
                     </Shape>
                 </Transform>
 
-                <!--Панель двигателей #7(Закрывющая)-->
                 <Transform translation=" 0 -1.38 0" Rotation="0 0 1 1.57">
+                    <!--Панель двигателей #7(Закрывющая)-->
                     <Shape>
                         <Appearance>
                             <TextureTransform scale="1 2"></TextureTransform>
@@ -299,9 +349,8 @@
                     </Shape>
                 </Transform>
 
-
-                <!--Левый двигатель-->
                 <Transform translation="-0.2 -1.6 -0.2 ">
+                    <!--Левый двигатель-->
 
                     <Shape>
                         <Appearance>
@@ -312,8 +361,8 @@
                     </Shape>
                 </Transform>
 
-                <!--Верхний двигатель-->
                 <Transform translation="0.2 -1.6 -0.2 ">
+                    <!--Верхний двигатель-->
 
                     <Shape>
                         <Appearance>
@@ -324,8 +373,8 @@
                     </Shape>
                 </Transform>
 
-                <!--Правый двигатель-->
                 <Transform translation="0 -1.6 0.1 ">
+                    <!--Правый двигатель-->
 
                     <Shape>
                         <Appearance>
@@ -336,9 +385,8 @@
                     </Shape>
                 </Transform>
 
-
-                <!--Функция для точек-->
                 <Transform DEF="Tochka">
+                    <!--Функция для точек-->
                     <Shape>
                         <Appearance>
                             <ImageTexture url="Yellow.jpg"></ImageTexture>
@@ -353,165 +401,78 @@
                     </Shape>
                 </Transform>
 
-                <!--Группировка точек верхнего двигателя-->
                 <Group DEF="TochkiUP">
-                    <Transform DEF="TochkiUP">
-
-                        <!--Точки-->
-                        <Transform translation='0 0 0'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-                        <!--Точки-->
-                        <Transform translation='-0.1 0 0'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-                        <!--Точки-->
-                        <Transform translation='0.1 0 0'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-                        <!--Точки-->
-                        <Transform translation='0 0 0'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-                        <!--Точки-->
-                        <Transform translation='0 0 0.1'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-
-                        <!--Точки-->
-                        <Transform translation='0 0 0.1'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-                        <!--Точки-->
-                        <Transform translation='0 0 -0.1'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-                        <!--Точки-->
-                        <Transform translation='0 0 -0.1'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-
-                        <Transform translation="-0.2 0 -0.3">
-                            <!--Точки-->
-                            <Transform translation='0 0 0'>
-                                <Shape USE='Tochka'>
-                                </Shape>
-                            </Transform>
-
-
-                            <!--Точки-->
-                            <Transform translation='-0.1 0 0'>
-                                <Shape USE='Tochka'>
-                                </Shape>
-                            </Transform>
-                        </Transform>
+                    <!--Группировка точек верхнего двигателя-->
+                    <!--Точки-->
+                    <Transform translation='-0.1 0 0'>
+                        <Shape USE='Tochka'>
+                        </Shape>
                     </Transform>
 
-                </Group>
+                    <Transform translation='0.1 0 0'>
+                        <Shape USE='Tochka'>
+                        </Shape>
+                    </Transform>
 
-                <!--Группировка точек правого двигателя-->
-                <Group DEF="TochkiRight">
-                    <Transform DEF="TochkiRight">
-
-                        <!--Точки-->
-                        <Transform translation='0.1 0 0'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-                        <!--Точки-->
-                        <Transform translation='0 0 0.1'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
-
-
-                        <!--Точки-->
-                        <Transform translation='0 0 -0.1'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
+                    <Transform translation='0 0 0.1'>
+                        <Shape USE='Tochka'>
+                        </Shape>
                     </Transform>
 
 
-                    <Transform translation="0.2 0 -0.3">
-                        <!--Точки-->
-                        <Transform translation='-0.1 0 0'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
+                    <Transform translation='0 0 -0.1'>
+                        <Shape USE='Tochka'>
+                        </Shape>
+                    </Transform>
+                    <!---->
 
-                        <!--Точки-->
-                        <Transform translation='0.1 0 0'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
+                    <Transform translation='0.2 0 -0.3'>
+                        <Shape USE='Tochka'>
+                        </Shape>
+                    </Transform>
 
-                        <!--Точки-->
-                        <Transform translation='0 0 0.1'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
+                    <Transform translation='0.2 0 -0.2'>
+                        <Shape USE='Tochka'>
+                        </Shape>
+                    </Transform>
 
-                        <!--Точки-->
-                        <Transform translation='0 0 -0.1'>
-                            <Shape USE='Tochka'>
-                            </Shape>
-                        </Transform>
+                    <Transform translation='0.2 0 -0.39'>
+                        <Shape USE='Tochka'>
+                        </Shape>
+                    </Transform>
+
+                    <Transform translation='0.3 0 -0.3'>
+                        <Shape USE='Tochka'>
+                        </Shape>
+                    </Transform>
+
+
+                    <Transform translation='-0.3 0 -0.3'>
+                        <Shape USE='Tochka'>
+                        </Shape>
+                    </Transform>
+                    <!---->
+
+                    <Transform translation='-0.1 0 -0.3'>
+                        <Shape USE='Tochka'>
+                        </Shape>
+                    </Transform>
+
+                    <Transform translation='-0.2 0 -0.37'>
+                        <Shape USE='Tochka'>
+                        </Shape>
+                    </Transform>
+
+                    <Transform translation='-0.2 0 -0.18'>
+                        <Shape USE='Tochka'>
+                        </Shape>
                     </Transform>
                 </Group>
 
-                <!--Передняя антена -->
-                <Transform translation="0 6.75 0" Rotation="0 1 0 1.57">
-                    <Shape>
-                        <IndexedLineSet coordIndex="3 1 0 2 3" colorIndex="0 1 0 1 0 1 0" colorPerVertex="false">
-                            <Coordinate point="-2 0 2, 2 0 2, 2 0 -2, -2 0 -2,
-                             -2 4 2, 2 4 2, 2 4 -2, -2 4 -2"></Coordinate>
-                            <Color color="0 0 1, 1 1 0"></Color>
-                        </IndexedLineSet>
-                    </Shape>
-                </Transform>
-
-                <!--Правая антена -->
-                <Transform translation="6 0 0" Rotation="0 0 1 1.57">
-                    <Shape>git
-                        <IndexedLineSet coordIndex="3 1 0 2 3" colorIndex="0 1 0 1 0 1 0" colorPerVertex="false">
-                            <Coordinate point="-2 0 2, 2 0 2, 2 0 -2, -2 0 -2,
-                             -2 4 2, 2 4 2, 2 4 -2, -2 4 -2"></Coordinate>
-                            <Color color="0 0 1, 1 1 0"></Color>
-                        </IndexedLineSet>
-                    </Shape>
-                </Transform>
-
-                <!--Левая антена -->
-                <Transform translation="-6 0 0" Rotation="0 0 1 1.57">
-                    <Shape>
-                        <IndexedLineSet coordIndex="3 1 0 2 3" colorIndex="0 1 0 1 0 1 0" colorPerVertex="false">
-                            <Coordinate point="-2 0 2, 2 0 2, 2 0 -2, -2 0 -2,
-                             -2 4 2, 2 4 2, 2 4 -2, -2 4 -2"></Coordinate>
-                            <Color color="0 0 1, 1 1 0"></Color>
-                        </IndexedLineSet>
-                    </Shape>
-                </Transform>
             </Transform>
+            <!-- Закрывающий трансформ всей МКС--------------------------------------------------------------------------->
 
-            <!--Космолёт-->
+            <!--Космолёт-------------------------------------------------------------------------------------------------------------->
             <Collision DEF="Main_collision" enabled="true">
 
                 <Transform translation="0 0 0" scale="0.1 0.1 0.1" rotation="1 0 0 1.57">
@@ -520,104 +481,88 @@
                     </Transform>
                 </Transform>
             </Collision>
+            <!--Космолёт-------------------------------------------------------------------------------------------------------------->
 
-                <!--Функция для лазера-->
-                <Transform DEF="Lazer">
-                    <Shape>
-                        <Appearance>
-                            <TextureTransform scale="1 1"></TextureTransform>
-                            <ImageTexture url="orange.jpg"></ImageTexture>
-                        </Appearance>
-                        <Cylinder solid="false" height="1" radius="0.010"></Cylinder>
+            <!--Лазеры-------------------------------------------------------------------------------------------------------------->
+
+            <Group DEF='LazerOne'>
+                <!--Группировка первой линии лазеров-->
+
+                <!--Лазер-->
+                <Transform translation='0 2.1 0'>
+                    <Shape USE='Lazer'>
                     </Shape>
                 </Transform>
 
-                <!--Группировка лазеров-->
-                <Group DEF='Lazeri'>
+                <Transform translation='0 4.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                    <!--Лазер-->
-                    <Transform translation='0 2 0'>
-                        <Shape USE='Lazer'>
-                        </Shape>
-                    </Transform>
+                <Transform translation='0 6.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                    <!--Лазер-->
-                    <Transform translation='0 4 0'>
-                        <Shape USE='Lazer'>
-                        </Shape>
-                    </Transform>
+                <Transform translation='0 8.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                    <!--Лазер-->
-                    <Transform translation='0 6 0'>
-                        <Shape USE='Lazer'>
-                        </Shape>
-                    </Transform>
+                <Transform translation='0 10.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                    <!--Лазер-->
-                    <Transform translation='0 8 0'>
-                        <Shape USE='Lazer'>
-                        </Shape>
-                    </Transform>
+                <Transform translation='0 12.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                    <!--Лазер-->
-                    <Transform translation='0 10 0'>
-                        <Shape USE='Lazer'>
-                        </Shape>
-                    </Transform>
+                <Transform translation='0 14.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
+            </Group>
 
-                    <!--Лазер-->
-                    <Transform translation='-0.10 3 0'>
-                        <Shape USE='Lazer'>
-                        </Shape>
-                    </Transform>
+            <Group DEF='LazerTwo'>
+                <!--Группировка второй линии лазеров-->
+                <Transform translation='0.1 3.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                    <!--Лазер-->
-                    <Transform translation='-0.10 5 0'>
-                        <Shape USE='Lazer'>
-                        </Shape>
-                    </Transform>
+                <Transform translation='0.1 5.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                    <!--Лазер-->
-                    <Transform translation='-0.10 7 0'>
-                        <Shape USE='Lazer'>
-                        </Shape>
-                    </Transform>
+                <Transform translation='0.1 7.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                    <!--Лазер-->
-                    <Transform translation='-0.10 9 0'>
-                        <Shape USE='Lazer'>
-                        </Shape>
-                    </Transform>
-                </Group>
+                <Transform translation='0.1 9.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                <!--Позиция камеры-->
-                <NavigationInfo avatarSize='[ 3, 5, 2 ]' explorationMode='all' speed='5.0' transitionTime='1.0'
-                    transitionType='["ANIMATE"]' headlight='false' type="FLY">
-                </NavigationInfo>
+                <Transform translation='0.1 11.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-                <!--Ход камеры-->
-                <Viewpoint position="2 -6 1" orientation="1 0 0 1.57" zNear="1" zFar="1000"
-                    centerOfRotation="0.00000 0.00000 0.00000" fieldOfView="0.9" description="defaultX3DViewpointNode">
-                </Viewpoint>
+                <Transform translation='0.1 13.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
 
-
-
-
-                <!--Подсветка-->
-                <DirectionalLight ambientIntensity='0' color='1,1,0' direction='5,5,5' global='false' intensity='.1000'
-                    on='true' shadowCascades='1' shadowFilterSize='10' shadowIntensity='1' shadowMapSize='2024'
-                    shadowOffset='0' shadowSplitFactor='1' shadowSplitOffset='0.1'>
-                </DirectionalLight>
-
-                <!--Подсветка-->
-                <SpotLight ambientIntensity='5' attenuation='1,0,0' beamWidth='1.5' color='0.5,0,0.4' cutOffAngle='1'
-                    direction='0,2,2' global='false' intensity='1' location='0,7,0' radius='5' shadowCascades='1'
-                    shadowFilterSize='2' shadowIntensity='1' shadowMapSize='1024'>
-                </SpotLight>
-
-                <!--Подсветка космического корабля-->
-                <DirectionalLight DEF='svet3' direction='1 1 1' color="blue" radius='20' intensity='10'>
-                </DirectionalLight>
+                <Transform translation='0.1 15.1 0'>
+                    <Shape USE='Lazer'>
+                    </Shape>
+                </Transform>
+            </Group>
+            <!--Лазеры-------------------------------------------------------------------------------------------------------------->
 
         </Scene>
     </x3d>
