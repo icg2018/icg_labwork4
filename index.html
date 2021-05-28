@@ -6,13 +6,33 @@
     <title>Лабораторная работа 2</title>
     <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
     <script src="https://x3dom.org/download/dev/x3dom-full.debug.js"></script>
-  </head>
-  <body>
-     <X3D>
+
+    <body style='width:100%; height:100%; border:0; margin:0; padding:0; background: url("1.jpg") no-repeat fixed;
+  background-size: cover; background-position: center;'>
+
+      <X3D width="100vw" height="100vh">
         <Scene>
 
+
+<!-- освещение -->
+  <PointLight location="10 10 0" color="1 1 1" intensity="1"></PointLight>
+  <DirectionalLight direction='-1 0 0' color='1 1 1' intensity='1' shadowIntensity='0.1'></DirectionalLight>
+  <SpotLight direction="-1 0 0" color="1 1 1" location="10 10 0" radius='100' intensity="1" beamWidth="0.5" cutOffAngle="0.5"></SpotLight>
+
+<!-- туман -->
+  <Fog DEF='tuman' fogType="EXPONENTIAL" color="#b7f7d7" visibilityRange='200'></Fog>
+
+<!-- навигация -->
+  <Viewpoint DEF='camera' description="Начальный вид" position="-1 0 30" fieldOfView = "0.50" ></Viewpoint>
+
+  <NavigationInfo type='Fly' avatarSize="1 2 1" speed="5"></NavigationInfo>
+
+
+
+<collision enabled="true">        
 <!--заполнение по четырём точкам-->
 <!--ваза-->
+ <collision>
   <Transform translation = "1 0.157 -1">
     <Shape>
         <IndexedFaceSet ccw="true" colorPerVertex="true" convex="true"
@@ -255,7 +275,7 @@
         </Transform>
         </Transform>
         </Transform>   
-
+ </collision>
 
     <!--текст-->
             <Transform translation = "0.65 0.61 -0.9"  rotation="0 1 0 -0.8" >
