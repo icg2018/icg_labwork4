@@ -8,7 +8,7 @@
 	<Scene>
 		<group>
                     
-        <transform translation='-4.5 -10 3.5'>
+        <transform translation='4.5 10 -3.5'>
           <shape>
             <IndexedTriangleSet index="0 1 4 0 3 4 1 2 4 2 3 4 0 1 5 0 3 5 1 2 5 2 3 5" solid="false">
               <Coordinate point="4 10 -3, 4 10 -4, 5 10 -4, 5 10 -3, 4.5 11 -3.5, 4.5 9 -3.5">
