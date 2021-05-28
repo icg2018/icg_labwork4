@@ -25,23 +25,13 @@
                     <Transform rotation="0 1 0 1.57">
                         
 
-                            <TimeSensor DEF="Time" cycleInterval="4" loop="true"></TimeSensor>
-                                 <PositionInterpolator DEF="PosInt" key="0 0.5 1"
-                                     keyValue="0 0.6 0, 0 5.6 -10,   0 0.6 0">
-                                 </PositionInterpolator>
-        
+                            
                             <Transform DEF="Trans" translation="0 0.6 0" scale="0.1 0.1 0.1" rotation="1 0 0 0.4">
                               
                                  <Inline url=" untitled111.x3d">
                                 </Inline>
     
-                                         </Transform>
-                         <ROUTE fromNode="Time" fromField="fraction_changed"
-                             toNode="PosInt" toField="set_fraction"></ROUTE>
-                         <ROUTE fromNode="PosInt" fromField="value_changed"
-                         toNode="Trans" toField="set_translation"></ROUTE>
-                            
-                        
+                                         </Transform>                             
                     </Transform>
                 </Anchor>
                 <!--END Anchor-->
@@ -250,7 +240,6 @@
 </body>
 
 </html>
-
 
 
 
