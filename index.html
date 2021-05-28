@@ -23,12 +23,25 @@
 
                 <Anchor url="https://www.youtube.com/watch?v=--gyrdxO1ok" parameter="target='_self'">
                     <Transform rotation="0 1 0 1.57">
-                        <Transform translation="0 0.6 0" scale="0.1 0.1 0.1" rotation="1 0 0 0.4">
+                        
 
-                            <Inline url=" untitled111.x3d">
-                            </Inline>
-
-                        </Transform>
+                            <TimeSensor DEF="Time" cycleInterval="4" loop="true"></TimeSensor>
+                                 <PositionInterpolator DEF="PosInt" key="0 0.5 1"
+                                     keyValue="0 0.6 0, 0 5.6 -10,   0 0.6 0">
+                                 </PositionInterpolator>
+        
+                            <Transform DEF="Trans" translation="0 0.6 0" scale="0.1 0.1 0.1" rotation="1 0 0 0.4">
+                              
+                                 <Inline url=" untitled111.x3d">
+                                </Inline>
+    
+                                         </Transform>
+                         <ROUTE fromNode="Time" fromField="fraction_changed"
+                             toNode="PosInt" toField="set_fraction"></ROUTE>
+                         <ROUTE fromNode="PosInt" fromField="value_changed"
+                         toNode="Trans" toField="set_translation"></ROUTE>
+                            
+                        
                     </Transform>
                 </Anchor>
                 <!--END Anchor-->
@@ -67,7 +80,7 @@
                             </Transform>
                             <!--столбики-->
                             <Transform translation="9 0.1 -1.2">
-                                <Shape>
+                                <Shape DEF='STOLB'>
                                     <Appearance>
 
                                         <Material diffuseColor="#ffffff"></Material>
@@ -75,22 +88,9 @@
                                     </Appearance>
                                     <Cylinder radius="0.05" height="0.3" solid="false"></Cylinder>
                                 </Shape>
-
                             </Transform>
 
-                            <Transform DEF="STOLB">
-
-                                <Shape>
-                                    <Appearance>
-
-                                        <Material diffuseColor="#ffffff"></Material>
-                                        <ImageTexture url="5.jpg"></ImageTexture>
-                                    </Appearance>
-                                    <Cylinder radius="0.05" height="0.3" solid="false"></Cylinder>
-                                </Shape>
-
-
-                            </Transform>
+                           
                             <Transform translation='7 0.1 -1.2'>
                                 <Shape USE='STOLB'>
                                 </Shape>
