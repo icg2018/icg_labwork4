@@ -25,11 +25,9 @@
 <!-- навигация -->
   <Viewpoint DEF='camera' description="Начальный вид" position="-1 0 30" fieldOfView = "0.50" ></Viewpoint>
 
-  <NavigationInfo type='Fly' avatarSize="1 2 1" speed="5"></NavigationInfo>
+  <NavigationInfo type='EXAMINE' avatarSize="1 2 1" speed="5"></NavigationInfo>
 
-
-
-<collision enabled="true">        
+      
 <!--заполнение по четырём точкам-->
 <!--ваза-->
  <collision>
@@ -300,7 +298,6 @@
                 <Box size="0.06 0.6 0.01" solid = "false"></Box>
             </Shape>
         </Transform> 
-         </collision> 
       </Scene>
     </X3D>
   </body> 
