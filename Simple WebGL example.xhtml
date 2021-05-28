@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Simple WebGL example</title>
+        <link rel="stylesheet" type="text/css" href="Simple%20WebGL%20example_files/x3dom.css" />
+	</head>
+
+<body style="background-color:#E0E0E0;">
+
+    <h1>OGV and MP4 MovieTexture example</h1>
+		<p>
+			Example shows how you can easily provide multiple video-sources in a single MovieTexture Node
+		</p>
+		<p>
+			(Only OGV work in Minefield right now. WebKit only plays the mp4 sound)
+		</p>
+		<X3D xmlns="http://www.web3d.org/specifications/x3d-namespace" showStat="true" showLog="false" x="0px" y="0px" width="600px" height="400px">
+         <Scene DEF="scene" render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" pickMode="idBuf" doPickPass="true">
+			<Viewpoint position="0 0 8" fieldOfView="0.785398" orientation="0,0,0,0" centerOfRotation="0,0,0" zNear="-1" zFar="-1"/>
+			<Background skyColor="1 1 1" groundColor="" groundAngle="" skyAngle="" backUrl="" bottomUrl="" frontUrl="" leftUrl="" rightUrl="" topUrl=""/>
+		    <Transform translation="-3.2 0 0" render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" center="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleOrientation="0,0,0,0">
+		      <Transform scale="0.3 0.3 0.3" translation="0 0 0.5" render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" center="0,0,0" rotation="0,0,0,0" scaleOrientation="0,0,0,0">
+		        <Shape render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" isPickable="true">
+		          <Appearance DEF="textApp" sortType="auto" alphaClipThreshold="0.1">
+		            <Material diffuseColor="0.8 0.8 1" ambientIntensity="0.2" emissiveColor="0,0,0" shininess="0.2" specularColor="0,0,0"/>
+		          </Appearance>
+		          <Text string="'OGV Video source'" solid="true" ccw="true" useGeoCache="true" lit="true"/>
+		        </Shape>
+		      </Transform>
+		      <Shape render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" isPickable="true">
+		        <Appearance sortType="auto" alphaClipThreshold="0.1">
+		          <MovieTexture repeatS="false" repeatT="false" loop="true" url="'convertible.ogv'" scale="true" hideChildren="true" speed="1" pitch="1"/>
+		        </Appearance>
+		        <Box DEF="box" size="3 1.65 0.01" solid="true" ccw="true" useGeoCache="true" lit="true"/>
+		      </Shape>
+		    </Transform>
+		    <Transform render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleOrientation="0,0,0,0">
+		      <Transform scale="0.3 0.3 0.3" translation="0 0 0.5" render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" center="0,0,0" rotation="0,0,0,0" scaleOrientation="0,0,0,0">
+		        <Shape render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" isPickable="true">
+				  <Appearance USE="textApp"/>
+		          <Text string="'OGV or MP4 Video source'" solid="true" ccw="true" useGeoCache="true" lit="true"/>
+		        </Shape>
+		      </Transform>
+		      <Shape render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" isPickable="true">
+		        <Appearance sortType="auto" alphaClipThreshold="0.1">
+		          <MovieTexture repeatS="false" repeatT="false" loop="true" url="'convertible.ogv' 'convertible.mp4'" scale="true" hideChildren="true" speed="1" pitch="1"/>
+		        </Appearance>
+		        <Box USE="box"/>
+		      </Shape>
+		    </Transform>
+		    <Transform translation="3.2 0 0" render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" center="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleOrientation="0,0,0,0">
+		      <Transform scale="0.3 0.3 0.3" translation="0 0 0.5" render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" center="0,0,0" rotation="0,0,0,0" scaleOrientation="0,0,0,0">
+		        <Shape render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" isPickable="true">
+				  <Appearance USE="textApp"/>
+		          <Text string="'MP4 Video source'" solid="true" ccw="true" useGeoCache="true" lit="true"/>
+		        </Shape>
+		      </Transform>
+		      <Shape render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" isPickable="true">
+		        <Appearance sortType="auto" alphaClipThreshold="0.1">
+		          <MovieTexture repeatS="false" repeatT="false" loop="true" url="'convertible.mp4'" scale="true" hideChildren="true" speed="1" pitch="1"/>
+		        </Appearance>
+		        <Box USE="box"/>
+		      </Shape>
+		    </Transform>
+		  <matrixtransform xmlns="http://www.w3.org/1999/xhtml" render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" matrix="1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1"><inline render="false" bboxCenter="0,0,0" bboxSize="-1,-1,-1" url="" load="true" nameSpaceName=""></inline></matrixtransform><matrixtransform xmlns="http://www.w3.org/1999/xhtml" render="true" bboxCenter="0,0,0" bboxSize="-1,-1,-1" matrix="1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1"><inline render="false" bboxCenter="0,0,0" bboxSize="-1,-1,-1" url="" load="true" nameSpaceName=""></inline></matrixtransform></Scene>
+        <canvas xmlns="http://www.w3.org/1999/xhtml" class="x3dom-canvas" id="x3dom-1617925139673-canvas" style="width: 600px; height: 400px;" width="600" height="400" tabindex="0"></canvas><div xmlns="http://www.w3.org/1999/xhtml" class="x3dom-log" style="display: none;"><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: Time for setup and init of GL element no. 0: 1013 ms.</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: Adding video file: convertible.mp4</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: Adding video file: convertible.mp4</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: Adding video file: convertible.ogv</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: Adding video file: convertible.ogv</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: activate FogBindable null/defaultX3DFogNode</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: register FogBindable null/defaultX3DFogNode</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: create new Fog for X3DFogNode-stack</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: activate ViewpointBindable null/</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: activate first X3DViewpointNode for X3DViewpointNode-stack</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: activate BackgroundBindable null/</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: activate first X3DBackgroundNode for X3DBackgroundNode-stack</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: System ready.</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: activate NavigationInfoBindable null/defaultX3DNavigationInfoNode</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: register NavigationInfoBindable null/defaultX3DNavigationInfoNode</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: NavType: undefined</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: Switch to examine mode.</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: create new NavigationInfo for X3DNavigationInfoNode-stack</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: activate EnvironmentBindable null/defaultX3DEnvironmentNode</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: register EnvironmentBindable null/defaultX3DEnvironmentNode</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: create new Environment for X3DEnvironmentNode-stack</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: register BackgroundBindable null/</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: register ViewpointBindable null/</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: webgl2 context found
+Vendor: Mozilla Google Inc., Renderer: Mozilla ANGLE (AMD Radeon HD 7660G Direct3D11 vs_5_0 ps_5_0), Version: WebGL 2.0, ShadingLangV.: WebGL GLSL ES 3.00, MSAA samples: 4
+Extensions: EXT_color_buffer_float, EXT_float_blend, EXT_texture_compression_bptc, EXT_texture_compression_rgtc, EXT_texture_filter_anisotropic, OES_texture_float_linear, OVR_multiview2, WEBGL_compressed_texture_s3tc, WEBGL_compressed_texture_s3tc_srgb, WEBGL_debug_renderer_info, WEBGL_debug_shaders, WEBGL_lose_context</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: Initializing X3DCanvas for [x3dom-1617925139673-canvas]</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: Creating canvas for (X)3D element...</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: Found 1 X3D and nodes...</p><p style="margin: 0px; color: rgb(0, 255, 0);">INFO: X3DOM version 1.8.2-dev, Revison <a href="https://github.com/x3dom/x3dom/tree/d1cfddaa4e4ceb39a9cbee4aacca4bd18bf9cc04">d1cfddaa4e4ceb39a9cbee4aacca4bd18bf9cc04</a>, Date Sun Oct 13 19:19:04 2019 +0200</p></div><div xmlns="http://www.w3.org/1999/xhtml" id="x3dom-state-viewer" style="display: block;"><div class="x3dom-states-rendermode-hardware"></div><ul class="x3dom-states-list"><li class="x3dom-states-item"><div class="x3dom-states-item-title">FPS</div><div class="x3dom-states-item-value">2.03</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">ANIM</div><div class="x3dom-states-item-value">0.00</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">TRAVERSE</div><div class="x3dom-states-item-value">2.00</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">SORT</div><div class="x3dom-states-item-value">0.00</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">RENDER</div><div class="x3dom-states-item-value">383.00</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">DRAW</div><div class="x3dom-states-item-value">63.83</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">PICKING</div><div class="x3dom-states-item-value">8.00</div></li></ul><ul class="x3dom-states-list"><li class="x3dom-states-item"><div class="x3dom-states-item-title">#NODES:</div><div class="x3dom-states-item-value">15</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">#SHAPES:</div><div class="x3dom-states-item-value">6</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">#DRAWS:</div><div class="x3dom-states-item-value">6</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">#POINTS:</div><div class="x3dom-states-item-value">84</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">#TRIS:</div><div class="x3dom-states-item-value">42</div></li></ul><ul class="x3dom-states-list"><li class="x3dom-states-item"><div class="x3dom-states-item-title">#ACTIVE</div><div class="x3dom-states-item-value">0</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">#TOTAL</div><div class="x3dom-states-item-value">0</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">#LOADED</div><div class="x3dom-states-item-value">0</div></li><li class="x3dom-states-item"><div class="x3dom-states-item-title">#FAILED</div><div class="x3dom-states-item-value">0</div></li></ul></div><div xmlns="http://www.w3.org/1999/xhtml" class="x3dom-progress" style="display: flex; opacity: 0;"><div class="x3dom-progress-spinner"></div><div id="x3domProgessCount">0</div></div><div xmlns="http://www.w3.org/1999/xhtml" class="x3dom-vr"></div></X3D>
+
+	<script type="text/javascript" src="Simple%20WebGL%20example_files/x3dom.js"></script>
+
+<video preload="auto" muted="muted" style="visibility: hidden; display: none;"><source src="convertible.ogv" /></video><video preload="auto" muted="muted" style="visibility: hidden; display: none;"><source src="convertible.ogv" /><source src="convertible.mp4" /></video><video preload="auto" muted="muted" style="visibility: hidden; display: none;"><source src="convertible.mp4" /></video></body>
+</html>
