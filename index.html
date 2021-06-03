@@ -1,13 +1,82 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 3</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+<html lang='ru'>
+
+<head>
+  <meta charset='utf-8' />
+  <title>ЛР 3</title>
+  <link rel='stylesheet' href="https://www.x3dom.org/download/dev/x3dom.css">
+  </link>
+  <script src="https://x3dom.org/download/dev/x3dom-full.debug.js"></script>
+
+</head>
+
+<body>
+  <h1>ЛР 3, Иванов А.С., гр. 4842</h1>
+  <X3D style='left: 0px; top: 0px; width: 100%; height: 100%; border: none;'>
+    <Scene>
+
+      <background skyAngle='1.5708' skyColor='0.6 0.75 1'>
+      </background>
+
+
+      <ViewPoint position='0 150 1000' fieldOfView='0.4'></ViewPoint>
+      <NavigationInfo headlight="false"></NavigationInfo>
+      <DirectionalLight direction="0 -0.5 0" global="true" shadowIntensity="0.5" intensity="1"></DirectionalLight>
+
+
+      <!-- Ground -->
+      <Transform translation='-100 -3000 0'>
+        <Shape>
+          <Appearance>
+            <ImageTexture url='tex/photo-1494344670326-077cb5f4d3e5.jpg' repeatT='true' repeatS='true'></ImageTexture>
+            <TextureTransform translation='1 1' scale='1 1'></TextureTransform>
+          </Appearance>
+
+          <!--<box size='20000 1 20000' />-->
+        </Shape>
+      </Transform>
+
+
+      <!-- Ground ElevationGrid -->
+      <Transform translation='-14000 -4000 -6000' rotation='0 1 0 0'>
+        <Shape>
+          <Appearance>
+            <ImageTexture url='tex/photo-1494344670326-077cb5f4d3e5.jpg' repeatT='true' repeatS='true'></ImageTexture>
+            <TextureTransform translation='1 1' scale='1 1'></TextureTransform>
+          </Appearance>
+          <ElevationGrid creaseAngle='1.57' solid='true' xDimension='5' zDimension='5' height="0, 0, 0, 0, 0,
+                    0,   0,    0,      -1000,  0,
+                    0,   0,    0,      0,      0,
+                    0,   0,    0,      0,      0,
+                    0,   0,    2400,   2000,    900" xSpacing="5000" zSpacing="5000">
+          </ElevationGrid>
+        </Shape>
+      </Transform>
+
+      <!-- UFO -->
+
+      <Transform scale='2 2 2' translation='-7000 100 0'>
+        <PointLight location='0 0 0' color='1 0 0' ambientIntensity='1' radius='1500' attenuation='1 0 0' global='true'
+          on='true' intensity='1'>
+        </PointLight>
+        <Shape>
+          <Appearance>
+            <Material specularColor="#cdd388"></Material>
+          </Appearance>
+          <IndexedTriangleStripSet index='0 1 2 3 4 5 6 7 8 9 10 11 12 13  14 15 16 17 18 19 -1' solid='false'>
+            <Coordinate
+              point='-400 100 300, -200 200 150, -300 400 50, -200 300 250,
+ 0 400 0, 200 300 150, 500 500 -250, 400 300 150, 600 400 200, 650 200 400, 
+ 400 200 600, 660 200 700, 200 200 700, 0 300 600, 100 200 600, 0 50 550, -100 50 400, -100 150 100, -200 200 300, -400 100 300'>
+            </Coordinate>
+        </Shape>
+      </Transform>
+      <!-- Встраивание файла с самолётами -->
+      <Inline url="planes.x3d"></Inline>
+
+      <Fog type="Linear" color="0.3 0.3 0.4" visibilityRange="30000"></Fog>
+    </Scene>
+  </X3D>
+</body>
+
 </html>
