@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>My first X3DOM page</title>
+        <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
+        <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link>
+
+
+    </head>
+    <body>
+        <h1>Salam</h1>
+
+        <x3d width='600px' height='400px'>
+          <scene>
+
+              <transform translation='-3 0 0'>
+              <shape>
+                  <appearance>
+                  <material diffuseColor='0 1 0'></material>
+
+                    </appearance>
+                  <cone></cone>
+              </shape>
+              </transform>
+
+              <Sound>
+                <AudioClip loop='true' enabled="true" url="musicshort.mp3" />
+              </Sound>
+
+
+            <transform translation='0 0 1.02'>
+              <shape>
+                <appearance>
+                  <ImageTexture url='dababyhead.jpg'></ImageTexture>
+                  <TextureTransform scale='1.01, 1.01'></TextureTransform>
+                </appearance>
+                <plane size ='2, 2' solid = 'false'> </plane>
+              </shape>
+            </transform>
+
+
+            <transform translation='0 0 -1.02'>
+              <shape>
+                <appearance>
+                  <ImageTexture url='dababyhead.jpg'></ImageTexture>
+                  <TextureTransform scale='1.01, 1.01'></TextureTransform>
+                    </appearance>
+                    <plane size ='2, 2' solid = 'false'> </plane>
+              </shape>
+            </transform>
+
+            <transform>
+              <shape>
+                <appearance>
+                  <material diffuseColor= '1 2 1'></material>
+                    </appearance>
+                    <box> </box>
+              </shape>
+            </transform>
+<!-- right back wheel -->
+            <transform translation='-1 -1 1', rotation='1 0 0 -1.5708'>
+              <shape>
+                <appearance>
+                  <ImageTexture url='carwheel.png'></ImageTexture>
+                    </appearance>
+                    <cylinder height='0.2' radius='0.3'></cylinder>
+              </shape>
+            </transform>
+<!-- right back tire -->
+            <transform translation='-1 -1 0.97', rotation='1 0 0 -1.5708'>
+              <shape>
+                <appearance>
+                  <material diffuseColor='f'></material>
+                    </appearance>
+                    <cylinder height='0.21' radius='0.32'></cylinder>
+              </shape>
+            </transform>
+<!-- right front wheel -->
+            <transform translation='1 -1 1', rotation='1 0 0 -1.5708'>
+              <shape>
+                <appearance>
+                  <material diffuseColor= '1 2 1'></material>
+                    </appearance>
+                    <cylinder height='0.2' radius='0.3'></cylinder>
+              </shape>
+            </transform>
+<!-- left front wheel -->
+            <transform translation='1 -1 -1', rotation='1 0 0 -1.5708'>
+              <shape>
+                <appearance>
+                  <material diffuseColor= '1 2 1'></material>
+                    </appearance>
+                    <cylinder height='0.2' radius='0.3'></cylinder>
+              </shape>
+            </transform>
+<!-- left back wheel -->
+            <transform translation='-1 -1 -1', rotation='1 0 0 -1.5708'>
+              <shape>
+                <appearance>
+                  <material diffuseColor= '1 2 1'></material>
+                    </appearance>
+                    <cylinder height='0.2' radius='0.3'></cylinder>
+              </shape>
+            </transform>
+
+
+
+
+            </scene>
+        </x3d>
+
+    </body>
+    </html>
