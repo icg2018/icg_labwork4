@@ -1,0 +1,13 @@
+
+	<Scene>
+		<transform DEF='Planet'>
+		<Shape>
+          <Appearance>
+            <material color="0 0 0"></material>
+            <TextureTransform scale="1 1"></TextureTransform>
+            <ImageTexture url="4.jpg"></ImageTexture>
+          </Appearance>
+          <Sphere radius="20"></Sphere>
+        </Shape>
+		</transform>
+	</Scene>
