@@ -1,13 +1,124 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>  
-    <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <title>Лабораторная работа 3</title>
-    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css" />
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-  </head>
-  <body>
-    <h1>Здесь только я. А должна быть твоя лаба!</h1>
-  </body> 
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>laba3</title>
+
+
+<script src="https://www.x3dom.org/download/dev/x3dom.js"></script>
+<link rel="stylesheet" href="https://www.x3dom.org/download/dev/x3dom.css"/>
+
+</head>
+<body>
+<x3d width="100vw" height="100vh">
+<scene>
+<Collision DEF="Main_collision" enabled="true">
+<Anchor url="https://www.youtube.com/watch?v=LEUKYOndizA&ab_channel=Vladis65" parameter="target='_self'">
+<Transform translation="0 0 -3" scale="5 5 5" rotation="0 1 0 2.8">
+<appearance>
+<ImageTexture url="./Bet1.jpg"></ImageTexture>
+</appearance>
+<Inline url="./x3d/Wolf_One_x3d.x3d"></Inline>
+</Transform>
+</Anchor>
+
+
+<Group DEF="Part_scene">
+<transform DEF="GF" translation="0 0 0">
+<shape DEF="G">
+<appearance>
+<Material color="#ffffff"></Material>
+<ImageTexture url="./z.jpg">
+</ImageTexture>
+</appearance>
+<box Size="40 0.1 40"></box>
+</shape>
+</transform>
+
+<Transform DEF="LWall" translation="-9.95 4 0">
+<Shape DEF="Wall">
+<Appearance>
+<Material color="#ffffff"></Material>
+<ImageTexture url="./f.jpg">
+</ImageTexture>
+</Appearance>
+<Box Size=".1 10 40"></Box>
+</Shape>
+</Transform>
+</Group>
+<transform DEF="Part_scene_2"
+translation="0 0 40">
+<shape USE="Part_scene"></shape>
+</transform>
+<Transform DEF="BWall" translation="0 4 -9.9" rotation="0 1 0 1.5708">
+<Shape USE="Wall"></Shape>
+</Transform>
+<!-- стены -->
+
+</Collision>
+<!--Light and fog-->
+<Group DEF="Light">
+<PointLight ambientIntensity='0' attenuation='1,0,0' color='0,1,0'
+global='false' intensity='.1' location='0,3,3'
+on='true' radius='100' shadowFilterSize='0'
+shadowIntensity='1' shadowMapSize='512'
+shadowOffset='0' zFar='-1' zNear='-1' ></PointLight>
+<DirectionalLight  intensity="0.3" ambientIntensity='0' color='1,0.1,0'
+direction='0,-0.1,-2' global='false' on='true' shadowCascades='1'
+shadowFilterSize='20' shadowIntensity='.9'  shadowMapSize='2024'
+ shadowSplitFactor='1' shadowSplitOffset='0.9'
+></DirectionalLight>
+
+<SpotLight ambientIntensity='0' attenuation='1,0,0'
+beamWidth='1.5' color='0.5,0,0.4' cutOffAngle='1'
+direction='0,-2,0' global='false' intensity='1'
+location='0,7,0' radius='5' shadowCascades='1'
+shadowFilterSize='2' shadowIntensity='1'
+shadowMapSize='1024'></SpotLight> 
+
+<transform>
+<Fog bind='true' color='(0,1,0)'
+fogType='EXPONENTIAL' isActive='true' visibilityRange='360' ></Fog>
+</transform>
+</Group>
+   
+    <!--Light________________________________________________________________-->
+
+
+
+
+
+
+ <!--background-->
+ <Background DEF='Summer'
+ backUrl="sky.jpg"
+ skyAngle='0.8,
+ 1.3,
+1.5708'
+ skyColor='0 0 0.1,
+ 0 0 0.2,
+ 0 0 0.4'
+ groundAngle='0.4,
+ 1.2,
+1.5708'
+ groundColor='0 0 0.1,
+ 0 0 0.15,
+ 0 0 0.542,
+ 0 0 0.669'/>
+
+<!-- 
+ <NavigationInfo avatarSize= '[ 3, 5, 2 ]'explorationMode='all'
+ speed='5.0' transitionTime='1.0' transitionType='["LINEAR"]' headlight='false'
+type="FLY" ></NavigationInfo> -->
+<!-- <Viewpoint position="0 4 15"
+orientation="0 0 0 0"
+zNear="1" zFar="1000"
+centerOfRotation="0.00000 0.00000 0.00000"
+fieldOfView="0.9"
+description="defaultX3DViewpointNode">
+</Viewpoint> -->
+
+</scene>
+</x3d>
+</body>
 </html>
